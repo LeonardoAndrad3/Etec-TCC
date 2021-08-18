@@ -1,0 +1,23 @@
+{
+    "name": "Open doors",
+    "short_name": "Open doors",
+    "description": "WEB APP para aprender PWA (Disciplina PAMII).",
+    "display": "fullscreen",
+    "start_url":"index.html",    
+    "scope": "/",
+    "background_color": "#535353",
+    
+    "icons": [
+        {
+            "src": "icon/app-icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "icon/app-icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }]
+}

@@ -1,0 +1,614 @@
+body, ul{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: rgb(24, 25, 27);
+    width: 100%;
+}
+
+#login{
+    color: rgb(12, 147, 3);
+    font-weight: bold;
+    border: 2px solid rgb(12, 147, 3);
+    border-radius: 10px;
+    text-align: center;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+a:hover{ /*mostrar área de contato*/
+    background: rgba(0, 0, 0, .05);
+}
+
+#header{
+    box-sizing: border-box;
+    height: 70px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*divide o logo de um lado*/
+    background: rgb(53, 53, 53);
+}
+
+#menu{
+    display: flex;
+    list-style: none;
+    gap: .5rem; /*espaço entre cada item*/
+}
+
+#menu a {
+    display: block;
+    padding: .5rem;
+}
+
+#btn-mobile{
+    display: none;
+    color: white;
+}
+
+/*Início do conteúdo*/
+
+    /*Inicio home*/
+    .home{
+        color: white;
+        position: relative;
+    }
+    .fundo-home{
+        width: 100%;
+        max-height: 85vh;
+        size: 100%;
+    }
+
+    .titulo{
+        font-size: 50px;
+        position: absolute;
+        text-align: center;
+        top: 30px;
+        right: 100px;
+    }
+
+    .texto-center{
+        text-align: center;
+        margin: 30px;
+        line-height: 30px;
+    }
+
+    .titulo-centralizado{
+        font-size: 50px;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        margin: 0 20vw 0 20vw;
+    }
+
+    .sub-titulo{
+        position: absolute;
+        text-align: right;
+        width: 400px;
+        top: 160px;
+        right: 100px;
+    }
+
+    .home-botoes{
+        display: flex;
+        position: absolute;
+        top: 300px;
+        right: 80px;
+    }
+    .botoes-verdes{
+        color: white;
+        font-weight: bold;
+        border: 2px solid rgb(12, 147, 3);
+        border-radius: 10px;
+        padding: 15px;
+        background: rgb(12, 147, 3);
+    }
+    .botoes{
+        color: rgb(12, 147, 3);
+        font-weight: bold;
+        border: 2px solid rgb(12, 147, 3);
+        border-radius: 10px;
+        padding: 15px;
+    }
+    .botoes-linha{
+        margin: 0;
+        padding: 20px;
+    }
+    /*Fim home*/
+
+
+    /*Início div-oque*/
+    .oque{
+        color: white;
+    }
+
+    .lista-oque{
+        display: flex;
+        align-items: center;
+        margin-left: 70px;
+        margin-top: 40px;
+        text-align: center;
+        gap: 30px;
+    }
+    .busca, .escolher, .contratar{
+        list-style: none;
+    }
+
+    .image-oque{
+        width: 350px;
+        height: 230px;
+    }
+    /*fim div-oque*/
+
+
+    /*Inicio sobre*/
+    .sobre-nos{
+        color: white;
+        max-width: 100%;
+        display: flex;
+        margin: 40px 45px 30px 45px;
+        text-align: left;
+        align-content: space-between;
+        gap: 40px;
+        padding: 40px 40px;
+    }
+
+    .texto-sobre, .image-sobre{
+        list-style: none;
+    }
+
+    .paragrafo-sobre{
+        line-height: 30px;
+        padding-top: 20px;
+    }
+
+    .titulo-esquerda{
+        font-size: 50px;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        margin: 20px 100px 20px 100px;
+    }
+
+    .image-lampada{
+        width: 600px;
+        height: 400px;
+    }
+    /*Fim sobre*/
+
+
+    /*Inicio sobre*/
+    .motivos{
+        color: white;
+        max-width: 100%;
+        display: flex;
+        margin: 40px 45px 30px 45px;
+        text-align: right;
+        align-content: space-between;
+        gap: 40px;
+        padding-bottom: 40px;
+    }
+
+    .texto-motivos, .image-motivos{
+        list-style: none;
+    }
+
+    .paragrafo-motivos{
+        line-height: 30px;
+        padding-top: 0;
+    }
+
+    .titulo-direita{
+        font-size: 50px;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        margin: 0 70px 20px 70px;
+    }
+
+    .image-porque-escolher{
+        width: 600px;
+        height: 400px;
+    }
+    .botao-motivos{
+        text-align: left;
+        margin-left: 30px;
+    }
+
+    /*Fim sobre*/
+
+    /*ìnicio opcoes*/
+
+    .opcoes{
+        background-image: url(icon/fundo-opcoes.png);
+        height: 50vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        color: white;
+        margin-bottom: 40px;
+        padding-top: 5%;
+        padding-bottom: 10px;
+    }
+    .tipos-chaveiros{
+        text-align: center;
+    }
+
+    /*Fim opcoes*/
+
+    /*Inicio rodape*/
+    footer{
+        color: white;
+        background-color: rgb(53, 53, 53);
+        padding: 30px;
+    }
+
+    .rodape{
+        list-style: none;
+        text-align: center;
+    }
+
+    .titulo-rodape{
+        font-size: 30px;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid white;
+        margin: 0 35vw 0 35vw;
+    }
+    .copy{
+        padding-top: 20px;
+    }
+    .link-rodape{
+        text-decoration: underline;
+    }
+    /*Fim rodape*/
+
+    /*Inicio cadastro*/
+    .escolher-users img{
+        width: 350px;
+    }
+    .users{
+        display: flex;
+        color: white;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width:fit-content;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        gap: 100px;
+    }
+    .div-escolher, .users p{
+        color: rgb(12, 147, 3);
+        text-align: center;
+        font-size: 16px;
+    }
+    .escolher-users p{
+        padding: 0;
+        margin: 5px 30px 5px 30px;
+        font-size: 18px;
+    }
+    .escolher-form{
+        display: flex;
+        color: rgb(12, 147, 3);
+        font-size: 20px;
+        margin: 20px 250px 20px 250px;
+    }
+    .escolher-form li, .paragrafo-user{
+        border-bottom: 2px solid rgb(53, 53, 53);
+        padding: 10px 40px 10px 40px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .entrar{
+        color: white;
+        max-width: 100%;
+        font-size: 16px;
+    }
+    .titulo-entrar{
+        font-size: 35px;
+        text-align: center;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        padding: 30px 10px 10px 10px;
+        margin: 0 30vw 20px 30vw;
+    }
+    .paragrafo-entrar{
+        text-align: center;
+    }
+    .cadastro{
+        color: white;
+        max-width: 100%;
+        font-size: 16px;
+    }
+    .titulo-cadastro{
+        font-size: 35px;
+        text-align: center;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        padding: 30px 10px 10px 10px;
+        margin: 0 80px 20px 80px;
+    }
+    .login-cadastro p{
+        margin: 30px 80px 20px 80px;
+        text-align: left;
+    }
+    .lista-form{
+        display: flex;
+    }
+    .lista-form p{
+        margin-bottom: 5px;
+    }
+    .lista-form ul, li{
+        margin-left: auto;
+        margin-right: auto;
+        list-style: none;
+        padding: 10px;
+    }
+    .form-cadastro input[type="text"], input[type="password"], select{
+        color: white;
+        background-color: rgb(24, 25, 27);
+        width: 300px;
+        height: 25px;
+        border: none;
+        border-bottom: 2px solid rgb(53, 53, 53);
+        font-size: 16px;
+    }
+    .form-cadastro input[type="submit"]{
+        cursor: pointer;
+        color: rgb(12, 147, 3);
+        font-weight: bold;
+        border: 2px solid rgb(12, 147, 3);
+        border-radius: 10px;
+        padding: 15px;
+        background-color: rgb(24, 25, 27);
+        margin: 20px 0 20px 0;
+        width: 200px;
+        font-size: 18px;
+    }
+    .form-cadastro input[type="submit"]:hover{
+        background-color: rgb(12, 147, 3);
+        color: white;
+    }
+    .submit-line{
+        text-align: center;
+    }
+    .form-cadastro input[type="checkbox"]{
+        width: 20px;
+        height: 15px;
+        cursor: pointer;
+    }
+    #myInput{
+        margin-top: 10px;
+    }
+    #lista{
+        cursor: pointer;
+        color: white;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    #textBox1{
+        margin-top: 10px;
+    }
+    /*Fim cadastro*/
+
+    
+
+/*Fim do conteúdo*/
+
+
+@media (max-width: 600px){
+    /*caso esteja abaixo de 600px*/
+    #menu{
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        background: rgb(53, 53, 53);
+        display: block;/*item abaixo do outro*/
+        height: 0;
+        transition: .6s;
+        z-index: 1000;
+        visibility: hidden; /*escondido*/
+        overflow-y: hidden;
+    }
+    #nav.active #menu{
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+    #menu a{
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(0, 0, 0, .05);
+    }
+    #btn-mobile{
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+    }
+    #hamburguer{
+        width: 20px;
+        border-top: 2px solid;
+        color: white;
+    }
+    /*Criando o hamburguer*/
+    #hamburguer::after, #hamburguer::before{
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+    #nav.active #hamburguer{
+        border-top-color: transparent;/*tiro o primeiro traço*/
+    }
+    #nav.active #hamburguer::before{
+        transform: rotate(135deg);
+    }
+    #nav.active #hamburguer::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+    /*Configs do Cadastro*/
+    .div-escolher{
+        max-width: 100%;
+    }
+    .escolher-form{
+        margin: 15px;
+    }
+    .entrar{
+        max-width: 100%;
+    }
+    .titulo-entrar{
+        margin: 0 80px 20px 80px;
+    }
+    .cadastro{
+        max-width: 100%;
+    }
+    .lista-form{
+        display: block;
+    }
+    /*Fim do Cadastro*/
+
+    /*Configs do rodape*/
+    .titulo-rodape{
+        margin: 15px;
+    }
+    .titulo-cadastro{
+        margin: 30px;
+        max-width: 100%;
+    }
+    /*fim do rodape*/
+
+    /*configs opções*/
+    .opcoes{
+        max-width: 100%;
+        height: 50vh;
+        background-size: 100%;
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 5px;
+        background: rgb(24, 25, 27);
+    }
+    .titulo-centralizado{
+        font-size: 35px;
+        background-image: url(icon/fundo-opcoes.png);
+        background-position:center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        max-width: 100%;
+        margin: 0;
+        margin-top: 10px;
+        padding: 15px;
+    }
+    .tipos-chaveiros{
+        text-align: center;
+        margin: 20px;
+        padding-bottom: 5px;
+    }
+    /*fim opções*/
+
+    /*configs motivos*/
+    .motivos{
+        display: block;
+        max-width: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+    .image-motivos{
+        display: none;
+    }
+    .titulo-direita{
+        font-size: 35px;
+        padding: 0;
+        margin: 0;
+    }
+    .paragrafo-motivos{
+        text-align: justify;
+    }
+    .botao-motivos{
+        margin: 0;
+        text-align: center;
+    }
+    /*fim motivos*/
+
+    /*Configs sobre nos*/
+    .sobre-nos{
+        display: block;
+        max-width: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+    .titulo-esquerda{
+        font-size: 35px;
+        margin: 0;
+        padding: 0;
+    }
+    .paragrafo-sobre{
+        text-align: justify;
+        margin: 0;
+    }
+    .image-lampada{
+        width: 100%;
+        height: 200px;
+        margin: auto;
+        padding-top: 10px;
+    }
+    /*Fim sobre nos*/
+
+    /*Configs oque*/
+    .lista-oque{
+        display: block;
+        max-width: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+    .image-oque{
+        width: 100%;
+        height: auto;
+    }
+    .texto-center{
+        text-align: justify;
+    }
+    /*Fim oque*/
+
+    /*Configs home*/
+    .home{
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: 80px;
+    }
+    .titulo{
+        font-size: 35px;
+        top: 0%;
+        right: 25%;
+    }
+    .sub-titulo{
+        font-size: 20px;
+        top: 25%;
+        text-align: center;
+        right: 12%;
+        width: 300px;
+    }
+    .home-botoes{
+        display: block;
+        position: absolute;
+        top: 70%;
+        right: 25%;
+        text-align: center;
+    }
+    /*Fim home*/
+}
