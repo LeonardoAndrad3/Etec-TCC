@@ -29,11 +29,11 @@
 
         <div id="users" class="users">
             <ul class="escolher-users">
-                <li id="chamar-user"><img src="icon/Usuario.png"></li>
-                <li id="chamar-user"><p class="paragrafo-user" onclick="chamaruser()">Entre como Usuário</p></li>
+                <li id="chamar-user"><img src="icon/Usuario.png" onclick="chamarusernormal()"></li>
+                <li id="chamar-user"><p class="paragrafo-user" onclick="chamarusernormal()">Entre como Usuário</p></li>
             </ul>
             <ul class="escolher-users">
-                <li id="chamar-chaveiro"><img src="icon/Chaveiro.png"></li>
+                <li id="chamar-chaveiro"><img src="icon/Chaveiro.png" onclick="chamarchaveiro()"></li>
                 <li id="chamar-chaveiro" onclick="chamarchaveiro()"><p class="paragrafo-user">Entre como Chaveiro</p></li>
             </ul>
         </div>
@@ -44,8 +44,14 @@
                 <li id="chamarlog" style="display: none;" onclick="chamarform()">Clique aqui para Entrar</li>
             </ul>
         </div>
+        <div id="div-escolhernormal" class="div-escolher" style="display: none;">
+            <ul class="escolher-form">
+                <li id="chamarformnormal" onclick="chamarformnormal()">Clique aqui para Cadastrar-se</li>
+                <li id="chamarlognormal" style="display: none;" onclick="chamarformnormal()">Clique aqui para Entrar</li>
+            </ul>
+        </div>
 
-    
+        <!--Abaixo é o cadastro do chaveiro-->
         <section id="cadastro" class="cadastro" style="display: none;">
             <div class="login-cadastro">
                     <h1 class="titulo-cadastro">Cadastro</h1>
@@ -89,6 +95,32 @@
             </div>
         </section>
         
+        <!--Abaixo é o cadastro do usuário normal-->
+        <section id="cadastronormal" class="cadastro" style="display: none;">
+            <div class="login-cadastro">
+                    <h1 class="titulo-cadastro">Cadastro</h1>
+                    <p>Preencha todos os campos obrigatórios *</p>
+            </div>
+        
+            <div class="form-cadastro">
+                <form class="lista-form">
+                    <ul>
+                        <li><p>*Nome:</p><input type="text"></li>
+                        <li><p>*Email:</p><input type="text"></li>
+                        <li><p>*Senha:</p><input type="password"></li>
+                        <li><p>*Confirmar Senha:</p><input type="password"></li>
+                    </ul>
+
+                    <ul>
+                        <li><p>*CPF:</p><input type="text"></li>
+                        <li><p>*Data de Nascimento:</p><input type="text"></li>
+                        <li><p>*Telefone:</p><input type="text"></li>
+                        <li class="submit-line"><input type="submit" value="Cadastrar"></li>
+                    </ul>
+                </form>
+            </div>
+        </section>
+
 
         <section id="entrar" class="entrar" style="display: none;">
             <div class="login-cadastro">
@@ -133,16 +165,21 @@
 
         <!--Abaixo é o script para escolher a maneira de entrar-->
         <script type="text/javascript">
-            function chamaruser(){
-                var div = document.getElementById('div-escolher');
+
+            //inicio de caso escolher entrar como usuário
+            function chamarusernormal(){
+                var div = document.getElementById('div-escolhernormal');
                 if(div.style.display == 'none'){
                     document.getElementById('users').style.display = 'none';
-                    document.getElementById('div-escolher').style.display = 'block';
+                    document.getElementById('div-escolhernormal').style.display = 'block';
                     document.getElementById('entrar').style.display = 'block';
                 } else {
                     document.getElementById('chamarform').style.display = 'none';
                 }
             }
+            //fim para entrar como usuário
+
+            //inicio de caso escolher entrar como chaveiro
             function chamarchaveiro(){
                 var div = document.getElementById('div-escolher');
                 if(div.style.display == 'none'){
@@ -153,6 +190,7 @@
                     document.getElementById('chamarform').style.display = 'none';
                 }
             }
+            //fim para entrar como chaveiro
         </script>
 
         <!--Abaixo é o script para checkbox com input.text-->
@@ -170,6 +208,7 @@
 
         <!--Abaixo é o script para chamar os forms-->
         <script>
+            //chamar forms da parte do chaveiro
             function chamarform(){
                 var divlogin = document.getElementById('entrar');
                 if(divlogin.style.display == 'none'){
@@ -184,6 +223,24 @@
                     document.getElementById('cadastro').style.display = 'block';
                 }
             }
+            //fim de chamar forms do chaveiro
+
+            //chamar forms da parte do usuário comum
+            function chamarformnormal(){
+                var divlogin = document.getElementById('entrar');
+                if(divlogin.style.display == 'none'){
+                    document.getElementById('chamarformnormal').style.display = 'block';
+                    document.getElementById('chamarlognormal').style.display = 'none';
+                    document.getElementById('entrar').style.display = 'block';
+                    document.getElementById('cadastronormal').style.display = 'none';
+                } else {
+                    document.getElementById('chamarformnormal').style.display = 'none';
+                    document.getElementById('chamarlognormal').style.display = 'block';
+                    document.getElementById('entrar').style.display = 'none';
+                    document.getElementById('cadastronormal').style.display = 'block';
+                }
+            }
+            //fim de chamar forms do usuário
         </script>
 
     </body>

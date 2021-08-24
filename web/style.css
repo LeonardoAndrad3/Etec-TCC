@@ -272,6 +272,7 @@ a:hover{ /*mostrar área de contato*/
     /*Inicio cadastro*/
     .escolher-users img{
         width: 350px;
+        cursor: pointer;
     }
     .users{
         display: flex;
@@ -463,6 +464,15 @@ a:hover{ /*mostrar área de contato*/
     }
 
     /*Configs do Cadastro*/
+    .users{
+        display: block;
+    }
+    .escolher-users{
+        margin-bottom: 20px;
+    }
+    .escolher-users img{
+        width: 300px;
+    }
     .div-escolher{
         max-width: 100%;
     }
@@ -479,13 +489,17 @@ a:hover{ /*mostrar área de contato*/
         max-width: 100%;
     }
     .lista-form{
-        display: block;
+        display: grid;
+        place-items: center;
     }
     /*Fim do Cadastro*/
 
     /*Configs do rodape*/
+    footer{
+        margin-top: 0;
+    }
     .titulo-rodape{
-        margin: 15px;
+        margin: 0 15px 15px 15px;
     }
     .titulo-cadastro{
         margin: 30px;
@@ -496,11 +510,6 @@ a:hover{ /*mostrar área de contato*/
     /*configs opções*/
     .opcoes{
         max-width: 100%;
-        height: 50vh;
-        background-size: 100%;
-        margin-top: 0;
-        padding-top: 0;
-        padding-bottom: 5px;
         background: rgb(24, 25, 27);
     }
     .titulo-centralizado{
@@ -510,14 +519,12 @@ a:hover{ /*mostrar área de contato*/
         background-repeat: no-repeat;
         background-size: 100%;
         max-width: 100%;
-        margin: 0;
-        margin-top: 10px;
+        margin: 10px 0 0 0;
         padding: 15px;
     }
     .tipos-chaveiros{
         text-align: center;
         margin: 20px;
-        padding-bottom: 5px;
     }
     /*fim opções*/
 
@@ -590,6 +597,8 @@ a:hover{ /*mostrar área de contato*/
         max-width: 100%;
         padding: 0;
         margin-bottom: 80px;
+        display: grid;
+        place-items: center;
     }
     .titulo{
         font-size: 35px;
