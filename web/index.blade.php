@@ -10,6 +10,16 @@
     </head>
     <body>
 
+    <?php
+    
+    $db = new ControllerDb();
+    if($connetion= pg_connect(connectDb())){
+        echo("Foi");
+        pg_close($connetion);
+    } else{
+        echo("Não foi cara!");
+    }
+    ?>
         <header id="header">
             <a id="logo" href="index.html"><img src="icon/logo-2.png" width="150" height="120"></a> <!--logo1: w:60, h:60 -- logo2: w:150, h:120 -- logo3: w:130, h:70-->
             <nav id="nav">
