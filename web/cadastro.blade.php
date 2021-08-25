@@ -1,3 +1,12 @@
+<?php
+$db = new ControllerDb();
+if($connetion= pg_connect(connectDb())){
+    echo("Foi");
+    pg_close($connetion);
+} else{
+
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
