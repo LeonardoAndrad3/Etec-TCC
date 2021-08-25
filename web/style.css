@@ -116,6 +116,10 @@ a:hover{ /*mostrar área de contato*/
         border-radius: 10px;
         padding: 15px;
     }
+    .botoes:hover{
+        color: white;
+        background-color: rgb(12, 147, 3);
+    }
     .botoes-linha{
         margin: 0;
         padding: 20px;
@@ -167,7 +171,7 @@ a:hover{ /*mostrar área de contato*/
         line-height: 30px;
         padding-top: 20px;
     }
-
+    /*Abaixo é um titulo onde o pai tem flex box e precisa estar na esquerda*/
     .titulo-esquerda{
         font-size: 50px;
         text-align: center;
@@ -350,7 +354,7 @@ a:hover{ /*mostrar área de contato*/
         list-style: none;
         padding: 10px;
     }
-    .form-cadastro input[type="text"], input[type="password"], select{
+    .form-cadastro input[type="text"], input[type="password"], select, #busca-fun-input{
         color: white;
         background-color: rgb(24, 25, 27);
         width: 300px;
@@ -358,6 +362,18 @@ a:hover{ /*mostrar área de contato*/
         border: none;
         border-bottom: 2px solid rgb(53, 53, 53);
         font-size: 16px;
+    }
+    .form-cadastro input:hover{
+        border-color: rgb(12, 147, 3);
+    }
+    .form-cadastro select:hover{
+        border-color: rgb(12, 147, 3);
+    }
+    .form-cadastro input:focus{
+        outline: 0;
+    }
+    .form-cadastro select:focus{
+        outline: 0;
     }
     .form-cadastro input[type="submit"]{
         cursor: pointer;
@@ -397,7 +413,113 @@ a:hover{ /*mostrar área de contato*/
     }
     /*Fim cadastro*/
 
+    /*Inicio da parte dos serviços*/
+    .apresentacao-servicos{
+        color: white;
+        margin: 30px;
+    }
+    .align-esquerda{
+        font-size: 45px;
+        text-align: left;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        max-width: 550px;
+    }
+    .voce-chaveiro{
+        margin: 70px 30px 70px 30px;
+        color: white;
+        text-align: center;
+    }
+    .voce-chaveiro p{
+        padding-bottom: 20px;
+    }
+    .botao-maior{
+        color: rgb(12, 147, 3);
+        font-weight: bold;
+        border: 2px solid rgb(12, 147, 3);
+        border-radius: 10px;
+        padding: 15px;
+        font-size: 18px;
+    }
+    .botao-maior:hover{
+        color: white;
+        background-color: rgb(12, 147, 3);
+    }
+    .opcoes-servicos{
+        margin: 70px 30px 70px 30px;
+        color: white;
+        text-align: center;
+    }
+    .input-funcao ul{
+        display: flex;
+    }
     
+    #busca-fun-input, select{
+        color: white;
+        background-color: rgb(24, 25, 27);
+        width: 200px;
+        height: 25px;
+        border: none;
+        border-bottom: 2px solid rgb(53, 53, 53);
+        font-size: 16px;
+        margin-left: 15px;
+    }
+    #busca-fun-input{
+        width: 300px;
+    }
+    #busca-fun-input:hover , select:hover{
+        border-color: rgb(12, 147, 3);
+    }
+    #busca-fun-input:focus, select:focus{
+        outline: 0;
+    }
+    #busca-fun-input::placeholder{
+        color: rgb(190, 190, 190);
+        font-size: 15px;
+        padding-left: 10px;
+    }
+    .servicos-chaveiros{
+        color: white;
+        margin: 70px 0 70px 0;
+        display: grid;
+        grid-gap: 40px;
+        justify-content: center;
+        grid-template-areas:  /*Diz a estrutura do meu grid*/
+        "blocos-chaveiros blocos-chaveiros blocos-chaveiros"
+        "blocos-chaveiros blocos-chaveiros blocos-chaveiros"
+        "blocos-chaveiros blocos-chaveiros blocos-chaveiros"
+        "blocos-chaveiros blocos-chaveiros blocos-chaveiros";
+    }
+    .blocos-chaveiros{
+        background-color: rgb(53, 53, 53);
+        text-align: center;
+        width: 300px;
+        padding: 0 20px 20px 20px;
+        border-radius: 10px;
+        grid-area: "blocos-chaveiros"; /*fazendo isso ele identifica a label la no grid-template*/
+    }
+    .blocos-chaveiros h4{
+        font-size: 22px;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        margin: 20px auto 20px auto;
+        max-width: 250px;
+        padding: 10px;
+    }
+    .blocos-chaveiros p{
+        text-align: justify;
+        margin: 0 0 15px 0;
+    }
+    .mais-info-bloco{
+        text-decoration: underline;
+    }
+    .mais-info-bloco:hover{
+        color: rgb(12, 147, 3);
+        text-decoration: none;
+    }
+    .linha-botao-bloco{
+        margin: 10px 0 10px 0;
+    }
+    /*Fim da parte dos serviços*/    
 
 /*Fim do conteúdo*/
 
@@ -620,4 +742,37 @@ a:hover{ /*mostrar área de contato*/
         text-align: center;
     }
     /*Fim home*/
+
+}
+
+@media (max-width: 750px){
+    /*Inicio consultando serviços*/
+    .servicos-chaveiros{
+        grid-template-areas: 
+        "blocos-chaveiros"
+        "blocos-chaveiros"
+        "blocos-chaveiros"
+        "blocos-chaveiros";
+        max-width: 100%;
+    }
+    .blocos-chaveiros{
+        width: 250px;
+    }
+    #busca-fun-input{
+        width: 200px;
+    }
+
+    /*Fim consultando serviços*/
+}
+
+@media (max-width: 1150px) and (min-width: 751px){
+    /*Inicio consultando serviços*/
+    .servicos-chaveiros{
+        grid-template-areas: 
+        "blocos-chaveiros blocos-chaveiros"
+        "blocos-chaveiros blocos-chaveiros"
+        "blocos-chaveiros blocos-chaveiros"
+        "blocos-chaveiros blocos-chaveiros";
+    }
+    /*Fim consultando serviços*/
 }
