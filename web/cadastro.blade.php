@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -9,13 +8,6 @@
         <link rel="manifest" href="manifest.json">
         <script src="js/main.js" defer></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <?php
-    $db = new ControllerDb();
-    if($connetion= pg_connect(connectDb())){
-        echo("Foi");
-        pg_close($connetion);
-    } else{}
-    ?> 
     </head>
     <body>
 
