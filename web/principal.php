@@ -7,6 +7,21 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="manifest" href="manifest.json">
         <script src="js/main.js" defer></script>
+        <?php
+            $host = "ec2-23-21-229-200.compute-1.amazonaws.com";
+            $user = "denibmcnmjikfy";
+            $port = 5432;
+            $password  = "18201ee8394165431162a91c26243c1dcf20092899f9d94ad1d8587604e88148";
+            $database = "d4vk0o4kdhima3";
+            $conn;
+
+            try{
+                $conn = pg_connect($host, $port, $database, $user, $password);
+                echo($conn);
+            } catch(exception $e){
+                echo $e->getMessage();
+            }
+        ?>
     </head>
     <body>
         <header id="header">

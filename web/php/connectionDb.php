@@ -9,15 +9,15 @@
         private $conn;
 
         function connectDb(){
-            $conn = mysqli_connect($this->host,$this->user,$this->password,$this->database);
+            $conn = pg_connect($this->host,$this->user,$this->password,$this->database);
             return $conn;
         }
         function construct(){
             $this->conn = $this->connectDb();
         }
         function accessQuery($query){
-            $result = mysqli_query($this->conn,$query);
-            while($row=mysqli_fetch_assoc($result)){
+            $result = pg_query($this->conn,$query);
+            while($row=pg_fetch_assoc($result)){
                 $resultset[] = $row;
             }
             if(!empty($resultset))
