@@ -15,8 +15,8 @@
             $database = "d4vk0o4kdhima3";
             $conn;
 
+            $conn = pg_connect($host, $port, $database, $user, $password);
             try{
-                $conn = pg_connect($host, $port, $database, $user, $password);
                 echo($conn);
             } catch(exception $e){
                 echo $e->getMessage();
