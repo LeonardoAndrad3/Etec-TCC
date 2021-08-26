@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="manifest" href="manifest.json">
         <script src="js/main.js" defer></script>
+        <script src="//code-sa1.jivosite.com/widget/PNSgAqbd3B" async></script>
     </head>
     <body>
         <header id="header">
