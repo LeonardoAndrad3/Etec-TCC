@@ -8,7 +8,9 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="manifest" href="manifest.json">
         <script src="js/main.js" defer></script>
+        <script src="js/visualizarSenha.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     </head>
     <body>
 
@@ -106,17 +108,17 @@
             <div class="form-cadastro">
                 <form class="lista-form" action="php/login.php" method="POST">
                     <ul>
-                        <li><p>*Nome:</p><input type="text"required></li>
-                        <li><p>*Email:</p><input type="text"required></li>
-                        <li><p>*Senha:</p><input type="password"required></li>
+                        <li><p>*Nome:</p><input type="text" name="txtNameCliente"required></li>
+                        <li><p>*Email:</p><input type="text" name="txtEmailCadastroCliente"required></li>
+                        <li><p>*Senha:</p><input type="password" name="txtSenhaCadastroCliente"required></li>
                         <li><p>*Confirmar Senha:</p><input type="password"required></li>
                     </ul>
 
                     <ul>
-                        <li><p>*CPF:</p><input type="text"required></li>
-                        <li><p>*Data de Nascimento:</p><input type="text"required></li>
-                        <li><p>*Telefone:</p><input type="text"required></li>
-                        <li class="submit-line"><button type="submit">Cadastrar</button></li>
+                        <li><p>*CPF:</p><input type="text"required name="cpfCliente"></li>
+                        <li><p>*Data de Nascimento:</p><input type="text"required name="txtDataNascimento"></li>
+                        <li><p>*Telefone:</p><input type="text"required name="txtTelefone"></li>
+                        <li class="submit-line"><button type="submit" >Cadastrar</button></li>
                     </ul>
                 </form>
             </div>
@@ -132,14 +134,17 @@
             <div class="form-cadastro">
                 <form class="lista-form" action="php/login.php" method="POST">
                     <ul>
-                        <li><p>*Email:</p><input type="text" name="txtEmail" required></li>
-                        <li><p>*Senha:</p><input type="password" name="txtSenha" required></li>
-                        <li class="submit-line"><button type="submit">Entar</button></li>
+                        <li><p>*Email:</p><input type="text" name="txtEmailLogin" required></li>
+                        <li><p>*Senha:</p><input type="password" name="txtSenhaLogin"required>
+                        <span class="lnr lnr-eye"></span></li>
+
+                        <!-- depois devo terminar essa parte de visualizar senha -->
+
+                        <li class="submit-line"><button class ="button" type="submit" name="btnLogin">Entar</button></li>
                     </ul>
                 </form>
             </div>
         </section>
-        
             <footer>
                 <ul class="rodape">
                     <li><h1 class="titulo-rodape">Suporte</h1></li>
