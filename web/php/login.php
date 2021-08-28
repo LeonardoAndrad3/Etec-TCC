@@ -13,4 +13,5 @@ $db->accessQuery($query="select email, senha from Chaveiro;");
 }catch(Exception $e){
     echo($this->e);
 };
+
 ?>
