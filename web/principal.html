@@ -64,29 +64,7 @@
                         <li><p class="paragrafo-oque">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></li>
                     </ul>
                 </div>
-                <div>
-                <?php
-            $host = "ec2-23-21-229-200.compute-1.amazonaws.com";
-            $user = "denibmcnmjikfy";
-            $port = 5432;
-            $password  = "18201ee8394165431162a91c26243c1dcf20092899f9d94ad1d8587604e88148";
-            $database = "d4vk0o4kdhima3";
-            $conn;
-          
-            $conn = pg_connect("host=$host dbname=$database user=$user password=$password") 
-            or die("Failed to create connection to database: ". pg_last_error(). "<br/>");
-            print "Successfully created connection to database.<br/></br>";
-                    
-            $result = pg_query("select nome, email, cpf from Chaveiro;");
-            echo("Chaveiros disponíveis: <br></br>");
-            while($row = pg_fetch_assoc($result)){
-                echo "Nome: " . $row['nome'] . "</br>" . "Email: " . $row['email'] . "</br>" . "CPF: " . $row['cpf']."</br></br></br>";
-            }
-        ?>
-                </div>
             </div>
-        
-        
             <div class="sobre-nos">
                 <ul class="texto-sobre">
                     <li><h1 class="titulo-esquerda">Sobre nós</h1></li>

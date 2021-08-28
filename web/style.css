@@ -375,7 +375,7 @@ a:hover{ /*mostrar área de contato*/
     .form-cadastro select:focus{
         outline: 0;
     }
-    .form-cadastro input[type="submit"]{
+    .form-cadastro button[type=submit]{
         cursor: pointer;
         color: rgb(12, 147, 3);
         font-weight: bold;

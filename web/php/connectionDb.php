@@ -9,16 +9,16 @@
         private $conn;
 
         function connectDb(){
-            $conn = pg_connect($this->host,$this->user,$this->password,$this->database);
-            return $conn;
+            $conn = pg_connect("host=$this->host dbname=$this->database user=$this->user password=$this->password")or 
+            die("Failed to create connection to database: ". pg_last_error(). "<br/>");
         }
         function construct(){
             $this->conn = $this->connectDb();
         }
         function accessQuery($query){
-            $result = pg_query($this->conn,$query);
+            $result = pg_query($query);
             while($row=pg_fetch_assoc($result)){
-                $resultset[] = $row;
+                echo $row['email']."<br>";
             }
             if(!empty($resultset))
             return $resultset;
