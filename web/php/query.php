@@ -3,7 +3,7 @@ include('connectionDb.php');
 $db= new ControllerDb();
 $db->connectDb();
 
-if(isset($_POST['btnCadastroChaveiro'])){
+if(isset($_POST['btnCadastrarChaveiro'])){
 
     $name = $_POST['txtName'];
     $email = $_POST['txtEmailCadastro'];
@@ -18,16 +18,16 @@ if(isset($_POST['btnCadastroChaveiro'])){
 
     try{
     $db->accessQuery(
-    $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, cep, descricao, senha, dataDeNascimento)
-    values('$name','$email','$especialidade','$tel','$cpf','$cep','$descricao','$senha','$dataN');"
+    $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, cep, descricao, senha, dataDeNascimento, pagamento)
+    values('$name','$email','$especialidade','$tel','$cpf','$cep','$descricao','$senha','$dataN','$pagamento');"
     );
         return $query;
     } catch(Exception $e){
         return $e;
-    };
-    pg_close($db->conn);
+    };    
+    header('location: ./index.php');
 
-}; if(isset($_POST['btnCadastroCliente'])){
+} elseif(isset($_POST['btnCadastrarCliente'])){
         
     $name = $_POST['txtName'];
     $email = $_POST['txtEmailCadastro'];
@@ -35,18 +35,18 @@ if(isset($_POST['btnCadastroChaveiro'])){
     $cpf = $_POST['txtCpf'];
     $dataN = $_POST['txtDataNascimento'];
     $tel = $_POST['txtTelefone'];
-
     try{
         $db->accessQuery(
         $query="insert into Cliente(nome, email, telefone, cpf, senha, datadenascimento) 
         values('$name', '$email', '$tel', '$cpf', '$senha', '$dataN');");
+        
         return $query;
     } catch(Exception $e){
-        return $e;
-    }
-    pg_close($db->conn);
+       return $e;
+    };
+    header('location: ./index.php');
 
-}; if(isset($_POST['btnLogin'])){
+} elseif(isset($_POST['btnLogin'])){
 
     $email = $_POST["txtEmailLogin"];
     $senha = $_POST["txtSenhaLogin"];
@@ -59,8 +59,9 @@ if(isset($_POST['btnCadastroChaveiro'])){
     $_SESSION['login']  = $db->accessQuery($query);
 
     }catch(Exception $e){
-        echo($this->e);
+        return $e;
     };
+    header('location: ../index.php');
 }; 
 
 // Esse código foi feito para quando aperter certo button, ele irá corresponder 

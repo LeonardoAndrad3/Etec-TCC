@@ -17,7 +17,7 @@
         function accessQuery($query){
             $result = pg_query($query);
             while($row=pg_fetch_assoc($result)){
-                echo $row['email']."<br>";
+                echo $row['']."<br>";
             }
             if(!empty($resultset))
             return $resultset;
