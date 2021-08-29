@@ -354,9 +354,6 @@ a:hover{ /*mostrar área de contato*/
         list-style: none;
         padding: 10px;
     }
-    .lista-form span{
-        cursor: pointer;
-    }
     .form-cadastro input[type="text"], input[type="password"], select, #busca-fun-input{
         color: white;
         background-color: rgb(24, 25, 27);

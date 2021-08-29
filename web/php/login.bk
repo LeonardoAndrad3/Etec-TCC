@@ -3,8 +3,14 @@ include('connectionDb.php');
 $db = new ControllerDb();
 $db->connectDb();
 
+// if(isset($_POST['action'])){
+//     switch($_POST['action']){
+//         case 'btnLogin':
+//             login();
+//         break;
+//     }
+// }
 
-function login(){
 $email = $_POST["txtEmailLogin"];
 $senha = $_POST["txtSenhaLogin"];
 // error_reporting(0);
@@ -18,20 +24,14 @@ $_SESSION['login']  = $db->accessQuery($query);
 }catch(Exception $e){
     echo($this->e);
 };
-};
+pg_close($db->conn);
 
-function cadastrarChaveiro(){
-    $db->accessQuery(
-    $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, endereco, cep, descricao, senha) 
-    values();");
-};
 
-if(isset($_POST['action'])){
-    switch($_POST['action']){
-        case 'btnLogin':
-            login();
-        break;
-    }
-}
+// function cadastrarChaveiro(){
+//     $db->accessQuery(
+//     $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, endereco, cep, descricao, senha) 
+//     values();");
+// };
+
 
 ?>

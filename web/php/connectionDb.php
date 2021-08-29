@@ -1,5 +1,4 @@
 <?php
-
     class ControllerDb{
 
         private $host = "ec2-23-21-229-200.compute-1.amazonaws.com";

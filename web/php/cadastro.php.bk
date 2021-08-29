@@ -1,0 +1,43 @@
+<?php
+include('connectionDb.php');
+$db= new ControllerDb();
+$db->connectDb();
+
+if(isset($_POST['btnCadastrar'])){
+
+$name = $_POST['txtNameCliente'];
+$email = $_POST['txtEmailCadastroCliente'];
+$senha = $_POST['txtSenhaCadastroCliente'];
+$cpf = $_POST['cpfCliente'];
+$dataN = $_POST['txtDataNascimento'];
+$cep =  $_POST['txtCep'];
+$tel = $_POST['txtTelefone'];
+$descricao = $_POST['txtDescricao'];
+$profissao = $_POST['txtProfissao'];
+$pagamento = $_POST['txtPagamento'];
+
+}
+
+
+
+
+
+else{
+$name = $_POST['txtNameCliente'];
+$email = $_POST['txtEmailCadastroCliente'];
+$senha = $_POST['txtSenhaCadastroCliente'];
+$cpf = $_POST['cpfCliente'];
+$dataN = $_POST['txtDataNascimento'];
+$tel = $_POST['txtTelefone'];
+
+
+try{
+    $db->accessQuery(
+    $query="insert into Cliente(nome, email, telefone, cpf, senha, datadenascimento) 
+    values('$name', '$email', '$tel', '$cpf', '$senha', '$dataN');");
+    return $query;
+} catch(Exception $e){
+    return $e;
+}
+}
+?>
