@@ -19,13 +19,13 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     try{
     $db->accessQuery(
     $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, cep, descricao, senha, dataDeNascimento, pagamento)
-    values('$name','$email','$especialidade','$tel','$cpf','$cep','$descricao','$senha','$dataN','$pagamento');"
-    );
+    values('$name','$email','$especialidade','$tel','$cpf','$cep','$descricao','$senha','$dataN','$pagamento');");  
+        header('location: ../index.php');
         return $query;
     } catch(Exception $e){
         return $e;
     };    
-    header('location: ./index.php');
+    
 
 } elseif(isset($_POST['btnCadastrarCliente'])){
         
@@ -39,12 +39,12 @@ if(isset($_POST['btnCadastrarChaveiro'])){
         $db->accessQuery(
         $query="insert into Cliente(nome, email, telefone, cpf, senha, datadenascimento) 
         values('$name', '$email', '$tel', '$cpf', '$senha', '$dataN');");
-        
+         header('location: ../index.php');
         return $query;
     } catch(Exception $e){
        return $e;
     };
-    header('location: ./index.php');
+   
 
 } elseif(isset($_POST['btnLogin'])){
 
