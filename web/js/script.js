@@ -1,3 +1,14 @@
+// Scroll suave para link interno
+$('.home a').click(function(e){
+	e.preventDefault();
+	var id = $(this).attr('href'),
+			menuHeight = $('nav').innerHeight(),
+			targetOffset = $(id).offset().top;
+	$('html, section').animate({
+		scrollTop: targetOffset
+	}, 500);
+});
+
 const btnMobile = document.getElementById('btn-mobile');
 
 function alternarMenu(event){
@@ -15,6 +26,3 @@ function alternarMenu(event){
 
 btnMobile.addEventListener('click', alternarMenu);
 btnMobile.addEventListener('touchstart', alternarMenu);
-
-
-
