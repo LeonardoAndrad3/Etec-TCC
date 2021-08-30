@@ -64,8 +64,8 @@
                     <ul>
                         <li><p>*Nome:</p><input type="text"></li>
                         <li><p>*Email:</p><input type="text"></li>
-                        <li><p>*Senha:</p><input type="password"></li>
-                        <li><p>*Confirmar Senha:</p><input type="password"></li>
+                        <li><p>*Senha:</p><input type="password" id="campo-senha"><button type="button" class="visible-senha" onclick="mostrarSenha()"><img src="icon/olho-senha.png"></button></li>
+                        <li><p>*Confirmar Senha:</p><input type="password" id="campo-senhaconfirm"><button type="button" class="visible-senha" onclick="mostrarConfSenha()"><img src="icon/olho-senha.png"></button></li>
                         <li><p>*CPF:</p><input type="text"></li>
                         <li><p>*Data de Nascimento:</p><input type="text"></li>
                         <li><p>*CEP:</p><input type="text"></li>
@@ -91,7 +91,7 @@
                         <li><p>Insira os valores das funções extras:</p><input type="text"></li>
                         <li><p>*Métodos de pagamento aceito: <br/> <p>Dinheiro: <input type="checkbox"></p> <p>Cartão: <input type="checkbox"></p> 
                         </p></li>
-                        <li class="submit-line"><input type="submit" value="Cadastrar"></li>
+                        <li class="submit-line"><input type="button" value="Cadastrar" class="botaochav"></li>
                     </ul>
                 </form>
             </div>
@@ -109,15 +109,15 @@
                     <ul>
                         <li><p>*Nome:</p><input type="text"></li>
                         <li><p>*Email:</p><input type="text"></li>
-                        <li><p>*Senha:</p><input type="password"></li>
-                        <li><p>*Confirmar Senha:</p><input type="password"></li>
+                        <li><p>*Senha:</p><input type="password" id="campo-senha2"><button type="button" class="visible-senha" onclick="mostrarSenha()"><img src="icon/olho-senha.png"></button></li>
+                        <li><p>*Confirmar Senha:</p><input type="password" id="campo-senhaconfirm2"><button type="button" class="visible-senha" onclick="mostrarConfSenha()"><img src="icon/olho-senha.png"></button></li>
                     </ul>
 
                     <ul>
                         <li><p>*CPF:</p><input type="text"></li>
                         <li><p>*Data de Nascimento:</p><input type="text"></li>
                         <li><p>*Telefone:</p><input type="text"></li>
-                        <li class="submit-line"><input type="submit" value="Cadastrar"></li>
+                        <li class="submit-line"><input type="button" value="Cadastrar" class="botaouser"></li>
                     </ul>
                 </form>
             </div>
@@ -134,23 +134,29 @@
                 <form class="lista-form">
                     <ul>
                         <li><p>*Email:</p><input type="text"></li>
-                        <li><p>*Senha:</p><input type="password"></li>
+                        <li><p>*Senha:</p><input type="password" id="campo-senhalogin"><button type="button" class="visible-senha" onclick="mostrarSenhaLogin()"><img src="icon/olho-senha.png"></button></li>
                         <li class="submit-line"><input type="submit" value="Entrar"></li>
                     </ul>
                 </form>
             </div>
         </section>
         
-            <footer>
-                <ul class="rodape">
-                    <li><h1 class="titulo-rodape">Suporte</h1></li>
-                    <li><p>Email: opendoors@gmail.com</p></li>
-                    <li><p>Desenvolvido por: Giovanna Rocha, Leonardo Andrade, Mateus Santana, Renan Rocha.</p></li>
-                    <li><p class="copy">Copyright © 2021 Open doors</p></li>
-                    <li><a class="link-rodape" href="">Termos e condições</a></li>
-                </ul>
-            </footer>
+        <footer>
+            <ul class="rodape">
+                <li><h1 class="titulo-rodape">Suporte</h1></li>
+                <li><p>Email: opendoors@gmail.com</p></li>
+                <li><p>Desenvolvido por: Giovanna Rocha, Leonardo Andrade, Mateus Santana, Renan Rocha.</p></li>
+                <li><p class="copy">Copyright © 2021 Open doors</p></li>
+                <li><a class="link-rodape" href="">Termos e condições</a></li>
+            </ul>
+        </footer>
         
+        <div id="modal-container" class="modal-container">
+            <div class="modal">
+                <a href="index.html"><button class="fechar">X</button></a>
+                <h3>Cadastro realizado com sucesso!</h3>
+            </div>
+        </div>    
 
         <script type="text/javascript" src="js/script.js"></script>
 
@@ -243,6 +249,71 @@
                 }
             }
             //fim de chamar forms do usuário
+        </script>
+
+        <script>
+            //abaixo é para mostrar senha quando clica no icon do olho
+            function mostrarSenha(){
+                var tipo = document.getElementById("campo-senha");
+                var tipo2 = document.getElementById("campo-senha2");
+                if (tipo.type == "password") {
+                    tipo.type = "text"; 
+                }else {
+                    tipo.type = "password";
+                }
+                if (tipo2.type == "password") {
+                    tipo2.type = "text"; 
+                }else {
+                    tipo2.type = "password";
+                }
+            }
+
+            function mostrarConfSenha(){
+                var tipo3 = document.getElementById("campo-senhaconfirm");
+                var tipo4 = document.getElementById("campo-senhaconfirm2");
+                if (tipo3.type == "password") {
+                    tipo3.type = "text"; 
+                }else {
+                    tipo3.type = "password";
+                }
+                if (tipo4.type == "password") {
+                    tipo4.type = "text"; 
+                }else {
+                    tipo4.type = "password";
+                }
+            }
+
+            function mostrarSenhaLogin(){
+                var tipo5 = document.getElementById("campo-senhalogin");
+                if (tipo5.type == "password") {
+                    tipo5.type = "text"; 
+                }else {
+                    tipo5.type = "password";
+                }
+            }
+        </script>
+
+        <script>
+            //script para o modal
+
+            function iniciaModal(modalID){
+                const modal = document.getElementById(modalID);
+                if (modal){
+                    modal.classList.add("mostrar");
+                    modal.addEventListener("click", (e)=> {
+                    console.log(e);
+                    if(e.target.className == "fechar"){
+                        modal.classList.remove("mostrar");
+                    }
+                    });
+                }
+            }
+
+            const botaouser = document.querySelector(".botaouser");
+            botaouser.addEventListener("click", () => iniciaModal ('modal-container'));
+            const botaochav = document.querySelector(".botaochav");
+            botaochav.addEventListener("click", () => iniciaModal ('modal-container'));
+
         </script>
 
     </body>

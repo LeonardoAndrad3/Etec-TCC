@@ -374,7 +374,7 @@ a:hover{ /*mostrar área de contato*/
     .form-cadastro select:focus{
         outline: 0;
     }
-    .form-cadastro input[type="submit"]{
+    .form-cadastro input[type="button"], .form-cadastro input[type="submit"]{
         cursor: pointer;
         color: rgb(12, 147, 3);
         font-weight: bold;
@@ -386,7 +386,7 @@ a:hover{ /*mostrar área de contato*/
         width: 200px;
         font-size: 18px;
     }
-    .form-cadastro input[type="submit"]:hover{
+    .form-cadastro input[type="button"]:hover, .form-cadastro input[type="submit"]:hover{
         background-color: rgb(12, 147, 3);
         color: white;
     }
@@ -409,6 +409,11 @@ a:hover{ /*mostrar área de contato*/
     }
     #textBox1{
         margin-top: 10px;
+    }
+    .visible-senha{
+        background: none;
+        border: none;
+        cursor: pointer;
     }
     /*Fim cadastro*/
 
@@ -522,7 +527,69 @@ a:hover{ /*mostrar área de contato*/
 
 /*Fim do conteúdo*/
 
+/*Inicio modal*/
+    .modal-container{
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(0, 0, 0,.5);
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 2000;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
 
+    .modal{
+        background: rgb(53, 53, 53);
+        width: 30%;
+        min-width: 300px;
+        padding: 40px;
+        border: 2px solid rgb(12, 147, 3);
+        box-shadow: 0 0 0 10px rgb(53, 53, 53);
+        position: relative;
+        color: white;
+        text-align: center;
+    }
+
+    @keyframes modal{
+        from{
+            opacity: 0;
+            transform: translate(0, -60px, 0);
+        }
+        tp{
+            opacity: 1;
+            transform: translate(0, 0, 0);
+        }
+    }
+
+    .mostrar .modal{
+        animation: modal .3s;
+    }
+
+    .fechar{
+        position: absolute;
+        font-size: 1.2em;
+        font-weight: bold;
+        top: -30px;
+        right: -30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 4px solid rgb(12, 147, 3);
+        background: rgb(53, 53, 53);
+        color: white;
+        font-family: monospace;
+        cursor: pointer;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .3);
+    }
+
+    .modal-container.mostrar{
+        display: flex;
+
+}
+/*Fim modal*/
 @media (max-width: 600px){
     /*caso esteja abaixo de 600px*/
     #menu{
@@ -612,6 +679,9 @@ a:hover{ /*mostrar área de contato*/
     .lista-form{
         display: grid;
         place-items: center;
+    }
+    .form-cadastro input[type="text"], input[type="password"], select, #busca-fun-input{
+        width: 250px;
     }
     /*Fim do Cadastro*/
 
@@ -728,7 +798,11 @@ a:hover{ /*mostrar área de contato*/
         width: 80%;
     }
     /*Fim home*/
-
+    /*Modal*/
+    .modal{
+        min-width: 120px;
+    }
+    /*fim Modal*/
 }
 
 @media (max-width: 750px){
