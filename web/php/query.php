@@ -14,17 +14,35 @@
     function construct(){
         $this->conn = $this->connectDb();
     }
-    function accessQuery($query){
+    function logar($query){
         $result = pg_query($query);
-        if(pg_num_rows($result) >0){
+        if(pg_num_rows($result) > 0){
         while($row=pg_fetch_assoc($result)){
-            
+
+            echo '<script>window.location.replace("../index.php");
+            alert("Usuário logado com sucesso!");</script>';
         } 
     } else{
-       
-    }
-    }
 
+        echo '<script>window.location.replace("../index.php");
+            alert("Email ou senha incorretos!");</script>';
+               
+    }
+}
+    function cadastrar(){
+        $result = pg_query($query);
+        if(pg_num_rows($result) > 0){
+        while($row=pg_fetch_assoc($result)){
+
+            echo '<script>window.location.replace("../index.php");
+            alert("Cadastro feito com sucesso!");</script>';
+        } 
+    } else{
+
+        echo '<script>window.location.replace("../index.php");
+            alert("Não foi possivel fazer o Cadastro! Tente novamente!");</script>';
+    }
+    }
 }
 
 $db = new ControllerDb();
@@ -62,11 +80,11 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     $pagamento;
 
     try{
-    $db->accessQuery(
+    $db->cadastrar(
     $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, cep, descricao, senha, dataDeNascimento, pagamento)
     values('$name','$email','$especialidade','$tel','$cpf','$cep','$descricao','$senha','$dataN','$pagamento');");  
-        header('location: ../index.php');
-        return $query;
+    echo '<script>window.location.replace("../index.php");
+    alert("Cadastrado com sucesso!");</script>';
     } catch(Exception $e){
         return die($e);
     };    
@@ -77,20 +95,27 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     $name = addslashes($_POST['txtName']);
     $email = addslashes($_POST['txtEmailCadastro']);
     $senha = addslashes($_POST['txtSenhaCadastro']);
+    $senhaConfirma  = $_POST['txtSenhaConf'];
     $cpf = addslashes($_POST['txtCpf']);
     $dataN = addslashes($_POST['txtDataNascimento']);
     $tel = addslashes($_POST['txtTelefone']);
 
-    try{
-        $db->accessQuery(
+    try{     
+
+        if ($senha == $senhaConfirma) {
+        $db->cadastrar(
         $query="insert into Cliente(nome, email, telefone, cpf, senha, datadenascimento) 
         values('$name', '$email',$tel,$cpf,$senha,'$dataN');");
-        return $query;
-        header('location: ../index.php');
+        } else {
+            $mensagem = "<span class='erro'><b>Erro</b>: As senhas não conferem!</span>";
+        echo "<p>".$mensagem."</p>";
+    };
+        
     } catch(Exception $e){
        return die($e);
     };
-   
+
+ 
 
 } elseif(isset($_POST['btnLogin'])){
 
@@ -99,8 +124,8 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     // error_reporting(0);
     // ini_set("display_erros", 0);
     try{
-    $db->accessQuery($query="select email, senha from Cliente where email='$email' and senha=$senha;");
-    die(header('location: ./sucesso.php'));
+    $db->logar($query="select email, senha from Cliente where email='$email' and senha=$senha;");
+
     }catch(Exception $e){
         return die($e);
     };
