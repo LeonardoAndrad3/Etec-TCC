@@ -100,11 +100,11 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     session_start();
     $_SESSION['login']  = $db->accessQuery($query);
     setcookie("primerioUsuario", "Bem vindo");
-    header("location:../index.php");
+    
         }catch(Exception $e){
         return $e;
     };
-    
+    header("location:../index.php");
 }; 
 
 // Esse código foi feito para quando aperter certo button, ele irá corresponder 
