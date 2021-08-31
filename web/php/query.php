@@ -16,12 +16,15 @@
     }
     function accessQuery($query){
         $result = pg_query($query);
+        if(pg_num_rows($result) >0){
         while($row=pg_fetch_assoc($result)){
             
-        }
-        if(!empty($resultset))
-        return $resultset;
+        } 
+    } else{
+       
     }
+    }
+
 }
 
 $db = new ControllerDb();
@@ -65,7 +68,7 @@ if(isset($_POST['btnCadastrarChaveiro'])){
         header('location: ../index.php');
         return $query;
     } catch(Exception $e){
-        return $e;
+        return die($e);
     };    
     
 
@@ -81,11 +84,11 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     try{
         $db->accessQuery(
         $query="insert into Cliente(nome, email, telefone, cpf, senha, datadenascimento) 
-        values('$name', '$email','$tel','$cpf','$senha','$dataN');");
-        header('location: ../index.php');
+        values('$name', '$email',$tel,$cpf,$senha,'$dataN');");
         return $query;
+        header('location: ../index.php');
     } catch(Exception $e){
-       return $e;
+       return die($e);
     };
    
 
@@ -96,18 +99,12 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     // error_reporting(0);
     // ini_set("display_erros", 0);
     try{
-    $db->accessQuery($query=("select email, senha from Chaveiro where email= '$email' and senha=$senha;"));
-    session_start();
-    $_SESSION['login']  = $db->accessQuery($query);
-    setcookie("primerioUsuario", "Bem vindo");
-    echo"<link rel='stylesheet' type='text/css' href='../style.css'><h1 class='titulo-entrar'>Cadastrado com sucesso!<h1>";
-    echo"<a href='../index.php'><button type='submit'>Voltar</button></a>";
-    
-        }catch(Exception $e){
-        echo $e;
+    $db->accessQuery($query="select email, senha from Cliente where email='$email' and senha=$senha;");
+    die(header('location: ./sucesso.php'));
+    }catch(Exception $e){
+        return die($e);
     };
-    
-}; 
+};
 
 // Esse código foi feito para quando aperter certo button, ele irá corresponder 
 // com o valor do button, assim não preciso criar pastas diferentes;

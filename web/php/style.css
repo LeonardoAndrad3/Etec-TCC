@@ -322,6 +322,7 @@ a:hover{ /*mostrar área de contato*/
         font-size: 16px;
     }
     .titulo-entrar{
+        color: white;
         font-size: 35px;
         text-align: center;
         border-bottom: 2px solid rgb(12, 147, 3);
