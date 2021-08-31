@@ -91,6 +91,7 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     
 
 } elseif(isset($_POST['btnCadastrarCliente'])){
+    
         
     $name = addslashes($_POST['txtName']);
     $email = addslashes($_POST['txtEmailCadastro']);
@@ -107,8 +108,8 @@ if(isset($_POST['btnCadastrarChaveiro'])){
         $query="insert into Cliente(nome, email, telefone, cpf, senha, datadenascimento) 
         values('$name', '$email',$tel,$cpf,$senha,'$dataN');");
         } else {
-            $mensagem = "<span class='erro'><b>Erro</b>: As senhas não conferem!</span>";
-        echo "<p>".$mensagem."</p>";
+            echo '<script>window.location.replace("../index.php");
+            alert("Senhas não conferem!");</script>';
     };
         
     } catch(Exception $e){
