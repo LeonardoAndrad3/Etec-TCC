@@ -96,7 +96,7 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     // error_reporting(0);
     // ini_set("display_erros", 0);
     try{
-    $db->accessQuery($query=sprintf("select email, senha from Chaveiro where email= '%s' and senha=%d;", $email, $senha));
+    $db->accessQuery($query=("select email, senha from Chaveiro where email= '$email' and senha=$senha;"));
     session_start();
     $_SESSION['login']  = $db->accessQuery($query);
     setcookie("primerioUsuario", "Bem vindo");
