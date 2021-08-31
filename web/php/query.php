@@ -100,8 +100,8 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     session_start();
     $_SESSION['login']  = $db->accessQuery($query);
     setcookie("primerioUsuario", "Bem vindo");
-    echo"<section id='entrar' class='entrar' style='display: none;'><h1 class='titulo-entrar'>Cadastrado com sucesso!<h1>";
-    echo"<link rel='stylesheet' type='text/css' href='../style.css'><a href='../index.php'><button type='submit'>Voltar</button></a></section>";
+    echo"<link rel='stylesheet' type='text/css' href='../style.css'><h1 class='titulo-entrar'>Cadastrado com sucesso!<h1>";
+    echo"<a href='../index.php'><button type='submit'>Voltar</button></a>";
     
         }catch(Exception $e){
         echo $e;
