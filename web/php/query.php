@@ -35,14 +35,15 @@
     
     function cadastrar($query){
         
-      try{
-          $result = pg_query($query);
-        //   echo '<script>window.location.replace("../index.php");
-        //     alert("Usuário cadastrado com sucesso!");</script>';
-      }catch(Exception $e){
+      try{  
+        if($result = pg_query($query)){
         echo '<script>window.location.replace("../index.php");
-        alert("Fala ao cadastrar!");</script>';         
-        return die($e);
+            alert("Usuário cadastrado com sucesso!");</script>';
+        } else{
+            throw new Exception('<script>window.location.replace("../index.php");alert("Fala ao cadastrar!");</script>');
+        }
+      }catch(Exception $e){
+        echo $e->getMessage();
       }
     }   
     
@@ -98,11 +99,10 @@ if(isset($_POST['btnCadastrarChaveiro'])){
 
     $db->cadastrar(
     $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, cep, descricao, senha, dataDeNascimento, pagamento)
-    values('$name','$email','$especialidade',$tel,$cpf,$cep,'$descricao',$senha,'$dataN','$pagamento');");  
+    values('$name','$email','$especialidade','$tel','$cpf','$cep','$descricao',$senha,'$dataN','$pagamento');");  
 
 } elseif(isset($_POST['btnCadastrarCliente'])){
     
-        
     $name = addslashes($_POST['txtName']);
     $email = addslashes($_POST['txtEmailCadastro']);
     $senha = addslashes($_POST['txtSenhaCadastro']);
@@ -114,7 +114,7 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     if ($senha == $senhaConfirma) {
     $db->cadastrar(
     $query="insert into Cliente(nome, email, telefone, cpf, senha, datadenascimento) 
-    values('$name', '$email',$tel,$cpf,$senha,'$dataN');");
+    values('$name', '$email','$tel','$cpf',$senha,'$dataN');");
     } else {
         echo '<script>window.location.replace("../index.php");
         alert("Senhas não conferem!");</script>';
