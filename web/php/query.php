@@ -17,24 +17,26 @@
     }    
     
     function logar($query){
-      try{  $result = pg_query($query);
-        if(pg_num_rows($result) > 0){
-       
-            echo '<script>window.location.replace("../index.php");
-            alert("Usuário logado com sucesso!");</script>';
-        
-        } else{
+        session_start();
 
-        echo '<script>window.location.replace("../index.php");
-            alert("Email ou senha incorretos!");</script>';
-               
+        try{  $result = pg_query($query);
+            if(pg_num_rows($result) > 0){
+                $row=pg_fetch_assoc($result);  
+                $_SESSION["mgs"] = '<script>window.location.replace("../index.php");alert("logado com sucesso!");</script>';
+                echo $_SESSION["mgs"];
+            } else{
+                throw new Exception("<script>window.location.replace('../index.php');alert('Ops, ocorreu um erro. Tente novamente mais tarde!');</script>');");
+                
+                $_SESSION["mgsErr"] ='<script>window.location.replace("../cadastro.php");
+                alert("Email ou senha incorretos!");</script>'; 
+                echo $_SESSION["mgsErr"];   
+
         }}catch(Exception $e){
-            return die($e);
+            echo die($e->getMenssage());
         }
     }    
     
     function cadastrar($query){
-        
       try{  
         if($result = pg_query($query)){
         echo '<script>window.location.replace("../index.php");
@@ -43,7 +45,7 @@
             throw new Exception('<script>window.location.replace("../index.php");alert("Fala ao cadastrar!");</script>');
         }
       }catch(Exception $e){
-        echo $e->getMessage();
+        echo die($e->getMenssage());
       }
     }   
     
@@ -69,7 +71,7 @@ $db->connectDb();
 if(isset($_POST['btnCadastrarChaveiro'])){  
     
     if(!empty($_POST['txtDescricao'])){
-        $descricao = $_POST['txtDescricao'];
+        $descricao = addslashes($_POST['txtDescricao']);
     } else {
         $descricao = "Chaveiro pronto a serviço!";
     }
@@ -86,17 +88,17 @@ if(isset($_POST['btnCadastrarChaveiro'])){
 
     //Verificando se os campos estão vazios.
 
-    $name = $_POST['txtName'];
-    $email = $_POST['txtEmailCadastro'];
-    $senha = $_POST['txtSenhaCadastro'];
-    $cpf = $_POST['cpf'];
-    $dataN = $_POST['txtDataNascimento'];
-    $cep =  $_POST['txtCep'];
-    $tel = $_POST['txtTelefone'];
+    $name = addslashes($_POST['txtName']);
+    $email = addslashes($_POST['txtEmailCadastro']);
+    $senha = addslashes($_POST['txtSenhaCadastro']);
+    $cpf = addslashes($_POST['cpf']);
+    $dataN = addslashes($_POST['txtDataNascimento']);
+    $cep =  addslashes($_POST['txtCep']);
+    $tel = addslashes($_POST['txtTelefone']);
     $descricao;
-    $especialidade = $_POST['txtEspecialidade'];
-    $pagamento = $_POST['txtPagamento'];;
-
+    $especialidade = addslashes($_POST['txtEspecialidade']);
+    $pagamento = addslashes($_POST['txtPagamento']);
+        
     $db->cadastrar(
     $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, cep, descricao, senha, dataDeNascimento, pagamento)
     values('$name','$email','$especialidade','$tel','$cpf','$cep','$descricao',$senha,'$dataN','$pagamento');");  
