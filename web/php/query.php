@@ -37,31 +37,30 @@
     
     function cadastrar($query, $vEmail, $vCpf){
       try{
+            $validarE = pg_query($vEmail);
+            $validarC = pg_query($vCpf);
 
-        if($validarE = pg_query($vEmail) && pg_num_rows($validarE) === 0){
+            if(pg_num_rows($validarE) === 0){
 
-        }else{
-            throw new Exception('<script>window.location.replace("../index.php");alert("Email já cadastrado, tente outro");</script>');
-        }
-        
-        if($validarC = pg_query($vCpf) && pg_num_rows($validarC) === 0){
-        } else{
-            throw new Exception('<script>window.location.replace("../index.php");alert("CPF já cadastrado, tente outro");</script>');
-            
-        }
+            }else{
+                throw new Exception('<script>window.location.replace("../index.php");alert("Email já cadastrado, tente outro");</script>');
+            }
+
+            if(pg_num_rows($validarC) === 0){
+
+            } else{
+                throw new Exception('<script>window.location.replace("../index.php");alert("CPF já cadastrado, tente outro");</script>');
+            }
     
-        $result = pg_query($query);
- 
-        if(pg_num_rows($result) > 0){
-           
-            echo '<script>window.location.replace("../index.php");
-            alert("Usuário cadastrado com sucesso!");</script>';
-        } else{
-            throw new Exception('<script>window.location.replace("../index.php");alert("Fala ao cadastrar!");</script>');
+            if($result = pg_query($query)){
+                echo '<script>window.location.replace("../index.php");
+                alert("Usuário cadastrado com sucesso!");</script>';
+            } else{
+                throw new Exception('<script>window.location.replace("../index.php");alert("Fala ao cadastrar!");</script>');
+            }
+        }catch(Exception $e){
+            echo die($e->getMessage());
         }
-      }catch(Exception $e){
-        echo die($e->getMessage());
-      }
     }   
     
     function profissao(){
