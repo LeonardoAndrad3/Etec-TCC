@@ -38,12 +38,12 @@
     function cadastrar($query, $vEmail, $vCpf){
       try{
 
-        if(!$validarE = pg_query($vEmail)){
+        if($validarE = pg_query($vEmail)){
         }else{
             throw new Exception('<script>window.location.replace("../index.php");alert("Email já cadastrado, tente outro");</script>', 1);
             
         }
-        if(!$validarC = pg_query($vCpf)){
+        if($validarC = pg_query($vCpf)){
         } else{
             throw new Exception('<script>window.location.replace("../index.php");alert("CPF já cadastrado, tente outro");</script>', 2);
             
