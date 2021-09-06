@@ -38,14 +38,15 @@
     function cadastrar($query, $vEmail, $vCpf){
       try{
 
-        if(!$validarE = pg_query($vEmail)){
+        if($validarE = pg_query($vEmail) && pg_num_rows($validarE) === 0){
+
         }else{
-            throw new Exception('<script>window.location.replace("../index.php");alert("Email já cadastrado, tente outro");</script>', 1);
-            
+            throw new Exception('<script>window.location.replace("../index.php");alert("Email já cadastrado, tente outro");</script>');
         }
-        if(!$validarC = pg_query($vCpf)){
+        
+        if($validarC = pg_query($vCpf) && pg_num_rows($validarC) === 0){
         } else{
-            throw new Exception('<script>window.location.replace("../index.php");alert("CPF já cadastrado, tente outro");</script>', 2);
+            throw new Exception('<script>window.location.replace("../index.php");alert("CPF já cadastrado, tente outro");</script>');
             
         }
     
