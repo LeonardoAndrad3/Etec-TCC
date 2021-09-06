@@ -24,11 +24,7 @@
                 $_SESSION["msg"] = '<script>window.location.replace("../index.php");alert("logado com sucesso!");</script>';
                 echo $_SESSION["msg"];
             } else{
-                throw new Exception("<script>window.location.replace('../index.php');alert('Ops, ocorreu um erro. Tente novamente mais tarde!');</script>');");
-                
-                $_SESSION["msgErr"] ='<script>window.location.replace("../cadastro.php");
-                alert("Email ou senha incorretos!");</script>'; 
-                echo $_SESSION["msgErr"];   
+                throw new Exception("<script>window.location.replace('../index.php');alert('Email ou senha incorretos!');</script>');"); 
 
         }}catch(Exception $e){
             echo die($e->getMessage());
