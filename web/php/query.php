@@ -90,7 +90,7 @@ if(isset($_POST['btnCadastrarChaveiro'])){
 
     $name = addslashes($_POST['txtName']);
     $email = addslashes($_POST['txtEmailCadastro']);
-    $senha = addslashes($_POST['txtSenhaCadastro']);
+    $senha = md5(addslashes($_POST['txtSenhaCadastro']));
     $cpf = addslashes($_POST['cpf']);
     $dataN = addslashes($_POST['txtDataNascimento']);
     $cep =  addslashes($_POST['txtCep']);
@@ -107,8 +107,9 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     
     $name = addslashes($_POST['txtName']);
     $email = addslashes($_POST['txtEmailCadastro']);
-    $senha = addslashes($_POST['txtSenhaCadastro']);
-    $senhaConfirma  = $_POST['txtSenhaConf'];
+    //remove os caracteres ilegais, caso tenha
+    $senha = md5(addslashes($_POST['txtSenhaCadastro']));
+    $senhaConfirma  = md5($_POST['txtSenhaConf']);
     $cpf = addslashes($_POST['txtCpf']);
     $dataN = addslashes($_POST['txtDataNascimento']);
     $tel = addslashes($_POST['txtTelefone']);
@@ -116,7 +117,7 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     if ($senha == $senhaConfirma) {
     $db->cadastrar(
     $query="insert into Cliente(nome, email, telefone, cpf, senha, datadenascimento) 
-    values('$name', '$email','$tel','$cpf',$senha,'$dataN');");
+    values('$name', '$email','$tel','$cpf','$senha','$dataN');");
     } else {
         echo '<script>window.location.replace("../index.php");
         alert("Senhas não conferem!");</script>';
@@ -125,10 +126,10 @@ if(isset($_POST['btnCadastrarChaveiro'])){
 } elseif(isset($_POST['btnLogin'])){
 
     $email = addslashes($_POST["txtEmailLogin"]);
-    $senha = addslashes($_POST["txtSenhaLogin"]);
+    $senha = md5(addslashes($_POST["txtSenhaLogin"]));
     // error_reporting(0);
     // ini_set("display_erros", 0);
-    $db->logar($query="select email, senha from Cliente where email='$email' and senha=$senha;");
+    $db->logar($query="select email, senha from Cliente where email='$email' and senha='$senha';");
 };
 
 // Esse código foi feito para quando aperter certo button, ele irá corresponder 
