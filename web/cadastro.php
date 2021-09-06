@@ -12,7 +12,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-        <script src="//code-sa1.jivosite.com/widget/PNSgAqbd3B" async></script>
  
         <!-- <script src="chamarFunctionPhp.js"></script> -->
         <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
@@ -71,8 +70,8 @@
                     <ul>
                         <li><p>*Nome:</p><input type="text" name="txtName"  required></li>
                         <li><p>*Email:</p><input type="text" name="txtEmailCadastro"required></li>
-                        <li><p>*Senha:</p><input type="password" name="txtSenhaCadastro" required maxlength="50"></li>
-                        <li><p>*CPF:</p><input type="text" name="cpf" required onkeypress="$(this).mask('000.000.000-00')"></li>
+                        <li><p>*Senha:</p><input type="password" name="txtSenhaCadastro" pattern="^[a-zA-Z0-9]+$" minlength="6" maxlength="50"required ></li>
+                        <li><p>*CPF:</p><input type="text" name="cpf" required  minlength="14" onkeypress="$(this).mask('000.000.000-00')"></li>
                         <li><p>*Data de Nascimento:</p ><input type="text" name="txtDataNascimento"required onkeypress="$(this).mask('00/00/0000')"></li>
                         <li><p>*CEP:</p><input type="text" onkeypress="$(this).mask('00000-000')"name="txtCep" required ></li>
                         <li><p>*Telefone:</p><input type="text" name="txtTelefone" onkeypress="$(this).mask('(00) 0000-00009')"required ></li>
@@ -117,8 +116,8 @@
                     <ul>
                         <li><p>*Nome:</p><input type="text" name="txtName"required></li>
                         <li><p>*Email:</p><input type="text" name="txtEmailCadastro"required></li>
-                        <li><p>*Senha:</p><input type="password" name="txtSenhaCadastro"required></li>
-                        <li><p>*Confirmar Senha:</p><input type="password" name="txtSenhaConf"required></li>
+                        <li><p>*Senha:</p><input type="password" name="txtSenhaCadastro" required minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"required></li>
+                        <li><p>*Confirmar Senha:</p><input type="password" name="txtSenhaConf" required minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"required></li>
                     </ul>
 
                     <ul>
@@ -142,7 +141,7 @@
                 <form class="lista-form" action="./php/query.php" method="POST">
                     <ul>
                         <li><p>*Email:</p><input type="text" name="txtEmailLogin" required></li>
-                        <li><p>*Senha:</p><input type="password" name="txtSenhaLogin"required>
+                        <li><p>*Senha:</p><input type="password" name="txtSenhaLogin" required minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$" required>
                         <span class="lnr lnr-eye"></span></li>
 
                         <!-- depois devo terminar essa parte de visualizar senha -->
