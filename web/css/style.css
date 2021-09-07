@@ -587,9 +587,172 @@ a:hover{ /*mostrar área de contato*/
 
     .modal-container.mostrar{
         display: flex;
-
 }
 /*Fim modal*/
+
+    /*Inicio detalhes dos serviços*/
+    .conteudo-detalhes{
+        color: white;
+    }
+    .detalhes{
+        display: grid;
+        grid-template-areas: 
+            "nome descricao"
+            "nome funcao"
+            "encontrar valor"
+            "avaliacao avaliacao"
+            "denunciar denunciar";
+        grid-gap: 30px;
+        margin: 70px;
+        justify-items: center;
+    }
+    .detalhe-nome{ 
+        grid-area: "nome";
+        background-color: rgb(53, 53, 53);
+        text-align: center;
+        width: 300px;
+        padding: 0 20px 20px 20px;
+        border-radius: 10px;
+        grid-row: nome;
+    }
+    .detalhe-nome h4{
+        font-size: 25px;
+        color: white;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        padding: 12px;
+    }
+    .botao-detalhes-menor{
+        color: rgb(12, 147, 3);
+        font-weight: bold;
+        border: 2px solid rgb(12, 147, 3);
+        border-radius: 10px;
+        padding: 15px;
+        font-size: 18px;
+    }
+    .botao-detalhes-menor:hover{
+        color: white;
+        background-color: rgb(12, 147, 3);
+    }
+    .detalhe-descricao, .detalhe-funcao, .detalhe-valor, .detalhe-encontrar{
+        background-color: rgb(53, 53, 53);
+        text-align: left;
+        width: 500px;
+        padding: 0 20px 20px 20px;
+        border-radius: 10px;
+    }
+    .detalhe-encontrar{
+        background-color: rgb(24, 25, 27);
+    }
+    .detalhe-descricao h4, .detalhe-funcao h4, .detalhe-valor h4, .detalhe-avaliacoes h4, .detalhe-encontrar h4{
+        font-size: 18px;
+        margin-bottom: 0;
+        border-left: 6px solid rgb(12, 147, 3);
+        padding-left: 10px;
+    }
+    .detalhe-denuncie h4{
+        font-size: 18px;
+        margin: 20px auto 0 auto;
+        margin: 20px 185px 0 185px;
+        border-left: 6px solid rgb(12, 147, 3);
+    }
+    .detalhe-descricao{
+        grid-area: "descricao";
+    }
+    .detalhe-funcao{
+        grid-area: "funcao";
+    }
+    .detalhe-valor{
+        grid-area: "valor";
+    }
+    .detalhe-encontrar{
+        grid-area: "encontrar";
+        width: 300px;
+        height: 40vh;
+    }
+    .detalhe-avaliacoes{
+        grid-area: "avaliacao";
+        grid-column: avaliacao;
+        width: 81%;
+        background-color: rgb(53, 53, 53);
+        text-align: left;
+        padding: 0 20px 20px 20px;
+        border-radius: 10px;
+    }
+    .uni-avaliacoes{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .detalhe-denuncie{
+        grid-area: "denunciar";
+        grid-column: denunciar;
+        background-color: rgb(53, 53, 53);
+        text-align: left;
+        width: 500px;
+        padding: 0 20px 20px 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .form-denuncia input[type="text"], input[type="email"]{
+        background-color: rgb(53, 53, 53);
+        border: none;
+        border-bottom: 2px solid rgb(24, 25, 27);
+        color: white;
+        width: 200px;
+        margin: 0 0 10px 0;
+    }
+    .form-denuncia input[type="text"]:hover, input[type="email"]:hover{
+        border-color: rgb(12, 147, 3);
+    }
+    .form-denuncia input:focus{
+        outline: 0;
+    }
+    .form-denuncia input[type="submit"]{
+        cursor: pointer;
+        color: rgb(12, 147, 3);
+        font-weight: bold;
+        border: 2px solid rgb(12, 147, 3);
+        border-radius: 10px;
+        padding: 15px;
+        background-color: rgb(53, 53, 53);
+        margin: 30px 0 20px 0;
+        font-size: 18px;
+        width: 200px;
+    }
+    .form-denuncia input[type="submit"]:hover{
+        background-color: rgb(12, 147, 3);
+        color: white;
+    }
+    /*Inicio estrelas*/
+    .estrelas input[type=radio]{
+        display: none; /*deixando invisivel para ter apenas as labels funcionando*/
+    }
+    .estrelas label i.fa:before{
+        content: '\f005'; /*Aqui tornando a label em estrela (ela pegou o id de check para funcionar)*/
+        color: yellow;
+        cursor: pointer;
+    }
+    .estrelas input[type=radio]:checked ~ label i.fa:before{
+        color: rgb(182, 182, 182);
+    }
+    /*Fim estrelas*/
+    .botao-detalhes-estrela{
+        color: rgb(12, 147, 3);
+        margin: 15px;
+        font-size: 18px;
+        background-color: rgb(53, 53, 53);
+        border: 2px solid rgb(12, 147, 3);
+        padding: 15px;
+        border-radius: 10px;
+        width: 200px;
+        cursor: pointer;
+    }
+    .botao-detalhes-estrela:hover{
+        color: white;
+        background-color: rgb(12, 147, 3);
+    }
+    /*Fim detalhes dos serviços*/
+
 @media (max-width: 600px){
     /*caso esteja abaixo de 600px*/
     #menu{
@@ -803,6 +966,29 @@ a:hover{ /*mostrar área de contato*/
         min-width: 120px;
     }
     /*fim Modal*/
+
+    /*Inicio detalhes do serviço*/
+        .detalhes{
+            grid-template-areas: 
+            "nome"
+            "descricao"
+            "funcao"
+            "encontrar"
+            "valor"
+            "avaliacao"
+            "denunciar";
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .detalhes ul{
+            max-width: 80%;
+        }
+        .detalhe-denuncie h4{
+            margin: 20px auto 10px auto;
+            text-align: left;
+            padding-left: 10px;
+        }
+    /*Fim detalhes do serviço*/
 }
 
 @media (max-width: 750px){
@@ -893,6 +1079,27 @@ a:hover{ /*mostrar área de contato*/
     .image-porque-escolher{
         display: none;
     }
+    /*Inicio detalhes serviços*/
+    .detalhes{
+        grid-template-areas: 
+            "nome"
+            "descricao"
+            "funcao"
+            "encontrar"
+            "valor"
+            "avaliacao"
+            "denunciar";
+    }
+    .detalhes ul{
+        width: 90%;
+        margin: 10px auto;
+    }
+    .detalhe-denuncie h4{
+        margin: 20px 0 10px 0;
+        text-align: left;
+        padding-left: 10px;
+    }
+    /*Fim detalhes serviços*/
 }
 @media (max-width: 930px) and (min-width: 751px){
     #menu{
@@ -965,6 +1172,20 @@ a:hover{ /*mostrar área de contato*/
     .image-lampada{
         max-width: 100%;
     }
+    /*Inicio detalhes serviços*/
+    .detalhes{
+        max-width: 100%;
+    }
+    .detalhes ul{
+        width: 90%;
+        margin: 10px auto;
+    }
+    .detalhe-denuncie h4{
+        margin: 20px 0 10px 0;
+        text-align: left;
+        padding-left: 10px;
+    }
+    /*Fim detalhes serviços*/
 }
 
 @media (max-width: 1150px) and (min-width: 931px){
@@ -987,6 +1208,20 @@ a:hover{ /*mostrar área de contato*/
         max-width: 100%;
         max-height: 400px;
     }
+    /*Inicio detalhes serviços*/
+    .detalhes{
+        max-width: 100%;
+    }
+    .detalhes ul{
+        width: 90%;
+        margin: 10px auto;
+    }
+    .detalhe-denuncie h4{
+        margin: 20px 0 10px 0;
+        text-align: left;
+        padding-left: 10px;
+    }
+    /*Fim detalhes serviços*/
 }
 
 @media (max-width: 1250px) and (min-width: 1151px){
