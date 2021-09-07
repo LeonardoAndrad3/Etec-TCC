@@ -87,16 +87,12 @@
                                 $db = new ControllerDb();
                                 $db->profissao();                                
                                 ?>
+                                <option value="3">Outro</option>
                             </select><br/>
+                          
                         </p></li>
                         <li><p>*Valor da função principal:</p><input type="text" required></li>
-                        <li><p>
-                                Possui outras funções? <input type="checkbox" id="checkBox1" onchange="javascript:Caixa()"><br/>
-                                <input id="textBox1" type="text" style="display:none"/>
-                            </p>
-                        </li>
-                        <li><p>Insira os valores das funções extras:</p><input type="text"></li>
-                        <li><p>*Métodos de pagamento aceito: <br/> <p>Dinheiro: <input type="checkbox" value="Dinheiro"name="txtPagamento"></p> <p>Cartão: <input type="checkbox" value="Cartão" name="txtPagamento"></p> 
+                        <li><p>*Métodos de pagamento aceito: <br/> <p>Dinheiro: <input type="checkbox" value="Dinheiro"name="txtPagamentoD"></p> <p>Cartão: <input type="checkbox" value="Cartão" name="txtPagamentoC"></p> 
                         </p></li>
                         <li class="submit-line"><button name="btnCadastrarChaveiro" type="submit">Cadastrar</button></li>
                     </ul>
@@ -167,9 +163,15 @@
         <script>
             $('#lista').change(function(){
                 if( $(this).val() == '3'){
-                    $('#funcao').append('<input id="myInput" type="text" />');
+                    $('#funcao').append("<?php
+                        require_once('./php/query.php');
+                        $db = new ControllerDb();
+                        $db->profissaoCheck();       
+                        ?>");
                 }else{
-                    $('#myInput').remove();
+                    for(let i=0;i<5;i++){
+                        $("#myInput").remove();
+                    } 
                 }
             });
         </script>

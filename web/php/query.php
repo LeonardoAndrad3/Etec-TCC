@@ -73,6 +73,20 @@
             return die($e);
         }
     }
+
+    function profissaoCheck(){
+        try{
+            $result = pg_query('select nome from Profissao;');
+            if(pg_num_rows($result)>0){
+                while($row=pg_fetch_assoc($result)){
+                echo str_replace("_", " ", "<p id='myInput'>".$row['nome']);
+                echo "<input type='checkbox' id='myInput' value=".$row['nome']."/></p>";
+                }
+            }
+    }catch(Exception $e){
+            return die($e);
+        }
+    }
 }
 
 $db = new ControllerDb();
@@ -86,15 +100,17 @@ if(isset($_POST['btnCadastrarChaveiro'])){
         $descricao = "Chaveiro pronto a serviço!";
     }
 
-    // if(!empty($_POST['txtPagamentoD']) && !empty($_POST['txtPagamentoC'])){
-    //     $pagamento = $_POST['txtPagamentoD']."".$_POST['txtPagamentoC'];
-    // } elseif(!empty($_POST['txtPagamentoD'])){
-    //     $pagamento = $_POST['txtPagamentoD'];
-    // } elseif(!empty($_POST['txtPagamentoC'])){
-    //     $pagamento = $_POST['txtPagamentoC'];
-    // } else{
+  
+    if(!empty(addslashes($_POST['txtPagamentoC'])) && !empty(addslashes($_POST['txtPagamentoD']))){
+        
+        $pagamento = addslashes($_POST['txtPagamentoC']) ." e ". addslashes($_POST['txtPagamentoD']);
 
-    // }
+    } elseif(!empty(addslashes($_POST['txtPagamentoC'])) || !empty(addslashes($_POST['txtPagamentoD']))){
+
+        $pagamento = addslashes($_POST['txtPagamentoC']) . addslashes($_POST['txtPagamentoD']);
+
+    }
+
 
     //Verificando se os campos estão vazios.
 
@@ -107,11 +123,11 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     $tel = addslashes($_POST['txtTelefone']);
     $descricao;
     $especialidade = addslashes($_POST['txtEspecialidade']);
-    $pagamento = addslashes($_POST['txtPagamento']);
+ 
         
     $db->cadastrar(
     $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, cep, descricao, senha, dataDeNascimento, pagamento)
-    values('$name','$email','$especialidade','$tel','$cpf','$cep','$descricao',$senha,'$dataN','$pagamento');", $vEmail="select email from Cliente where email='$email';", $vCpf="select cpf from Cliente where cpf='$cpf';");  
+    values('$name','$email','$especialidade','$tel','$cpf','$cep','$descricao','$senha','$dataN','$pagamento');", $vEmail="select email from Cliente where email='$email';", $vCpf="select cpf from Cliente where cpf='$cpf';");  
 
 } elseif(isset($_POST['btnCadastrarCliente'])){
     
