@@ -134,14 +134,15 @@ a:hover{ /*mostrar área de contato*/
 
     .lista-oque{
         display: flex;
-        align-items: center;
-        margin-left: 70px;
-        margin-top: 40px;
-        text-align: center;
+        justify-content: center;
         gap: 30px;
+        text-align: center;
     }
     .busca, .escolher, .contratar{
         list-style: none;
+    }
+    .paragrafo-oque{
+        margin-top: 0;
     }
 
     .image-oque{
@@ -166,7 +167,6 @@ a:hover{ /*mostrar área de contato*/
     .texto-sobre, .image-sobre{
         list-style: none;
     }
-
     .paragrafo-sobre{
         line-height: 30px;
         padding-top: 20px;
@@ -179,9 +179,8 @@ a:hover{ /*mostrar área de contato*/
         border-bottom: 2px solid rgb(12, 147, 3);
         margin: 20px 100px 20px 100px;
     }
-
     .image-lampada{
-        width: 600px;
+        max-width: 500px;
         height: 400px;
     }
     /*Fim sobre*/
@@ -204,7 +203,7 @@ a:hover{ /*mostrar área de contato*/
     }
 
     .paragrafo-motivos{
-        line-height: 30px;
+        line-height: 35px;
         padding-top: 0;
     }
 
@@ -235,7 +234,7 @@ a:hover{ /*mostrar área de contato*/
     }
 
     .opcoes{
-        background-image: url(icon/fundo-opcoes.png);
+        background-image: url(../icon/fundo-opcoes.png);
         height: 50vh;
         background-position: center;
         background-repeat: no-repeat;
@@ -388,7 +387,7 @@ a:hover{ /*mostrar área de contato*/
     .form-cadastro select:focus{
         outline: 0;
     }
-    .form-cadastro button[type=submit]{
+    .form-cadastro button[type="submit"]{
         cursor: pointer;
         color: rgb(12, 147, 3);
         font-weight: bold;
@@ -400,7 +399,7 @@ a:hover{ /*mostrar área de contato*/
         width: 200px;
         font-size: 18px;
     }
-    .form-cadastro input[type="submit"]:hover{
+    .form-cadastro button[type="submit"]:hover{
         background-color: rgb(12, 147, 3);
         color: white;
     }
@@ -423,6 +422,11 @@ a:hover{ /*mostrar área de contato*/
     }
     #textBox1{
         margin-top: 10px;
+    }
+    .visible-senha{
+        background: none;
+        border: none;
+        cursor: pointer;
     }
     /*Fim cadastro*/
 
@@ -536,6 +540,231 @@ a:hover{ /*mostrar área de contato*/
 
 /*Fim do conteúdo*/
 
+/*Inicio modal*/
+    .modal-container{
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(0, 0, 0,.5);
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 2000;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal{
+        background: rgb(53, 53, 53);
+        width: 30%;
+        min-width: 300px;
+        padding: 40px;
+        border: 2px solid rgb(12, 147, 3);
+        box-shadow: 0 0 0 10px rgb(53, 53, 53);
+        position: relative;
+        color: white;
+        text-align: center;
+    }
+
+    @keyframes modal{
+        from{
+            opacity: 0;
+            transform: translate(0, -60px, 0);
+        }
+        tp{
+            opacity: 1;
+            transform: translate(0, 0, 0);
+        }
+    }
+
+    .mostrar .modal{
+        animation: modal .3s;
+    }
+
+    .fechar{
+        position: absolute;
+        font-size: 1.2em;
+        font-weight: bold;
+        top: -30px;
+        right: -30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 4px solid rgb(12, 147, 3);
+        background: rgb(53, 53, 53);
+        color: white;
+        font-family: monospace;
+        cursor: pointer;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .3);
+    }
+
+    .modal-container.mostrar{
+        display: flex;
+}
+/*Fim modal*/
+
+    /*Inicio detalhes dos serviços*/
+    .conteudo-detalhes{
+        color: white;
+    }
+    .detalhes{
+        display: grid;
+        grid-template-areas: 
+            "nome descricao"
+            "nome funcao"
+            "encontrar valor"
+            "avaliacao avaliacao"
+            "denunciar denunciar";
+        grid-gap: 30px;
+        margin: 70px;
+        justify-items: center;
+    }
+    .detalhe-nome{ 
+        grid-area: "nome";
+        background-color: rgb(53, 53, 53);
+        text-align: center;
+        width: 300px;
+        padding: 0 20px 20px 20px;
+        border-radius: 10px;
+        grid-row: nome;
+    }
+    .detalhe-nome h4{
+        font-size: 25px;
+        color: white;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        padding: 12px;
+    }
+    .botao-detalhes-menor{
+        color: rgb(12, 147, 3);
+        font-weight: bold;
+        border: 2px solid rgb(12, 147, 3);
+        border-radius: 10px;
+        padding: 15px;
+        font-size: 18px;
+    }
+    .botao-detalhes-menor:hover{
+        color: white;
+        background-color: rgb(12, 147, 3);
+    }
+    .detalhe-descricao, .detalhe-funcao, .detalhe-valor, .detalhe-encontrar{
+        background-color: rgb(53, 53, 53);
+        text-align: left;
+        width: 500px;
+        padding: 0 20px 20px 20px;
+        border-radius: 10px;
+    }
+    .detalhe-encontrar{
+        background-color: rgb(24, 25, 27);
+    }
+    .detalhe-descricao h4, .detalhe-funcao h4, .detalhe-valor h4, .detalhe-avaliacoes h4, .detalhe-encontrar h4{
+        font-size: 18px;
+        margin-bottom: 0;
+        border-left: 6px solid rgb(12, 147, 3);
+        padding-left: 10px;
+    }
+    .detalhe-denuncie h4{
+        font-size: 18px;
+        margin: 20px auto 0 auto;
+        margin: 20px 185px 0 185px;
+        border-left: 6px solid rgb(12, 147, 3);
+    }
+    .detalhe-descricao{
+        grid-area: "descricao";
+    }
+    .detalhe-funcao{
+        grid-area: "funcao";
+    }
+    .detalhe-valor{
+        grid-area: "valor";
+    }
+    .detalhe-encontrar{
+        grid-area: "encontrar";
+        width: 300px;
+        height: 40vh;
+    }
+    .detalhe-avaliacoes{
+        grid-area: "avaliacao";
+        grid-column: avaliacao;
+        width: 81%;
+        background-color: rgb(53, 53, 53);
+        text-align: left;
+        padding: 0 20px 20px 20px;
+        border-radius: 10px;
+    }
+    .uni-avaliacoes{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .detalhe-denuncie{
+        grid-area: "denunciar";
+        grid-column: denunciar;
+        background-color: rgb(53, 53, 53);
+        text-align: left;
+        width: 500px;
+        padding: 0 20px 20px 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .form-denuncia input[type="text"], input[type="email"]{
+        background-color: rgb(53, 53, 53);
+        border: none;
+        border-bottom: 2px solid rgb(24, 25, 27);
+        color: white;
+        width: 200px;
+        margin: 0 0 10px 0;
+    }
+    .form-denuncia input[type="text"]:hover, input[type="email"]:hover{
+        border-color: rgb(12, 147, 3);
+    }
+    .form-denuncia input:focus{
+        outline: 0;
+    }
+    .form-denuncia input[type="submit"]{
+        cursor: pointer;
+        color: rgb(12, 147, 3);
+        font-weight: bold;
+        border: 2px solid rgb(12, 147, 3);
+        border-radius: 10px;
+        padding: 15px;
+        background-color: rgb(53, 53, 53);
+        margin: 30px 0 20px 0;
+        font-size: 18px;
+        width: 200px;
+    }
+    .form-denuncia input[type="submit"]:hover{
+        background-color: rgb(12, 147, 3);
+        color: white;
+    }
+    /*Inicio estrelas*/
+    .estrelas input[type=radio]{
+        display: none; /*deixando invisivel para ter apenas as labels funcionando*/
+    }
+    .estrelas label i.fa:before{
+        content: '\f005'; /*Aqui tornando a label em estrela (ela pegou o id de check para funcionar)*/
+        color: yellow;
+        cursor: pointer;
+    }
+    .estrelas input[type=radio]:checked ~ label i.fa:before{
+        color: rgb(182, 182, 182);
+    }
+    /*Fim estrelas*/
+    .botao-detalhes-estrela{
+        color: rgb(12, 147, 3);
+        margin: 15px;
+        font-size: 18px;
+        background-color: rgb(53, 53, 53);
+        border: 2px solid rgb(12, 147, 3);
+        padding: 15px;
+        border-radius: 10px;
+        width: 200px;
+        cursor: pointer;
+    }
+    .botao-detalhes-estrela:hover{
+        color: white;
+        background-color: rgb(12, 147, 3);
+    }
+    /*Fim detalhes dos serviços*/
 
 @media (max-width: 600px){
     /*caso esteja abaixo de 600px*/
@@ -627,6 +856,9 @@ a:hover{ /*mostrar área de contato*/
         display: grid;
         place-items: center;
     }
+    .form-cadastro input[type="text"], input[type="password"], select, #busca-fun-input{
+        width: 250px;
+    }
     /*Fim do Cadastro*/
 
     /*Configs do rodape*/
@@ -649,7 +881,7 @@ a:hover{ /*mostrar área de contato*/
     }
     .titulo-centralizado{
         font-size: 35px;
-        background-image: url(icon/fundo-opcoes.png);
+        background-image: url(../icon/fundo-opcoes.png);
         background-position:center;
         background-repeat: no-repeat;
         background-size: 100%;
@@ -704,7 +936,7 @@ a:hover{ /*mostrar área de contato*/
         margin: 0;
     }
     .image-lampada{
-        width: 100%;
+        max-width: 100%;
         height: 200px;
         margin: auto;
         padding-top: 10px;
@@ -719,7 +951,7 @@ a:hover{ /*mostrar área de contato*/
         padding: 20px;
     }
     .image-oque{
-        width: 100%;
+        width: 80%;
         height: auto;
     }
     .texto-center{
@@ -728,37 +960,109 @@ a:hover{ /*mostrar área de contato*/
     /*Fim oque*/
 
     /*Configs home*/
-    .home{
-        max-width: 100%;
-        padding: 0;
-        margin-bottom: 80px;
-        display: grid;
-        place-items: center;
+    .texto-home img{
+        display: none;
     }
-    .titulo{
-        font-size: 35px;
-        top: 0%;
-        right: 25%;
+    .home, .sub-titulo, .titulo, .home-botoes{
+        position: static;
+        display: grid;
+        margin: auto;
+        padding: 10px;
+        text-align: center;
     }
     .sub-titulo{
-        font-size: 20px;
-        top: 25%;
-        text-align: center;
-        right: 12%;
-        width: 300px;
-    }
-    .home-botoes{
-        display: block;
-        position: absolute;
-        top: 70%;
-        right: 25%;
-        text-align: center;
+        width: 80%;
     }
     /*Fim home*/
+    /*Modal*/
+    .modal{
+        min-width: 120px;
+    }
+    /*fim Modal*/
 
+    /*Inicio detalhes do serviço*/
+        .detalhes{
+            grid-template-areas: 
+            "nome"
+            "descricao"
+            "funcao"
+            "encontrar"
+            "valor"
+            "avaliacao"
+            "denunciar";
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .detalhes ul{
+            max-width: 80%;
+        }
+        .detalhe-denuncie h4{
+            margin: 20px auto 10px auto;
+            text-align: left;
+            padding-left: 10px;
+        }
+    /*Fim detalhes do serviço*/
 }
 
 @media (max-width: 750px){
+    #menu{
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        background: rgb(53, 53, 53);
+        display: block;/*item abaixo do outro*/
+        height: 0;
+        transition: .6s;
+        z-index: 1000;
+        visibility: hidden; /*escondido*/
+        overflow-y: hidden;
+    }
+    #nav.active #menu{
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+    #menu a{
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(0, 0, 0, .05);
+    }
+    #btn-mobile{
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+    }
+    #hamburguer{
+        width: 20px;
+        border-top: 2px solid;
+        color: white;
+    }
+    /*Criando o hamburguer*/
+    #hamburguer::after, #hamburguer::before{
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+    #nav.active #hamburguer{
+        border-top-color: transparent;/*tiro o primeiro traço*/
+    }
+    #nav.active #hamburguer::before{
+        transform: rotate(135deg);
+    }
+    #nav.active #hamburguer::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
     /*Inicio consultando serviços*/
     .servicos-chaveiros{
         grid-template-areas: 
@@ -776,9 +1080,128 @@ a:hover{ /*mostrar área de contato*/
     }
 
     /*Fim consultando serviços*/
+    .sobre-nos{
+        display: block;
+    }
+    .image-lampada{
+        max-width: 100%;
+    }
+    .lista-oque{
+        display: block;
+    }
+    .image-porque-escolher{
+        display: none;
+    }
+    /*Inicio detalhes serviços*/
+    .detalhes{
+        grid-template-areas: 
+            "nome"
+            "descricao"
+            "funcao"
+            "encontrar"
+            "valor"
+            "avaliacao"
+            "denunciar";
+    }
+    .detalhes ul{
+        width: 90%;
+        margin: 10px auto;
+    }
+    .detalhe-denuncie h4{
+        margin: 20px 0 10px 0;
+        text-align: left;
+        padding-left: 10px;
+    }
+    /*Fim detalhes serviços*/
+}
+@media (max-width: 930px) and (min-width: 751px){
+    #menu{
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        background: rgb(53, 53, 53);
+        display: block;/*item abaixo do outro*/
+        height: 0;
+        transition: .6s;
+        z-index: 1000;
+        visibility: hidden; /*escondido*/
+        overflow-y: hidden;
+    }
+    #nav.active #menu{
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+    #menu a{
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(0, 0, 0, .05);
+    }
+    #btn-mobile{
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+    }
+    #hamburguer{
+        width: 20px;
+        border-top: 2px solid;
+        color: white;
+    }
+    /*Criando o hamburguer*/
+    #hamburguer::after, #hamburguer::before{
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+    #nav.active #hamburguer{
+        border-top-color: transparent;/*tiro o primeiro traço*/
+    }
+    #nav.active #hamburguer::before{
+        transform: rotate(135deg);
+    }
+    #nav.active #hamburguer::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+    .lista-oque{
+        display: block;
+    }
+    .image-porque-escolher{
+        display: none;
+    }
+    .sobre-nos{
+        display: block;
+    }
+    .image-lampada{
+        max-width: 100%;
+    }
+    /*Inicio detalhes serviços*/
+    .detalhes{
+        max-width: 100%;
+    }
+    .detalhes ul{
+        width: 90%;
+        margin: 10px auto;
+    }
+    .detalhe-denuncie h4{
+        margin: 20px 0 10px 0;
+        text-align: left;
+        padding-left: 10px;
+    }
+    /*Fim detalhes serviços*/
 }
 
-@media (max-width: 1150px) and (min-width: 751px){
+@media (max-width: 1150px) and (min-width: 931px){
     /*Inicio consultando serviços*/
     .servicos-chaveiros{
         grid-template-areas: 
@@ -788,4 +1211,38 @@ a:hover{ /*mostrar área de contato*/
         "blocos-chaveiros blocos-chaveiros";
     }
     /*Fim consultando serviços*/
+    .image-lampada{
+        max-width: 350px;
+    }
+    .image-porque-escolher{
+        max-width: 350px;
+    }
+    .image-oque{
+        max-width: 100%;
+        max-height: 400px;
+    }
+    /*Inicio detalhes serviços*/
+    .detalhes{
+        max-width: 100%;
+    }
+    .detalhes ul{
+        width: 90%;
+        margin: 10px auto;
+    }
+    .detalhe-denuncie h4{
+        margin: 20px 0 10px 0;
+        text-align: left;
+        padding-left: 10px;
+    }
+    /*Fim detalhes serviços*/
+}
+
+@media (max-width: 1250px) and (min-width: 1151px){
+    .image-lampada{
+        max-width: 400px;
+    }
+    .image-oque{
+        max-width: 100%;
+        max-height: 80%;
+    }
 }

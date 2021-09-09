@@ -24,7 +24,7 @@
                 $_SESSION["msg"] = '<script>window.location.replace("../index.php");alert("logado com sucesso!");</script>';
                 echo $_SESSION["msg"];
             } else{
-                throw new Exception("<script>window.location.replace('../index.php');alert('Email ou senha incorretos!');</script>');"); 
+                throw new Exception("<script>window.location.replace('../cadastro.php');alert('Email ou senha incorretos!');</script>');"); 
 
         }}catch(Exception $e){
             echo die($e->getMessage());
@@ -39,20 +39,20 @@
             if(pg_num_rows($validarE) === 0){
 
             }else{
-                throw new Exception('<script>window.location.replace("../index.php");alert("Email já cadastrado, tente outro");</script>');
+                throw new Exception('<script>window.location.replace("../cadastro.php");alert("Email já cadastrado, tente outro");</script>');
             }
 
             if(pg_num_rows($validarC) === 0){
 
             } else{
-                throw new Exception('<script>window.location.replace("../index.php");alert("CPF já cadastrado, tente outro");</script>');
+                throw new Exception('<script>window.location.replace("../cadastro.php");alert("CPF já cadastrado, tente outro");</script>');
             }
     
             if($result = pg_query($query)){
                 echo '<script>window.location.replace("../index.php");
                 alert("Usuário cadastrado com sucesso!");</script>';
             } else{
-                throw new Exception('<script>window.location.replace("../index.php");alert("Fala ao cadastrar!");</script>');
+                throw new Exception('<script>window.location.replace("../cadastro.php");alert("Fala ao cadastrar!");</script>');
             }
         }catch(Exception $e){
             echo die($e->getMessage());
@@ -80,11 +80,59 @@
             if(pg_num_rows($result)>0){
                 while($row=pg_fetch_assoc($result)){
                 echo str_replace("_", " ", "<p id='myInput'>".$row['nome']);
-                echo "<input type='checkbox' id='myInput' value=".$row['nome']."/></p>";
+                echo "<input type='checkbox' id='myInput' name=".$row['nome']."/></p>";
                 }
             }
     }catch(Exception $e){
             return die($e);
+        }
+    }
+
+    function validarCPF($cpf){
+        // Função para validar cpf
+        // fonte: https://gist.github.com/rafael-neri/ab3e58803a08cb4def059fce4e3c0e40
+
+        //Extraindo os números
+        $cpf =  preg_replace('/[^0-9]/is', '', $cpf);
+
+        try{
+            //Verifica se foi digitado corretamente
+            if(strlen($cpf) != 11){
+                throw new Exception('<script>window.location.replace("../cadastro.php");alert("CPF inválido");</script>');   
+            }
+
+            //verifica se foir informada um sequência de digitos repet
+            if(preg_match('/(\d)\1{10}', $cpf)){
+                throw new Exception('<script>window.location.replace("../cadastro.php");alert("CPF inválido");</script>');   
+            }
+
+            //faz o calculo para validar o cpf
+
+            for($t = 9; $t < 11; $t++){
+                for($d = 0, $c = 0; $c < $t; $c++){
+                    $d += $cpf[$c] * (($t + 1) - $c);
+                }
+                $d = ((10 * $d) % 11) %10;
+                if ($cpf[$c] != $d){
+                    throw new Exception('<script>window.location.replace("../cadastro.php");alert("CPF inválido");</script>'); 
+                }
+
+            }
+        }catch(Exception $e){
+            echo die($e->getMessage());
+        }
+        
+    // fazendo a vefiricação do cpf
+    }
+
+    function validarEmail($email){
+        try{
+            if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+            } else {
+                throw new Exception('<script>window.location.replace("../cadastro.php");alert("E-mail inválido");</script>');
+            }
+        }catch(Exception $e){
+            echo die($e->getMessage());
         }
     }
 }
@@ -103,7 +151,7 @@ if(isset($_POST['btnCadastrarChaveiro'])){
   
     if(!empty(addslashes($_POST['txtPagamentoC'])) && !empty(addslashes($_POST['txtPagamentoD']))){
         
-        $pagamento = addslashes($_POST['txtPagamentoC']) ." e ". addslashes($_POST['txtPagamentoD']);
+        $pagamento = addslashes($_POST['txtPagamentoC']) ." ou ". addslashes($_POST['txtPagamentoD']);
 
     } elseif(!empty(addslashes($_POST['txtPagamentoC'])) || !empty(addslashes($_POST['txtPagamentoD']))){
 
@@ -111,32 +159,46 @@ if(isset($_POST['btnCadastrarChaveiro'])){
 
     }
 
+    // $result = pg_query('select nome from Profissao;');
+    // if(pg_num_rows($result)>0){
+    //     while($row=pg_fetch_assoc($result)){
+    //         "$".$row['id'] = addslashes($_POST[$row['nome']]);
+    //     }
+
+
+    // }
 
     //Verificando se os campos estão vazios.
 
     $name = addslashes($_POST['txtName']);
-    $email = addslashes($_POST['txtEmailCadastro']);
+    $db->validarEmail($email = addslashes($_POST['txtEmailCadastro']));
     $senha = md5(addslashes($_POST['txtSenhaCadastro']));
-    $cpf = addslashes($_POST['cpf']);
+    $senhaConfirma = md5(addslashes($_POST['txtSenhaConf']));
+     // Fazendo a criptografia das senhas
+    $db->validarCPF($cpf = addslashes($_POST['txtCpf']));
     $dataN = addslashes($_POST['txtDataNascimento']);
     $cep =  addslashes($_POST['txtCep']);
     $tel = addslashes($_POST['txtTelefone']);
     $descricao;
     $especialidade = addslashes($_POST['txtEspecialidade']);
- 
+    
+    if ($senha == $senhaConfirma) {
+        $db->cadastrar(
+            $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, cep, descricao, senha, dataDeNascimento, pagamento)
+            values('$name','$email','$especialidade','$tel','$cpf','$cep','$descricao','$senha','$dataN','$pagamento');", $vEmail="select email from Cliente where email='$email';", $vCpf="select cpf from Cliente where cpf='$cpf';");  
+            } else {
+            echo '<script>window.location.replace("../index.php");
+            alert("Senhas não conferem!");</script>';
+        };
         
-    $db->cadastrar(
-    $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, cep, descricao, senha, dataDeNascimento, pagamento)
-    values('$name','$email','$especialidade','$tel','$cpf','$cep','$descricao','$senha','$dataN','$pagamento');", $vEmail="select email from Cliente where email='$email';", $vCpf="select cpf from Cliente where cpf='$cpf';");  
-
 } elseif(isset($_POST['btnCadastrarCliente'])){
     
     $name = addslashes($_POST['txtName']);
-    $email = addslashes($_POST['txtEmailCadastro']);
-    //remove os caracteres ilegais, caso tenha
+    $db->validarEmail($email = addslashes($_POST['txtEmailCadastro']));
     $senha = md5(addslashes($_POST['txtSenhaCadastro']));
     $senhaConfirma  = md5($_POST['txtSenhaConf']);
-    $cpf = addslashes($_POST['txtCpf']);
+    // Fazendo a criptografia das senhas
+    $db->validarCPF($cpf = addslashes($_POST['txtCpf']));
     $dataN = addslashes($_POST['txtDataNascimento']);
     $tel = addslashes($_POST['txtTelefone']);
 
@@ -153,6 +215,8 @@ if(isset($_POST['btnCadastrarChaveiro'])){
 
     $email = addslashes($_POST["txtEmailLogin"]);
     $senha = md5(addslashes($_POST["txtSenhaLogin"]));
+    // Fazendo a criptografia para entrar corretamente
+
     // error_reporting(0);
     // ini_set("display_erros", 0);
     $db->logar($query="select email, senha from Cliente where email='$email' and senha='$senha';");
