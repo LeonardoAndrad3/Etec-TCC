@@ -49,10 +49,10 @@
             }
     
             if($result = pg_query($query)){
-                // echo '<script>window.location.replace("../index.php");
-                // alert("Usuário cadastrado com sucesso!");</script>';
+                echo '<script>window.location.replace("../index.php");
+                alert("Usuário cadastrado com sucesso!");</script>';
             } else{
-            //     throw new Exception('<script>window.location.replace("../cadastro.php");alert("Fala ao cadastrar!");</script>');
+                throw new Exception('<script>window.location.replace("../cadastro.php");alert("Fala ao cadastrar!");</script>');
             }
         }catch(Exception $e){
             echo die($e->getMessage());
@@ -64,8 +64,8 @@
             $result = pg_query('select nome from Profissao;');
             if(pg_num_rows($result)>0){
                 while($row=pg_fetch_assoc($result)){
-                echo "<option value=".$row['nome'].">";
-                echo str_replace("_", " ", $row['nome']."</option>");
+                    echo "<option value=".$row['nome'].">";
+                    echo str_replace("_", " ", $row['nome']."</option>");
                 }
             }
         }
@@ -79,8 +79,8 @@
             $result = pg_query('select nome from Profissao;');
             if(pg_num_rows($result)>0){
                 while($row=pg_fetch_assoc($result)){
-                echo str_replace("_", " ", "<p id='myInput'>".$row['nome']);
-                echo "<input type='checkbox' id='myInput' name='profissao[]' value=".$row['nome']. " /></p>";
+                    echo str_replace("_", " ", "<p id='myInput'>".$row['nome']);
+                    echo "<input type='checkbox' id='myInput' name='profissao[]' value=".$row['nome']. " /></p>";
                 }
             }
     }catch(Exception $e){
@@ -163,29 +163,30 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     $name = addslashes($_POST['txtName']);
     $db->validarEmail($email = addslashes($_POST['txtEmailCadastro']));
     $senha = md5(addslashes($_POST['txtSenhaCadastro']));
-    $senhaConfirma = md5(addslashes($_POST['txtSenhaConf']));
-     // Fazendo a criptografia das senhas
+    $senhaConfirma = md5(addslashes($_POST['txtSenhaConf'])); // Fazendo a criptografia das senhas
     $db->validarCPF($cpf = addslashes($_POST['txtCpf']));
     $dataN = addslashes($_POST['txtDataNascimento']);
     $cep =  addslashes($_POST['txtCep']);
     $tel = addslashes($_POST['txtTelefone']);
     $descricao;
 
-    if(!empty(addslashes($_POST['txtEspecialidade']))){
-    $especialidade = addslashes($_POST['txtEspecialidade']);
+    if(addslashes($_POST['txtEspecialidade']) != 3){
+        $especialidade = addslashes($_POST['txtEspecialidade']);
+        // print_r($especialidade);
     } else{   
-       
+        $arrayProfissao = [];
+        $arrayProfissao['prof'] = $_POST["profissao"];
+        $especialidade = implode(", ", $arrayProfissao['prof']); 
+        // print_r($especialidade);   
     }
-
-    // $especialidade = [];
-    // $especialidade['prof'] = $_POST["profissao"];
-    // print_r($especialidade);
-        
+    // if para inserir mais de uma profissao ao chaveiro, coloquei ela em um 
+    // array para pegar todos os dados da tela cadastro.php
+            
     if ($senha == $senhaConfirma) {
         $db->cadastrar(
             $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, cep, descricao, senha, dataDeNascimento, pagamento)
             values('$name','$email','$especialidade','$tel','$cpf','$cep','$descricao','$senha','$dataN','$pagamento');", $vEmail="select email from Cliente where email='$email';", $vCpf="select cpf from Cliente where cpf='$cpf';");  
-            } else {
+        } else {
             echo '<script>window.location.replace("../index.php");
             alert("Senhas não conferem!");</script>';
         };
@@ -195,16 +196,15 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     $name = addslashes($_POST['txtName']);
     $db->validarEmail($email = addslashes($_POST['txtEmailCadastro']));
     $senha = md5(addslashes($_POST['txtSenhaCadastro']));
-    $senhaConfirma  = md5($_POST['txtSenhaConf']);
-    // Fazendo a criptografia das senhas
+    $senhaConfirma  = md5($_POST['txtSenhaConf']);    // Fazendo a criptografia das senhas
     $db->validarCPF($cpf = addslashes($_POST['txtCpf']));
     $dataN = addslashes($_POST['txtDataNascimento']);
     $tel = addslashes($_POST['txtTelefone']);
 
     if ($senha == $senhaConfirma) {
     $db->cadastrar(
-    $query="insert into Cliente(nome, email, telefone, cpf, senha, datadenascimento) 
-    values('$name', '$email','$tel','$cpf','$senha','$dataN');", $vEmail="select email from Cliente where email='$email';", $vCpf="select cpf from Cliente where cpf='$cpf';");
+        $query="insert into Cliente(nome, email, telefone, cpf, senha, datadenascimento) 
+        values('$name', '$email','$tel','$cpf','$senha','$dataN');", $vEmail="select email from Cliente where email='$email';", $vCpf="select cpf from Cliente where cpf='$cpf';");
     } else {
         echo '<script>window.location.replace("../index.php");
         alert("Senhas não conferem!");</script>';
