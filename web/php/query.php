@@ -49,10 +49,10 @@
             }
     
             if($result = pg_query($query)){
-                echo '<script>window.location.replace("../index.php");
-                alert("Usuário cadastrado com sucesso!");</script>';
+                // echo '<script>window.location.replace("../index.php");
+                // alert("Usuário cadastrado com sucesso!");</script>';
             } else{
-                throw new Exception('<script>window.location.replace("../cadastro.php");alert("Fala ao cadastrar!");</script>');
+            //     throw new Exception('<script>window.location.replace("../cadastro.php");alert("Fala ao cadastrar!");</script>');
             }
         }catch(Exception $e){
             echo die($e->getMessage());
@@ -80,14 +80,14 @@
             if(pg_num_rows($result)>0){
                 while($row=pg_fetch_assoc($result)){
                 echo str_replace("_", " ", "<p id='myInput'>".$row['nome']);
-                echo "<input type='checkbox' id='myInput' name=".$row['nome']."/></p>";
+                echo "<input type='checkbox' id='myInput' name='profissao[]' value=".$row['nome']. " /></p>";
                 }
             }
     }catch(Exception $e){
             return die($e);
         }
     }
-
+    
     function validarCPF($cpf){
         // Função para validar cpf
         // fonte: https://gist.github.com/rafael-neri/ab3e58803a08cb4def059fce4e3c0e40
@@ -148,7 +148,6 @@ if(isset($_POST['btnCadastrarChaveiro'])){
         $descricao = "Chaveiro pronto a serviço!";
     }
 
-  
     if(!empty(addslashes($_POST['txtPagamentoC'])) && !empty(addslashes($_POST['txtPagamentoD']))){
         
         $pagamento = addslashes($_POST['txtPagamentoC']) ." ou ". addslashes($_POST['txtPagamentoD']);
@@ -158,16 +157,7 @@ if(isset($_POST['btnCadastrarChaveiro'])){
         $pagamento = addslashes($_POST['txtPagamentoC']) . addslashes($_POST['txtPagamentoD']);
 
     }
-
-    // $result = pg_query('select nome from Profissao;');
-    // if(pg_num_rows($result)>0){
-    //     while($row=pg_fetch_assoc($result)){
-    //         "$".$row['id'] = addslashes($_POST[$row['nome']]);
-    //     }
-
-
-    // }
-
+    
     //Verificando se os campos estão vazios.
 
     $name = addslashes($_POST['txtName']);
@@ -180,8 +170,17 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     $cep =  addslashes($_POST['txtCep']);
     $tel = addslashes($_POST['txtTelefone']);
     $descricao;
+
+    if(!empty(addslashes($_POST['txtEspecialidade']))){
     $especialidade = addslashes($_POST['txtEspecialidade']);
-    
+    } else{   
+       
+    }
+
+    // $especialidade = [];
+    // $especialidade['prof'] = $_POST["profissao"];
+    // print_r($especialidade);
+        
     if ($senha == $senhaConfirma) {
         $db->cadastrar(
             $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, cep, descricao, senha, dataDeNascimento, pagamento)

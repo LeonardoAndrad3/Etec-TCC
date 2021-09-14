@@ -73,7 +73,7 @@
                         <li><p>*Senha:</p><input type="password" name="txtSenhaCadastro" id ="campo-senhaconfirm2"pattern="^[a-zA-Z0-9]+$" minlength="6" maxlength="50"required ><button type="button" class="visible-senha" onclick="mostrarConfSenha()" ><img src="icon/olho-senha.png"></button></li>
                         <li><p>*Confirmar Senha:</p><input type="password" id="campo-senhaconfirm" name="txtSenhaConf" pattern="^[a-zA-Z0-9]+$" minlength="6" maxlength="50"required ><button type="button" class="visible-senha" onclick="mostrarConfSenha()" ><img src="icon/olho-senha.png"></button></li>
                         <li><p>*CPF:</p><input type="text" name="txtCpf" required  minlength="14" onkeypress="$(this).mask('000.000.000-00')"></li>
-                        <li><p>*Data de Nascimento:</p ><input type="text" name="txtDataNascimento"required onkeypress="$(this).mask('00/00/0000')"></li>
+                        <li><p>*Data de Nascimento:<p><input type="text" name="txtDataNascimento"required onkeypress="$(this).mask('00/00/0000')"></li>
                         <li><p>*CEP:</p><input type="text" onkeypress="$(this).mask('00000-000')"name="txtCep" required ></li>
                         <li><p>*Telefone:</p><input type="text" name="txtTelefone" onkeypress="$(this).mask('(00) 0000-00009')"required ></li>
                     </ul>
@@ -83,14 +83,14 @@
                         <li><p id="funcao">*Função Principal <br/>
                             <select id="lista" name="txtEspecialidade"required>
                                 <option value="" disabled selected>Selecione</option>
-                                <?php
-                                include('./php/query.php');
-                                $db = new ControllerDb();
-                                $db->profissao();                                
+                                <?php   
+                                include('./php/query.php');$db = new ControllerDb();
+                                $teste = array(
+                                $db->profissao()
+                                );                                
                                 ?>
                                 <option value="3">Outro</option>
                             </select><br/>
-                    
                         </p></li>
                         <li><p>*Valor da função principal:</p><input type="text" required></li>
                         <li><p>*Métodos de pagamento aceito: <br/> <p>Dinheiro: <input type="checkbox" value="Dinheiro"name="txtPagamentoD"></p> <p>Cartão: <input type="checkbox" value="Cartão" name="txtPagamentoC"></p> 
@@ -109,7 +109,7 @@
             </div>
         
             <div class="form-cadastro">
-                <form class="lista-form" action="./php/query.php" method="POST">
+                <form class="lista-form" name="form_cliente" action="./php/query.php" method="POST">
                     <ul>
                         <li><p>*Nome:</p><input type="text" name="txtName"required></li>
                         <li><p>*Email:</p><input type="text" name="txtEmailCadastro"required></li>
@@ -383,6 +383,8 @@
             botaochav.addEventListener("click", () => iniciaModal ('modal-container'));
 
         </script> -->
+
+
 
     </body>
 </html>
