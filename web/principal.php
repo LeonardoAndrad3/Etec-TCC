@@ -1,10 +1,3 @@
-<?php
-
-include("./php/logar.php");
-session_start();
-
-?>
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,6 +9,15 @@ session_start();
 			<link rel="manifest" href="manifest.json">
 			<script src="js/main.js" defer></script>
 			<script src="//code-sa1.jivosite.com/widget/PNSgAqbd3B" async></script>
+			<?php
+				include("./php/logar.php");
+				session_start();
+				if(isset($_SESSION["usuario"])){
+					
+				}
+			?>
+
+				<link rel="stylesheet" href="css/button.css">
 
 	</head>
 	<body>
@@ -36,9 +38,8 @@ session_start();
 						echo '<li><a href="#" id="login">'.
 						$_SESSION["usuario"].'</a>
 							<ul id="sub-menu" class="sub-menu">
-								<li><a href=""><img src="icon/sair.png"></a></li>
-								<form action="./php/logar.php" method="POST">
-								<li><button type="submit" name="btnSair">Sair</button></li>
+								<form class="form-cadastro" action="./php/logar.php" method="POST">
+								<li><button name="btnSair" type="submit" class="botaochav" >Sair</button></li>
 								</form>
 							</ul>
 						</li></ul>';
