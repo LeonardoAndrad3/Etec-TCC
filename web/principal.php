@@ -1,3 +1,10 @@
+<?php
+
+include("./php/logar.php");
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,8 +31,24 @@
 					<li><a href="">Sua localização</a></li>
 					<li><a href="">Contate-nos</a></li>
 					<li><a href="">Sobre nós</a></li>
-					<li><a href="cadastro.php" id="login">Entrar</a></li>
-				</ul>
+					<?php
+					if(isset($_SESSION["usuario"])){
+						echo '<li><a href="#" id="login">'.
+						$_SESSION["usuario"].'</a>
+							<ul id="sub-menu" class="sub-menu">
+								<li><a href=""><img src="icon/sair.png"></a></li>
+								<form action="./php/logar.php" method="POST">
+								<li><button type="submit" name="btnSair">Sair</button></li>
+								</form>
+							</ul>
+						</li></ul>';
+
+						}else {
+							echo '<li><a href="cadastro.php" id="login">
+							entrar</a></li></ul>';
+					}
+					?>
+					
 			</nav>
 		</header>
 

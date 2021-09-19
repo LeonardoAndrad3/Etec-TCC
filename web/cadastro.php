@@ -66,7 +66,7 @@
             </div>
         
             <div class="form-cadastro">
-                <form class="lista-form" action="./php/query.php" method="POST">
+                <form class="lista-form" action="./php/cadastrar.php" method="POST">
                     <ul>
                         <li><p>*Nome:</p><input type="text" name="txtName" required></li>
                         <li><p>*Email:</p><input type="text" name="txtEmailCadastro"required></li>
@@ -109,7 +109,7 @@
             </div>
         
             <div class="form-cadastro">
-                <form class="lista-form" name="form_cliente" action="./php/query.php" method="POST">
+                <form class="lista-form" name="form_cliente" action="./php/cadastrar.php" method="POST">
                     <ul>
                         <li><p>*Nome:</p><input type="text" name="txtName"required></li>
                         <li><p>*Email:</p><input type="text" name="txtEmailCadastro"required></li>
@@ -135,11 +135,11 @@
             </div>
 
             <div class="form-cadastro">
-                <form class="lista-form" action="./php/query.php" method="POST">
+                <form class="lista-form" action="./php/logar.php" method="POST">
                     <ul>
                         <li><p>*Email:</p><input type="text"></li>
                         <li><p>*Senha:</p><input type="password" id="campo-senhalogin-chaveiro"required minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"><button type="button" class="visible-senha" onclick="mostrarSenhaLoginChaveiro()"><img src="icon/olho-senha.png"></button></li>
-                        <li class="submit-line"><button name="btnLogin" type="submit" class="botaochav">login</button></li>
+                        <li class="submit-line"><button name="btnLoginChaveiro" type="submit" class="botaochav">login</button></li>
                     </ul>
                 </form>
             </div>
@@ -153,11 +153,11 @@
             </div>
 
             <div class="form-cadastro">
-                <form class="lista-form" action="./php/query.php" method="POST">
+                <form class="lista-form" action="./php/logar.php" method="POST">
                     <ul>
                         <li><p>*Email:</p><input type="text" name="txtEmailLogin" required></li>
                         <li><p>*Senha:</p><input type="password" name="txtSenhaLogin" id="campo-senhalogin"required minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"><button type="button" class="visible-senha" onclick="mostrarSenhaLogin()"><img src="icon/olho-senha.png"></button></li>
-                        <li class="submit-line"><button name="btnLogin" type="submit" class="botaochav">Cadastrar</button></li>
+                        <li class="submit-line"><button name="btnLoginCliente" type="submit" class="botaochav">Cadastrar</button></li>
                     </ul>
                 </form>
             </div>
