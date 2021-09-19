@@ -13,12 +13,9 @@
 				include("./php/logar.php");
 				session_start();
 				if(isset($_SESSION["usuario"])){
-					
+					echo '<link rel="stylesheet" href="css/button.css">';
 				}
 			?>
-
-				<link rel="stylesheet" href="css/button.css">
-
 	</head>
 	<body>
 
@@ -38,8 +35,8 @@
 						echo '<li><a href="#" id="login">'.
 						$_SESSION["usuario"].'</a>
 							<ul id="sub-menu" class="sub-menu">
-								<form class="form-cadastro" action="./php/logar.php" method="POST">
-								<li><button name="btnSair" type="submit" class="botaochav" >Sair</button></li>
+								<form action="./php/logar.php" class="form-cadastro" method="POST">
+								<li><button type="submit" name="btnSair">Sair</button></li>
 								</form>
 							</ul>
 						</li></ul>';
@@ -49,7 +46,6 @@
 							entrar</a></li></ul>';
 					}
 					?>
-					
 			</nav>
 		</header>
 
