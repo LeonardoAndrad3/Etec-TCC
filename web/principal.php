@@ -18,12 +18,6 @@
 				}
 			?>
 =======
-		<title>Open Doors</title>
-		<meta name="theme-color" content="#353535">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="manifest" href="manifest.json">
-		<script src="js/main.js" defer></script>
 >>>>>>> 2a33eaa1856c3ef50fc826c09cd891afcf54649d:web/index.html
 	</head>
 	<body>
