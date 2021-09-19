@@ -89,7 +89,7 @@
                             <select id="lista" name="txtEspecialidade"required>
                                 <option value="" disabled selected>Selecione</option>
                                     <?php   
-                                        include_once('./php/query.php');
+                                        require_once('./php/query.php');
                                         $db = new ControllerDb();
                                         $db->profissao();                                
                                     ?>
