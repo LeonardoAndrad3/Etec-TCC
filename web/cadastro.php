@@ -84,10 +84,9 @@
                             <select id="lista" name="txtEspecialidade"required>
                                 <option value="" disabled selected>Selecione</option>
                                 <?php   
-                                include('./php/query.php');$db = new ControllerDb();
-                                $teste = array(
-                                $db->profissao()
-                                );                                
+                                include("./php/query.php");
+                                $db = new ControllerDb();
+                                $db->profissao()                              
                                 ?>
                                 <option value="3">Outro</option>
                             </select><br/>
