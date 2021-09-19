@@ -83,11 +83,6 @@
                         <li><p id="funcao">*Função Principal <br/>
                             <select id="lista" name="txtEspecialidade"required>
                                 <option value="" disabled selected>Selecione</option>
-                                    <?php   
-                                        require_once("./php/query.php");
-                                        $db = new ControllerDb();
-                                        $db->profissao();                                
-                                    ?>
                                 <option value="3">Outro</option>
                             </select><br/>
                         </p></li>
