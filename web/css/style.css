@@ -248,6 +248,23 @@ a:hover{ /*mostrar área de contato*/
         text-align: center;
     }
 
+    .sub-menu{
+        display: flex;
+        background-color: rgb(53, 53, 53);
+        list-style: none;
+        font-weight: bold;
+        border-radius: 0 0 10px 10px;
+        padding: 18px 10px 18px 10px;
+        right: 0;
+        width: 180px;
+        align-items: center;
+        display: none;
+    }
+    
+    .sub-menu a{
+        color: red;
+    }
+
     /*Fim opcoes*/
 
     /*Inicio rodape*/
