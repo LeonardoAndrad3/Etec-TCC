@@ -1,3 +1,3 @@
 <?php
-    include('principal.html')
+    include('principal.php')
 ?>

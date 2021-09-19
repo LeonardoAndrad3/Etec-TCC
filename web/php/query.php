@@ -21,8 +21,11 @@
 
         try{$result = pg_query($query);
             if(pg_num_rows($result) > 0){
-                $_SESSION["msg"] = '<script>window.location.replace("../index.php");alert("logado com sucesso!");</script>';
-                echo $_SESSION["msg"];
+                $row = pg_fetch_assoc($result);
+                session_start();
+                $_SESSION['usuario'] = $row["nome"];
+                echo'<script>window.location.replace("../index.php");
+                alert("Bem-vindo '.$_SESSION['usuario'].'!");</script>';
             } else{
                 throw new Exception("<script>window.location.replace('../cadastro.php');alert('Email ou senha incorretos!');</script>');"); 
 
@@ -218,7 +221,7 @@ if(isset($_POST['btnCadastrarChaveiro'])){
 
     // error_reporting(0);
     // ini_set("display_erros", 0);
-    $db->logar($query="select email, senha from Cliente where email='$email' and senha='$senha';");
+    $db->logar($query="select email, nome, senha from Cliente where email='$email' and senha='$senha';");
 };
 
 // Esse código foi feito para quando aperter certo button, ele irá corresponder 
