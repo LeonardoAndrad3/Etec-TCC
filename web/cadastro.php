@@ -91,9 +91,7 @@
                                     <?php   
                                         include('./php/query.php');
                                         $db = new ControllerDb();
-                                        $teste = array(
-                                        $db->profissao()
-                                        );                                
+                                        $db->profissao();                                
                                     ?>
                                 <option value="3">Outro</option>
                             </select><br/>
@@ -177,43 +175,6 @@
                     <li><a class="link-rodape" href="">Termos e condições</a></li>
                 </ul>
             </footer>
-        
-        <!-- <div id="modal-sucesso" class="modal-container">
-            <div class="modal">
-                <a href="index.php"><button class="fechar">X</button></a>
-                <h3>Cadastro realizado com sucesso!</h3>
-            </div>
-        </div> 
-        <div id="modal-falha" class="modal-container">
-            <div class="modal">
-                <a href="index.php"><button class="fechar">X</button></a>
-                <h3>Falha ao Cadastro!</h3>
-            </div>
-        </div>    
-        <div id="modal-cpf" class="modal-container">
-            <div class="modal">
-                <a href="index.php"><button class="fechar">X</button></a>
-                <h3>Cadastro realizado com sucesso!</h3>
-            </div>
-        </div> 
-        <div id="modal-login" class="modal-container">
-            <div class="modal">
-                <a href="index.php"><button class="fechar">X</button></a>
-                <h3>Cadastro realizado com sucesso!</h3>
-            </div>
-        </div>        
-        <div id="modal-email" class="modal-container">
-            <div class="modal">
-                <a href="index.php"><button class="fechar">X</button></a>
-                <h3>Cadastro realizado com sucesso!</h3>
-            </div>
-        </div>    
-        <div id="modal-senhas" class="modal-container">
-            <div class="modal">
-                <a href="index.php"><button class="fechar">X</button></a>
-                <h3>Cadastro realizado com sucesso!</h3>
-            </div>
-        </div>        -->
 
         <script type="text/javascript" src="js/script.js"></script>
 
