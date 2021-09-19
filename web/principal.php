@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+<<<<<<< HEAD:web/principal.php
 			<title>Open Doors</title>
 			<meta name="theme-color" content="#353535">
 			<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -16,6 +17,14 @@
 					echo '<link rel="stylesheet" href="css/button.css">';
 				}
 			?>
+=======
+		<title>Open Doors</title>
+		<meta name="theme-color" content="#353535">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="manifest" href="manifest.json">
+		<script src="js/main.js" defer></script>
+>>>>>>> 2a33eaa1856c3ef50fc826c09cd891afcf54649d:web/index.html
 	</head>
 	<body>
 
@@ -25,9 +34,10 @@
 				<button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
 					<span id="hamburguer"></span>
 				</button>
-				<ul id="menu" role="menu">
+				<ul id="menu" class="menu" role="menu">
 					<li><a href="servicos.html">Serviços</a></li>
 					<li><a href="">Sua localização</a></li>
+<<<<<<< HEAD:web/principal.php
 					<li><a href="">Contate-nos</a></li>
 					<li><a href="">Sobre nós</a></li>
 					<?php
@@ -46,6 +56,12 @@
 							entrar</a></li></ul>';
 					}
 					?>
+=======
+					<li><a href="contate.html">Contate-nos</a></li>
+					<li><a class="link-parascroll" href="#sobre-nos">Sobre nós</a></li>
+					<li><a href="cadastro.html" id="login">Entrar</a></li>
+				</ul>
+>>>>>>> 2a33eaa1856c3ef50fc826c09cd891afcf54649d:web/index.html
 			</nav>
 		</header>
 
@@ -92,7 +108,7 @@
 			</div>
 
 
-			<div class="sobre-nos">
+			<div class="sobre-nos" id="sobre-nos">
 				<ul class="texto-sobre">
 					<li><h1 class="titulo-esquerda">Sobre nós</h1></li>
 					<li><p class="paragrafo-sobre">A Open Doors surgiu com um grupo de estudantes da ETEC da Zona Leste com o objetivo

@@ -27,9 +27,15 @@
                 <ul id="menu" role="menu">
                     <li><a href="servicos.html">Serviços</a></li>
                     <li><a href="">Sua localização</a></li>
+<<<<<<< HEAD:web/cadastro.php
                     <li><a href="">Contate-nos</a></li>
                     <li><a href="">Sobre nós</a></li>
                     <li><a href="cadastro.php" id="login">Entrar</a></li>
+=======
+                    <li><a href="contate.html">Contate-nos</a></li>
+                    <li><a href="index.html">Sobre nós</a></li>
+                    <li><a href="cadastro.html" id="login">Entrar</a></li>
+>>>>>>> 2a33eaa1856c3ef50fc826c09cd891afcf54649d:web/cadastro.html
                 </ul>
             </nav>
         </header>
@@ -215,11 +221,15 @@
         <script>
             $('#lista').change(function(){
                 if( $(this).val() == '3'){
+<<<<<<< HEAD:web/cadastro.php
                     // $('#funcao').append("<?php
                     //     require_once('./php/query.php');
                     //     $db = new ControllerDb();
                     //     $db->profissaoCheck();       
                     //     ?>");
+=======
+                    $('#funcao').append('<input id="myInput" type="text"/>');
+>>>>>>> 2a33eaa1856c3ef50fc826c09cd891afcf54649d:web/cadastro.html
                 }else{
                     for(let i=0;i<15;i++){
                         $("#myInput").remove();
