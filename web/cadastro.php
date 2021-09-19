@@ -89,7 +89,7 @@
                             <select id="lista" name="txtEspecialidade"required>
                                 <option value="" disabled selected>Selecione</option>
                                     <?php   
-                                        require_once('./php/query.php');
+                                        require_once("./php/query.php");
                                         $db = new ControllerDb();
                                         $db->profissao();                                
                                     ?>
@@ -183,8 +183,6 @@
             $('#lista').change(function(){
                 if( $(this).val() == '3'){
                     $('#funcao').append("<?php
-                        require_once('./php/query.php');
-                        $db = new ControllerDb();
                         $db->profissaoCheck();       
                         ?>");
                 }else{
