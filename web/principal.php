@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-<<<<<<< HEAD:web/principal.php
 			<title>Open Doors</title>
 			<meta name="theme-color" content="#353535">
 			<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -17,8 +16,6 @@
 					echo '<link rel="stylesheet" href="css/button.css">';
 				}
 			?>
-=======
->>>>>>> 2a33eaa1856c3ef50fc826c09cd891afcf54649d:web/index.html
 	</head>
 	<body>
 
@@ -31,7 +28,6 @@
 				<ul id="menu" class="menu" role="menu">
 					<li><a href="servicos.html">Serviços</a></li>
 					<li><a href="">Sua localização</a></li>
-<<<<<<< HEAD:web/principal.php
 					<li><a href="">Contate-nos</a></li>
 					<li><a href="">Sobre nós</a></li>
 					<?php
@@ -50,12 +46,6 @@
 							entrar</a></li></ul>';
 					}
 					?>
-=======
-					<li><a href="contate.html">Contate-nos</a></li>
-					<li><a class="link-parascroll" href="#sobre-nos">Sobre nós</a></li>
-					<li><a href="cadastro.html" id="login">Entrar</a></li>
-				</ul>
->>>>>>> 2a33eaa1856c3ef50fc826c09cd891afcf54649d:web/index.html
 			</nav>
 		</header>
 
