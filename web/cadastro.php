@@ -66,7 +66,7 @@
             </div>
         
             <div class="form-cadastro">
-                <form class="lista-form" action="./php/query.php" method="POST">
+                <form class="lista-form" action="php/query.php" method="POST">
                     <ul>
                         <li><p>*Nome:</p><input type="text" name="txtName" required></li>
                         <li><p>*Email:</p><input type="text" name="txtEmailCadastro"required></li>
@@ -83,6 +83,10 @@
                         <li><p id="funcao">*Função Principal <br/>
                             <select id="lista" name="txtEspecialidade"required>
                                 <option value="" disabled selected>Selecione</option>
+                                <?php   
+                                include('php/profissoes.php');
+                                profissao();                           
+                                ?>
                                 <option value="3">Outro</option>
                             </select><br/>
                         </p></li>
@@ -103,7 +107,7 @@
             </div>
         
             <div class="form-cadastro">
-                <form class="lista-form" name="form_cliente" action="./php/query.php" method="POST">
+                <form class="lista-form" name="form_cliente" action="php/query.php" method="POST">
                     <ul>
                         <li><p>*Nome:</p><input type="text" name="txtName"required></li>
                         <li><p>*Email:</p><input type="text" name="txtEmailCadastro"required></li>
@@ -129,7 +133,7 @@
             </div>
 
             <div class="form-cadastro">
-                <form class="lista-form" action="./php/query.php" method="POST">
+                <form class="lista-form" action="php/logar.php" method="POST">
                     <ul>
                         <li><p>*Email:</p><input type="text"></li>
                         <li><p>*Senha:</p><input type="password" id="campo-senhalogin-chaveiro"required minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"><button type="button" class="visible-senha" onclick="mostrarSenhaLoginChaveiro()"><img src="icon/olho-senha.png"></button></li>
@@ -147,7 +151,7 @@
             </div>
 
             <div class="form-cadastro">
-                <form class="lista-form" action="./php/query.php" method="POST">
+                <form class="lista-form" action="php/logar.php" method="POST">
                     <ul>
                         <li><p>*Email:</p><input type="text" name="txtEmailLogin" required></li>
                         <li><p>*Senha:</p><input type="password" name="txtSenhaLogin" id="campo-senhalogin"required minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"><button type="button" class="visible-senha" onclick="mostrarSenhaLogin()"><img src="icon/olho-senha.png"></button></li>
@@ -210,9 +214,8 @@
             $('#lista').change(function(){
                 if( $(this).val() == '3'){
                     $('#funcao').append("<?php
-                        require_once('./php/query.php');
-                        $db = new ControllerDb();
-                        $db->profissaoCheck();       
+                        require_once('php/profissoes.php');
+                        profissaoCheck();
                         ?>");
                 }else{
                     for(let i=0;i<15;i++){
