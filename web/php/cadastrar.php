@@ -44,13 +44,7 @@ function validarCPF($cpf){
             throw new Exception('<script>window.location.replace("../cadastro.php");alert("CPF inválido");</script>');   
         }
 
-        //verifica se foir informada um sequência de digitos repet
-        if(preg_match('/(\d)\1{10}', $cpf)){
-            throw new Exception('<script>window.location.replace("../cadastro.php");alert("CPF inválido");</script>');   
-        }
-
         //faz o calculo para validar o cpf
-
         for($t = 9; $t < 11; $t++){
             for($d = 0, $c = 0; $c < $t; $c++){
                 $d += $cpf[$c] * (($t + 1) - $c);
