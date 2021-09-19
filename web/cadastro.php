@@ -1,3 +1,9 @@
+<?php
+include("./php/query.php");
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
