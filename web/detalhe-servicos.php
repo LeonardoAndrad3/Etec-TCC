@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> <!--link para pegar as estrelas-->
     <meta name="theme-color" content="#353535">
     <script src="//code-sa1.jivosite.com/widget/PNSgAqbd3B" async></script>
+    <?php
+        include("php/logar.php");
+        if(isset($_SESSION["usuario"])){
+            echo '<link rel="stylesheet" href="css/button.css">';
+        }
+	?>
 </head>
 <body>
     <header id="header">
@@ -20,12 +26,48 @@
                 <span id="hamburguer"></span>
             </button>
             <ul id="menu" role="menu">
-                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="servicos.php">Serviços</a></li>
                 <li><a href="">Sua localização</a></li>
-                <li><a href="contate.html">Contate-nos</a></li>
+                <li><a href="contate.php">Contate-nos</a></li>
                 <li><a href="index.php">Sobre nós</a></li>
-                <li><a href="cadastro.php" id="login">Entrar</a></li>
-            </ul>
+                <?php
+                if(isset($_SESSION["usuario"])){
+                    echo '<li><button href="" id="login" class="sessao">'.
+                    $_SESSION["usuario"].'</button></a></ul>';
+                            echo '<script>
+                        //script para o modal
+                            function iniciaModal(modalID){
+                                const modal = document.getElementById(modalID);
+                                if (modal){
+                                    modal.classList.add("mostrar");
+                                    modal.addEventListener("click", (e)=> {
+                                    console.log(e);
+                                    if(e.target.className == "fechar"){
+                                        modal.classList.remove("mostrar");
+                                    }
+                                    });
+                                }
+                            }
+
+                            const sessaoR = document.querySelector(".sessao");
+                            sessaoR.addEventListener("click", () => iniciaModal ("modal-container"));
+                        </script>
+                        <div id="modal-container" class="modal-container">
+                            <div class="modal" style="border-color: red;">
+                                <button class="fechar" style="border-color: red;">X</button>
+                                <h3>Deseja encerrar a sessão?</h3>
+                                <p>Ao clicar abaixo você desconectará de sua conta.</p>
+                                <form action="php/logar.php" method="POST">
+                                    <button name="btnSair" class="encerrar-sessao">Encerrar</button>
+                                </form>
+                            </div>
+                        </div>';
+
+                    }else {
+                        echo '<li><a href="cadastro.php" id="login">
+                        entrar</a></li></ul>';
+                }
+                ?>
         </nav>
     </header>
 

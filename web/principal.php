@@ -10,8 +10,7 @@
 			<script src="js/main.js" defer></script>
 			<script src="//code-sa1.jivosite.com/widget/PNSgAqbd3B" async></script>
 			<?php
-				include("./php/logar.php");
-				session_start();
+				include("php/logar.php");
 				if(isset($_SESSION["usuario"])){
 					echo '<link rel="stylesheet" href="css/button.css">';
 				}
@@ -26,20 +25,42 @@
 					<span id="hamburguer"></span>
 				</button>
 				<ul id="menu" class="menu" role="menu">
-					<li><a href="servicos.html">Serviços</a></li>
-					<li><a href="">Sua localização</a></li>
-					<li><a href="">Contate-nos</a></li>
-					<li><a href="">Sobre nós</a></li>
+				<li><a href="servicos.php">Serviços</a></li>
+                <li><a href="">Sua localização</a></li>
+                <li><a href="contate.php">Contate-nos</a></li>
+                <li><a href="index.php">Sobre nós</a></li>
 					<?php
 					if(isset($_SESSION["usuario"])){
-						echo '<li><a href="#" id="login">'.
-						$_SESSION["usuario"].'</a>
-							<ul id="sub-menu" class="sub-menu">
-								<form action="./php/logar.php" class="form-cadastro" method="POST">
-								<li><button type="submit" name="btnSair">Sair</button></li>
-								</form>
-							</ul>
-						</li></ul>';
+						echo '<li><button id="login" class="sessao">'.
+						$_SESSION["usuario"].'</button></a></ul>';
+						echo '<script>
+							//script para o modal
+								function iniciaModal(modalID){
+									const modal = document.getElementById(modalID);
+									if (modal){
+										modal.classList.add("mostrar");
+										modal.addEventListener("click", (e)=> {
+										console.log(e);
+										if(e.target.className == "fechar"){
+											modal.classList.remove("mostrar");
+										}
+										});
+									}
+								}
+
+								const sessaoR = document.querySelector(".sessao");
+								sessaoR.addEventListener("click", () => iniciaModal ("modal-container"));
+							</script>
+							<div id="modal-container" class="modal-container">
+								<div class="modal" style="border-color: red;">
+									<button class="fechar" style="border-color: red;">X</button>
+									<h3>Deseja encerrar a sessão?</h3>
+									<p>Ao clicar abaixo você desconectará de sua conta.</p>
+									<form action="php/logar.php" method="POST">
+										<button name="btnSair" class="encerrar-sessao">Encerrar</button>
+									</form>
+								</div>
+							</div>';
 
 						}else {
 							echo '<li><a href="cadastro.php" id="login">

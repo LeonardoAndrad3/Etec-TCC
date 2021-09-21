@@ -14,6 +14,10 @@ body{
     border: 2px solid rgb(12, 147, 3);
     border-radius: 10px;
     text-align: center;
+    font-size: 16px;
+    background-color: transparent;
+    padding: 8px;
+    cursor: pointer;
 }
 
 a{
@@ -42,41 +46,9 @@ a:hover{ /*mostrar área de contato*/
     gap: .5rem; /*espaço entre cada item*/
 }
 
-#menu li{
-    position: relative;
-}
-
-#menu li ul{
-    position: absolute;
-}
-
-.sub-menu{
-    display: flex;
-    background-color: rgb(53, 53, 53);
-    list-style: none;
-    font-weight: bold;
-    border-radius: 0 0 10px 10px;
-    padding: 18px 10px 18px 10px;
-    right: 0;
-    width: 180px;
-    align-items: center;
-    display: none;
-}
-
-.sub-menu a{
-    color: red;
-}
-
-#menu a{
+#menu a {
     display: block;
     padding: .5rem;
-}
-
-nav ul li:hover ul{
-    display: flex;
-}
-nav ul li:active ul{
-    display: flex;
 }
 
 #btn-mobile{
@@ -84,10 +56,808 @@ nav ul li:active ul{
     color: white;
 }
 
-/*Esse comando é apenas quando iniciar a sessios*/
-#login{
-    pointer-events: none;
-}
+/*Início do conteúdo*/
+
+    /*Inicio home*/
+    .home{
+        color: white;
+        position: relative;
+    }
+    .fundo-home{
+        width: 100%;
+        max-height: 85vh;
+        size: 100%;
+    }
+
+    .titulo{
+        font-size: 50px;
+        position: absolute;
+        text-align: center;
+        top: 30px;
+        right: 100px;
+    }
+
+    .texto-center{
+        text-align: center;
+        margin: 30px;
+        line-height: 30px;
+    }
+
+    .titulo-centralizado{
+        font-size: 50px;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        margin: 0 20vw 0 20vw;
+    }
+
+    .sub-titulo{
+        position: absolute;
+        text-align: right;
+        width: 400px;
+        top: 160px;
+        right: 100px;
+    }
+
+    .home-botoes{
+        display: flex;
+        position: absolute;
+        top: 300px;
+        right: 80px;
+    }
+    .botoes-verdes{
+        color: white;
+        font-weight: bold;
+        border: 2px solid rgb(12, 147, 3);
+        border-radius: 10px;
+        padding: 15px;
+        background: rgb(12, 147, 3);
+    }
+    .botoes{
+        color: rgb(12, 147, 3);
+        font-weight: bold;
+        border: 2px solid rgb(12, 147, 3);
+        border-radius: 10px;
+        padding: 15px;
+    }
+    .botoes:hover{
+        color: white;
+        background-color: rgb(12, 147, 3);
+    }
+    .botoes-linha{
+        margin: 0;
+        padding: 20px;
+    }
+    /*Fim home*/
+
+
+    /*Início div-oque*/
+    .oque{
+        color: white;
+    }
+
+    .lista-oque{
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        text-align: center;
+    }
+    .busca, .escolher, .contratar{
+        list-style: none;
+    }
+    .paragrafo-oque{
+        margin-top: 0;
+    }
+
+    .image-oque{
+        width: 350px;
+        height: 230px;
+    }
+    /*fim div-oque*/
+
+
+    /*Inicio sobre*/
+    .sobre-nos{
+        color: white;
+        max-width: 100%;
+        display: flex;
+        margin: 40px 45px 30px 45px;
+        text-align: left;
+        align-content: space-between;
+        gap: 40px;
+        padding: 40px 40px;
+    }
+
+    .texto-sobre, .image-sobre{
+        list-style: none;
+    }
+    .paragrafo-sobre{
+        line-height: 30px;
+        padding-top: 20px;
+    }
+    /*Abaixo é um titulo onde o pai tem flex box e precisa estar na esquerda*/
+    .titulo-esquerda{
+        font-size: 50px;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        margin: 20px 100px 20px 100px;
+    }
+    .image-lampada{
+        max-width: 500px;
+        height: 400px;
+    }
+    /*Fim sobre*/
+
+
+    /*Inicio sobre*/
+    .motivos{
+        color: white;
+        max-width: 100%;
+        display: flex;
+        margin: 40px 45px 30px 45px;
+        text-align: right;
+        align-content: space-between;
+        gap: 40px;
+        padding-bottom: 40px;
+    }
+
+    .texto-motivos, .image-motivos{
+        list-style: none;
+    }
+
+    .paragrafo-motivos{
+        line-height: 35px;
+        padding-top: 0;
+    }
+
+    .titulo-direita{
+        font-size: 50px;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        margin: 0 70px 20px 70px;
+    }
+
+    .image-porque-escolher{
+        width: 600px;
+        height: 400px;
+    }
+    .botao-motivos{
+        text-align: left;
+        margin-left: 30px;
+    }
+
+    /*Fim sobre*/
+
+    /*ìnicio opcoes*/
+
+    .opcoes{
+        background-image: url(../icon/fundo-opcoes.png);
+        height: 50vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        color: white;
+        margin-bottom: 40px;
+        padding-top: 5%;
+        padding-bottom: 10px;
+    }
+    .tipos-chaveiros{
+        text-align: center;
+    }
+
+    /*Fim opcoes*/
+
+    /*Inicio rodape*/
+    footer{
+        color: white;
+        background-color: rgb(53, 53, 53);
+        padding: 30px;
+    }
+
+    .rodape{
+        list-style: none;
+        text-align: center;
+    }
+
+    .titulo-rodape{
+        font-size: 30px;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 2px solid white;
+        margin: 0 35vw 0 35vw;
+    }
+    .copy{
+        padding-top: 20px;
+    }
+    .link-rodape{
+        text-decoration: underline;
+    }
+    /*Fim rodape*/
+
+    /*Inicio cadastro*/
+    .escolher-users img{
+        width: 350px;
+        cursor: pointer;
+    }
+    .users{
+        display: flex;
+        color: white;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width:fit-content;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        gap: 100px;
+    }
+    .div-escolher, .users p{
+        color: rgb(12, 147, 3);
+        text-align: center;
+        font-size: 16px;
+    }
+    .escolher-users p{
+        padding: 0;
+        margin: 5px 30px 5px 30px;
+        font-size: 18px;
+    }
+    .escolher-form{
+        display: flex;
+        color: rgb(12, 147, 3);
+        font-size: 20px;
+        margin: 20px 250px 20px 250px;
+    }
+    .escolher-form li, .paragrafo-user{
+        border-bottom: 2px solid rgb(53, 53, 53);
+        padding: 10px 40px 10px 40px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .entrar{
+        color: white;
+        max-width: 100%;
+        font-size: 16px;
+    }
+    .titulo-entrar{
+        font-size: 35px;
+        text-align: center;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        padding: 30px 10px 10px 10px;
+        margin: 0 30vw 20px 30vw;
+    }
+    .paragrafo-entrar{
+        text-align: center;
+    }
+    .cadastro{
+        color: white;
+        max-width: 100%;
+        font-size: 16px;
+    }
+    .titulo-cadastro{
+        font-size: 35px;
+        text-align: center;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        padding: 30px 10px 10px 10px;
+        margin: 0 80px 20px 80px;
+    }
+    .login-cadastro p{
+        margin: 30px 80px 20px 80px;
+        text-align: left;
+    }
+    .lista-form{
+        display: flex;
+    }
+    .lista-form p{
+        margin-bottom: 5px;
+    }
+    .lista-form ul, li{
+        margin-left: auto;
+        margin-right: auto;
+        list-style: none;
+        padding: 10px;
+    }
+    .form-cadastro input[type="text"], input[type="password"], select, #busca-fun-input{
+        color: white;
+        background-color: rgb(24, 25, 27);
+        width: 300px;
+        height: 25px;
+        border: none;
+        border-bottom: 2px solid rgb(53, 53, 53);
+        font-size: 16px;
+    }
+    .form-cadastro input:hover{
+        border-color: rgb(12, 147, 3);
+    }
+    .form-cadastro select:hover{
+        border-color: rgb(12, 147, 3);
+    }
+    .form-cadastro input:focus{
+        outline: 0;
+    }
+    .form-cadastro select:focus{
+        outline: 0;
+    }
+    .form-cadastro input[type="button"], .form-cadastro input[type="submit"]{
+        cursor: pointer;
+        color: rgb(12, 147, 3);
+        font-weight: bold;
+        border: 2px solid rgb(12, 147, 3);
+        border-radius: 10px;
+        padding: 15px;
+        background-color: rgb(24, 25, 27);
+        margin: 20px 0 20px 0;
+        width: 200px;
+        font-size: 18px;
+    }
+    .form-cadastro input[type="button"]:hover, .form-cadastro input[type="submit"]:hover{
+        background-color: rgb(12, 147, 3);
+        color: white;
+    }
+    .submit-line{
+        text-align: center;
+    }
+    .form-cadastro input[type="checkbox"]{
+        width: 20px;
+        height: 15px;
+        cursor: pointer;
+    }
+    #myInput{
+        margin-top: 10px;
+    }
+    #lista{
+        cursor: pointer;
+        color: white;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    #textBox1{
+        margin-top: 10px;
+    }
+    .visible-senha{
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    /*Fim cadastro*/
+
+    /*Inicio da parte dos serviços*/
+    .apresentacao-servicos{
+        color: white;
+        margin: 30px;
+    }
+    .align-esquerda{
+        font-size: 45px;
+        text-align: left;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        max-width: 550px;
+    }
+    .voce-chaveiro{
+        margin: 70px 30px 70px 30px;
+        color: white;
+        text-align: center;
+    }
+    .voce-chaveiro p{
+        padding-bottom: 20px;
+    }
+    .botao-maior{
+        color: rgb(12, 147, 3);
+        font-weight: bold;
+        border: 2px solid rgb(12, 147, 3);
+        border-radius: 10px;
+        padding: 15px;
+        font-size: 18px;
+    }
+    .botao-maior:hover{
+        color: white;
+        background-color: rgb(12, 147, 3);
+    }
+    .opcoes-servicos{
+        margin: 70px 30px 70px 30px;
+        color: white;
+        text-align: center;
+    }
+    .input-funcao ul{
+        display: flex;
+    }
+    
+    #busca-fun-input, select{
+        color: white;
+        background-color: rgb(24, 25, 27);
+        width: 200px;
+        height: 25px;
+        border: none;
+        border-bottom: 2px solid rgb(53, 53, 53);
+        font-size: 16px;
+        margin-left: 15px;
+    }
+    #busca-fun-input{
+        width: 300px;
+    }
+    #busca-fun-input:hover , select:hover{
+        border-color: rgb(12, 147, 3);
+    }
+    #busca-fun-input:focus, select:focus{
+        outline: 0;
+    }
+    #busca-fun-input::placeholder{
+        color: rgb(190, 190, 190);
+        font-size: 15px;
+        padding-left: 10px;
+    }
+    .servicos-chaveiros{
+        color: white;
+        margin: 70px 0 70px 0;
+        display: grid;
+        grid-gap: 40px;
+        justify-content: center;
+        grid-template-areas:  /*Diz a estrutura do meu grid*/
+        "blocos-chaveiros blocos-chaveiros blocos-chaveiros"
+        "blocos-chaveiros blocos-chaveiros blocos-chaveiros"
+        "blocos-chaveiros blocos-chaveiros blocos-chaveiros"
+        "blocos-chaveiros blocos-chaveiros blocos-chaveiros";
+    }
+    .blocos-chaveiros{
+        background-color: rgb(53, 53, 53);
+        text-align: center;
+        width: 300px;
+        padding: 0 20px 20px 20px;
+        border-radius: 10px;
+        grid-area: "blocos-chaveiros"; /*fazendo isso ele identifica a label la no grid-template*/
+    }
+    .blocos-chaveiros h4{
+        font-size: 22px;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        margin: 20px auto 20px auto;
+        max-width: 250px;
+        padding: 10px;
+    }
+    .blocos-chaveiros p{
+        text-align: justify;
+        margin: 0 0 15px 0;
+    }
+    .mais-info-bloco{
+        text-decoration: underline;
+    }
+    .mais-info-bloco:hover{
+        color: rgb(12, 147, 3);
+        text-decoration: none;
+    }
+    .linha-botao-bloco{
+        margin: 10px 0 10px 0;
+    }
+    /*Fim da parte dos serviços*/    
+
+/*Fim do conteúdo*/
+
+/*Inicio modal*/
+    .modal-container{
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(0, 0, 0,.5);
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 2000;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+    .modal{
+        background: rgb(53, 53, 53);
+        width: 30%;
+        min-width: 300px;
+        padding: 40px;
+        border: 2px solid rgb(12, 147, 3);
+        box-shadow: 0 0 0 10px rgb(53, 53, 53);
+        position: relative;
+        color: white;
+        text-align: center;
+    }
+    @keyframes modal{
+        from{
+            opacity: 0;
+            transform: translate(0, -60px, 0);
+        }
+        tp{
+            opacity: 1;
+            transform: translate(0, 0, 0);
+        }
+    }
+
+    .mostrar .modal{
+        animation: modal .3s;
+    }
+    .fechar{
+        position: absolute;
+        font-size: 1.2em;
+        font-weight: bold;
+        top: -30px;
+        right: -30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 4px solid rgb(12, 147, 3);
+        background: rgb(53, 53, 53);
+        color: white;
+        font-family: monospace;
+        cursor: pointer;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .3);
+    }
+    .modal-container.mostrar{
+        display: flex;
+    }
+
+/*Fim modal*/
+
+    /*Inicio detalhes dos serviços*/
+    .conteudo-detalhes{
+        color: white;
+    }
+    .detalhes{
+        display: grid;
+        grid-template-areas: 
+            "nome descricao"
+            "nome funcao"
+            "encontrar valor"
+            "avaliacao avaliacao"
+            "denunciar denunciar";
+        grid-gap: 30px;
+        margin: 70px;
+        justify-items: center;
+    }
+    .detalhe-nome{ 
+        grid-area: "nome";
+        background-color: rgb(53, 53, 53);
+        text-align: center;
+        width: 300px;
+        padding: 0 20px 20px 20px;
+        border-radius: 10px;
+        grid-row: nome;
+    }
+    .detalhe-nome h4{
+        font-size: 25px;
+        color: white;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        padding: 12px;
+    }
+    .botao-detalhes-menor{
+        color: rgb(12, 147, 3);
+        font-weight: bold;
+        border: 2px solid rgb(12, 147, 3);
+        border-radius: 10px;
+        padding: 15px;
+        font-size: 18px;
+    }
+    .botao-detalhes-menor:hover{
+        color: white;
+        background-color: rgb(12, 147, 3);
+    }
+    .detalhe-descricao, .detalhe-funcao, .detalhe-valor, .detalhe-encontrar{
+        background-color: rgb(53, 53, 53);
+        text-align: left;
+        width: 500px;
+        padding: 0 20px 20px 20px;
+        border-radius: 10px;
+    }
+    .detalhe-encontrar{
+        background-color: rgb(24, 25, 27);
+    }
+    .detalhe-descricao h4, .detalhe-funcao h4, .detalhe-valor h4, .detalhe-avaliacoes h4, .detalhe-encontrar h4{
+        font-size: 18px;
+        margin-bottom: 0;
+        border-left: 6px solid rgb(12, 147, 3);
+        padding-left: 10px;
+    }
+    .detalhe-denuncie h4{
+        font-size: 18px;
+        margin: 20px auto 0 auto;
+        margin: 20px 185px 0 185px;
+        border-left: 6px solid rgb(12, 147, 3);
+    }
+    .detalhe-descricao{
+        grid-area: "descricao";
+    }
+    .detalhe-funcao{
+        grid-area: "funcao";
+    }
+    .detalhe-valor{
+        grid-area: "valor";
+    }
+    .detalhe-encontrar{
+        grid-area: "encontrar";
+        width: 300px;
+        height: 40vh;
+    }
+    .detalhe-avaliacoes{
+        grid-area: "avaliacao";
+        grid-column: avaliacao;
+        width: 81%;
+        background-color: rgb(53, 53, 53);
+        text-align: left;
+        padding: 0 20px 20px 20px;
+        border-radius: 10px;
+    }
+    .uni-avaliacoes{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .detalhe-denuncie{
+        grid-area: "denunciar";
+        grid-column: denunciar;
+        background-color: rgb(53, 53, 53);
+        text-align: left;
+        width: 500px;
+        padding: 0 20px 20px 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .form-denuncia input[type="text"], input[type="email"]{
+        background-color: rgb(53, 53, 53);
+        border: none;
+        border-bottom: 2px solid rgb(24, 25, 27);
+        color: white;
+        width: 200px;
+        margin: 0 0 10px 0;
+    }
+    .mensagem-area-denuncia{
+        background-color: rgb(53, 53, 53);
+        border: 2px solid rgb(24, 25, 27);
+        border-radius: 10px;
+        resize: none;
+        height: 120px;
+        width: 200px;
+        padding: 10px;
+        color: white;
+        font-size: 12px;
+    }
+    .form-denuncia input[type="text"]:hover, input[type="email"]:hover{
+        border-color: rgb(12, 147, 3);
+    }
+    .form-denuncia input:focus{
+        outline: 0;
+    }
+    .form-denuncia input[type="submit"]{
+        cursor: pointer;
+        color: rgb(12, 147, 3);
+        font-weight: bold;
+        border: 2px solid rgb(12, 147, 3);
+        border-radius: 10px;
+        padding: 15px;
+        background-color: rgb(53, 53, 53);
+        margin: 30px 0 20px 0;
+        font-size: 18px;
+        width: 200px;
+    }
+    .form-denuncia input[type="submit"]:hover{
+        background-color: rgb(12, 147, 3);
+        color: white;
+    }
+    /*Inicio estrelas*/
+    .estrelas input[type=radio]{
+        display: none; /*deixando invisivel para ter apenas as labels funcionando*/
+    }
+    .estrelas label i.fa:before{
+        content: '\f005'; /*Aqui tornando a label em estrela (ela pegou o id de check para funcionar)*/
+        color: yellow;
+        cursor: pointer;
+    }
+    .estrelas input[type=radio]:checked ~ label i.fa:before{
+        color: rgb(182, 182, 182);
+    }
+    /*Fim estrelas*/
+    .botao-detalhes-estrela{
+        color: rgb(12, 147, 3);
+        margin: 15px;
+        font-size: 18px;
+        background-color: rgb(53, 53, 53);
+        border: 2px solid rgb(12, 147, 3);
+        padding: 15px;
+        border-radius: 10px;
+        width: 200px;
+        cursor: pointer;
+    }
+    .botao-detalhes-estrela:hover{
+        color: white;
+        background-color: rgb(12, 147, 3);
+    }
+    /*Fim detalhes dos serviços*/
+
+    /*Inicio contate-nos tela*/
+    .content-contate{
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        max-width: 100%;
+        margin: 40px auto;
+        display: flex;
+        justify-content:center;
+    }
+    .titulo-contate{
+        color: white;
+        font-size: 35px;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        padding-bottom: 10px;
+        margin: 10px;
+    }
+    .info-contate{
+        font-size: 14px;
+        margin-top: 0;
+    }
+    .ul-contate1{
+        margin: auto;
+    }
+    .formulario-contate p{
+        text-align: left;
+        padding-left: 30px;
+    }
+    .content-contate img{
+        width: 720px;
+    }
+    .content-contate input[type="text"],.content-contate input[type="email"]{
+        border: none;
+        background-color: rgb(24, 25, 27);
+        border-bottom: 2px solid rgb(53, 53, 53);
+        width: 300px;
+        color: white;
+        font-size: 16px;
+    }
+    .content-contate textarea{
+        background-color: rgb(24, 25, 27);
+        border: 2px solid rgb(53, 53, 53);
+        border-radius: 10px;
+        resize: none;
+        height: 120px;
+        width: 280px;
+        padding: 10px;
+        color: white;
+        font-size: 15px;
+    }
+    .content-contate input[type="text"]:hover, textarea:hover{
+        border-color: rgb(12, 147, 3);
+    }
+    .content-contate input:focus, textarea:focus{
+        outline: 0;
+    }
+    .content-contate input[type="submit"]{
+        cursor: pointer;
+        color: rgb(12, 147, 3);
+        font-weight: bold;
+        border: 2px solid rgb(12, 147, 3);
+        border-radius: 10px;
+        padding: 15px;
+        background-color: rgb(24, 25, 27);
+        margin: 30px auto;
+        font-size: 18px;
+        width: 300px;
+    }
+    .content-contate input[type="submit"]:hover{
+        background-color: rgb(12, 147, 3);
+        color: white;
+    }
+    select#lista{
+        width: 300px;
+        margin: 0;
+    }
+    /*Fim contate-nos*/
+
+    /*Inicio encerrando sessao*/
+    .encerrar-sessao{
+        font-size: 18px;
+        color: red;
+        background-color: transparent;
+        border: 2px solid red;
+        padding: 10px 12px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    .encerrar-sessao:hover{
+        background-color: red;
+        color: white;
+    }
+    /*FIm encerrando sessao*/
 
 @media (max-width: 600px){
     /*caso esteja abaixo de 600px*/
@@ -149,10 +919,184 @@ nav ul li:active ul{
         transform: rotate(-135deg);
         top: -7px;
     }
-    .sub-menu{
-        margin: 10px auto;
+
+    /*Configs do Cadastro*/
+    .users{
+        display: block;
     }
+    .escolher-users{
+        margin-bottom: 20px;
+    }
+    .escolher-users img{
+        width: 300px;
+    }
+    .div-escolher{
+        max-width: 100%;
+    }
+    .escolher-form{
+        margin: 15px;
+    }
+    .entrar{
+        max-width: 100%;
+    }
+    .titulo-entrar{
+        margin: 0 80px 20px 80px;
+    }
+    .cadastro{
+        max-width: 100%;
+    }
+    .lista-form{
+        display: grid;
+        place-items: center;
+    }
+    .form-cadastro input[type="text"], input[type="password"], select, #busca-fun-input{
+        width: 250px;
+    }
+    /*Fim do Cadastro*/
+
+    /*Configs do rodape*/
+    footer{
+        margin-top: 0;
+    }
+    .titulo-rodape{
+        margin: 0 15px 15px 15px;
+    }
+    .titulo-cadastro{
+        margin: 30px;
+        max-width: 100%;
+    }
+    /*fim do rodape*/
+
+    /*configs opções*/
+    .opcoes{
+        max-width: 100%;
+        background: rgb(24, 25, 27);
+    }
+    .titulo-centralizado{
+        font-size: 35px;
+        background-image: url(../icon/fundo-opcoes.png);
+        background-position:center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        max-width: 100%;
+        margin: 10px 0 0 0;
+        padding: 15px;
+    }
+    .tipos-chaveiros{
+        text-align: center;
+        margin: 20px;
+    }
+    /*fim opções*/
+
+    /*configs motivos*/
+    .motivos{
+        display: block;
+        max-width: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+    .image-motivos{
+        display: none;
+    }
+    .titulo-direita{
+        font-size: 35px;
+        padding: 0;
+        margin: 0;
+    }
+    .paragrafo-motivos{
+        text-align: justify;
+    }
+    .botao-motivos{
+        margin: 0;
+        text-align: center;
+    }
+    /*fim motivos*/
+
+    /*Configs sobre nos*/
+    .sobre-nos{
+        display: block;
+        max-width: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+    .titulo-esquerda{
+        font-size: 35px;
+        margin: 0;
+        padding: 0;
+    }
+    .paragrafo-sobre{
+        text-align: justify;
+        margin: 0;
+    }
+    .image-lampada{
+        max-width: 100%;
+        height: 200px;
+        margin: auto;
+        padding-top: 10px;
+    }
+    /*Fim sobre nos*/
+
+    /*Configs oque*/
+    .lista-oque{
+        display: block;
+        max-width: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+    .image-oque{
+        width: 80%;
+        height: auto;
+    }
+    .texto-center{
+        text-align: justify;
+    }
+    /*Fim oque*/
+
+    /*Configs home*/
+    .texto-home img{
+        display: none;
+    }
+    .home, .sub-titulo, .titulo, .home-botoes{
+        position: static;
+        display: grid;
+        margin: auto;
+        padding: 10px;
+        text-align: center;
+    }
+    .sub-titulo{
+        width: 80%;
+    }
+    /*Fim home*/
+    /*Modal*/
+    .modal{
+        min-width: 120px;
+    }
+    /*fim Modal*/
+
+    /*Inicio detalhes do serviço*/
+        .detalhes{
+            grid-template-areas: 
+            "nome"
+            "descricao"
+            "funcao"
+            "encontrar"
+            "valor"
+            "avaliacao"
+            "denunciar";
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .detalhes ul{
+            max-width: 80%;
+        }
+        .detalhe-denuncie h4{
+            margin: 20px auto 10px auto;
+            text-align: left;
+            padding-left: 10px;
+        }
+    /*Fim detalhes do serviço*/
 }
+
 @media (max-width: 750px){
     #menu{
         position: absolute;
@@ -212,15 +1156,75 @@ nav ul li:active ul{
         transform: rotate(-135deg);
         top: -7px;
     }
-    .sub-menu{
-        right: 0;
-        left: 0;
+    /*Inicio consultando serviços*/
+    .servicos-chaveiros{
+        grid-template-areas: 
+        "blocos-chaveiros"
+        "blocos-chaveiros"
+        "blocos-chaveiros"
+        "blocos-chaveiros";
+        max-width: 100%;
     }
-    .sub-menu a{
-        color: red;
-        text-align: center;
-        margin: auto;
+    .blocos-chaveiros{
+        width: 250px;
     }
+    #busca-fun-input{
+        width: 200px;
+    }
+
+    /*Fim consultando serviços*/
+    .sobre-nos{
+        display: block;
+    }
+    .image-lampada{
+        max-width: 100%;
+    }
+    .lista-oque{
+        display: block;
+    }
+    .image-porque-escolher{
+        display: none;
+    }
+    /*Inicio detalhes serviços*/
+    .detalhes{
+        grid-template-areas: 
+            "nome"
+            "descricao"
+            "funcao"
+            "encontrar"
+            "valor"
+            "avaliacao"
+            "denunciar";
+    }
+    .detalhes ul{
+        width: 90%;
+        margin: 10px auto;
+    }
+    .detalhe-denuncie h4{
+        margin: 20px 0 10px 0;
+        text-align: left;
+        padding-left: 10px;
+    }
+    /*Fim detalhes serviços*/
+    /*Tela contate-nos*/
+    .content-contate img{
+        display: none;
+    }
+    .formulario-contate input[type="text"], input[type="email"]{
+        width: 250px;
+        max-width: 100%;
+    }
+    select#lista{
+        padding: 10px;
+        width: 250px;
+    }
+    .formulario-contate textarea{
+        width: 250px;
+    }
+    .formulario-contate input[type="submit"]{
+        width: 250px;
+    }
+    /*Fim Tela contate-nos*/
 }
 @media (max-width: 930px) and (min-width: 751px){
     #menu{
@@ -281,36 +1285,100 @@ nav ul li:active ul{
         transform: rotate(-135deg);
         top: -7px;
     }
-    .sub-menu{
-        right: 0;
-        left: 0;
+    .lista-oque{
+        display: block;
     }
-    .sub-menu a{
-        color: red;
-        text-align: center;
-        margin: auto;
+    .image-porque-escolher{
+        display: none;
     }
+    .sobre-nos{
+        display: block;
+    }
+    .image-lampada{
+        max-width: 100%;
+    }
+    /*Inicio detalhes serviços*/
+    .detalhes{
+        max-width: 100%;
+    }
+    .detalhes ul{
+        width: 90%;
+        margin: 10px auto;
+    }
+    .detalhe-denuncie h4{
+        margin: 20px 0 10px 0;
+        text-align: left;
+        padding-left: 10px;
+    }
+    /*Fim detalhes serviços*/
+    /*Tela contate-nos*/
+    .content-contate img{
+        width: 50vw;
+    }
+    .ul-contate1{
+        width: 35vw;
+    }
+    /*Fim Tela contate-nos*/
 }
 
 @media (max-width: 1150px) and (min-width: 931px){
-    .sub-menu{
-        right: 0;
-        left: 0;
+    /*Inicio consultando serviços*/
+    .servicos-chaveiros{
+        grid-template-areas: 
+        "blocos-chaveiros blocos-chaveiros"
+        "blocos-chaveiros blocos-chaveiros"
+        "blocos-chaveiros blocos-chaveiros"
+        "blocos-chaveiros blocos-chaveiros";
     }
-    .sub-menu a{
-        color: red;
-        text-align: center;
-        margin: auto;
+    /*Fim consultando serviços*/
+    .image-lampada{
+        max-width: 350px;
     }
+    .image-porque-escolher{
+        max-width: 350px;
+    }
+    .image-oque{
+        max-width: 100%;
+        max-height: 400px;
+    }
+    /*Inicio detalhes serviços*/
+    .detalhes{
+        max-width: 100%;
+    }
+    .detalhes ul{
+        width: 90%;
+        margin: 10px auto;
+    }
+    .detalhe-denuncie h4{
+        margin: 20px 0 10px 0;
+        text-align: left;
+        padding-left: 10px;
+    }
+    /*Fim detalhes serviços*/
+    /*Tela contate-nos*/
+    .content-contate img{
+        width: 60vw;
+    }
+    .ul-contate1{
+        width: 35vw;
+    }
+    /*Fim Tela contate-nos*/
 }
+
 @media (max-width: 1250px) and (min-width: 1151px){
-    .sub-menu{
-        right: 0;
-        left: 0;
+    .image-lampada{
+        max-width: 400px;
     }
-    .sub-menu a{
-        color: red;
-        text-align: center;
-        margin: auto;
+    .image-oque{
+        max-width: 100%;
+        max-height: 80%;
     }
+    /*Tela contate-nos*/
+    .content-contate img{
+        width: 600px;
+    }
+    .ul-contate1{
+        width: 400px;
+    }
+    /*Fim Tela contate-nos*/
 }

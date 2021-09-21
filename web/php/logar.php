@@ -1,14 +1,14 @@
 <?php
-include("query.php");
+include_once("query.php");
 $db = new ControllerDb();
 $db->connectDb();
+session_start();
 
-function logar($query){
+function entrar($query){
     try{$result = pg_query($query);
         session_reset();
         if(pg_num_rows($result) > 0){
             $row = pg_fetch_assoc($result);
-            session_start();
             $_SESSION['usuario'] = $row["nome"];
             echo'<script>window.location.replace("../index.php");alert("Bem-vindo '.$_SESSION['usuario'].'!");</script>';
             include("../css/button.css");
@@ -26,21 +26,22 @@ if(isset($_POST['btnLoginCliente'])){
     $senha = md5(addslashes($_POST["txtSenhaLogin"]));
     // Fazendo a criptografia para entrar corretamente
 
-    logar($query="select email, senha, nome from Cliente where email='$email' and senha='$senha';");
+    entrar($query="select email, senha, nome from Cliente where email='$email' and senha='$senha';");
+    
 } elseif(isset($_POST['btnLoginChaveiro'])){           
 
     $email = addslashes($_POST["txtEmailLogin"]);
     $senha = md5(addslashes($_POST["txtSenhaLogin"]));
     // Fazendo a criptografia para entrar corretamente
 
-    logar($query="select email, senha, nome from Chaveiro where email='$email' and senha='$senha';");
-};
+    entrar($query="select email, senha, nome from Chaveiro where email='$email' and senha='$senha';");
 
-if(isset($_POST["btnSair"])){
-    echo'<script>window.location.replace("../index.php");alert("Até uma próxima!");</script>';
-    include("../principal.php");
+} elseif(isset($_POST["btnSair"])){
+    include_once("logar.php");
     session_destroy();
-    
+    echo'<script>window.location.replace("../index.php");alert("Até uma próxima!");</script>';
 }
+
+
 
 ?>

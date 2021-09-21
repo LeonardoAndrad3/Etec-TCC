@@ -12,9 +12,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
- 
         <!-- <script src="chamarFunctionPhp.js"></script> -->
         <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    
     </head>
     <body>
 
@@ -25,12 +25,12 @@
                     <span id="hamburguer"></span>
                 </button>
                 <ul id="menu" role="menu">
-                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="servicos.php">Serviços</a></li>
                     <li><a href="">Sua localização</a></li>
-                    <li><a href="">Contate-nos</a></li>
-                    <li><a href="">Sobre nós</a></li>
-                    <li><a href="cadastro.php" id="login">Entrar</a></li>
-                </ul>
+                    <li><a href="contate.php">Contate-nos</a></li>
+                    <li><a href="index.php">Sobre nós</a></li>              
+                    <li><a href="cadastro.php" id="login">entrar</a></li>
+                </ul>;
             </nav>
         </header>
 
@@ -206,6 +206,7 @@
                 <h3>Cadastro realizado com sucesso!</h3>
             </div>
         </div>        -->
+
 
         <script type="text/javascript" src="js/script.js"></script>
 
