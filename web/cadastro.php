@@ -66,7 +66,7 @@
             </div>
         
             <div class="form-cadastro">
-                <form class="lista-form" action="php/logar.php" method="POST">
+                <form class="lista-form" action="php/cadastro.php" method="POST">
                     <ul>
                         <li><p>*Nome:</p><input type="text" name="txtName" required></li>
                         <li><p>*Email:</p><input type="text" name="txtEmailCadastro"required></li>
@@ -107,7 +107,7 @@
             </div>
         
             <div class="form-cadastro">
-                <form class="lista-form" name="form_cliente" action="php/logar.php" method="POST">
+                <form class="lista-form" name="form_cliente" action="php/cadastro.php" method="POST">
                     <ul>
                         <li><p>*Nome:</p><input type="text" name="txtName"required></li>
                         <li><p>*Email:</p><input type="text" name="txtEmailCadastro"required></li>
