@@ -13,7 +13,6 @@
     
     function construct(){
         $this->conn = $this->connectDb();
-    }        
-    
+    }            
 }
 ?>

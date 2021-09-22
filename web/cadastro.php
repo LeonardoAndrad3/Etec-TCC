@@ -98,7 +98,6 @@
                 </form>
             </div>
         </section>
-        
         <!--Abaixo é o cadastro do usuário normal-->
         <section id="cadastronormal" class="cadastro" style="display: none;">
             <div class="login-cadastro">
