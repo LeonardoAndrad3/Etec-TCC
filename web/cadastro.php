@@ -30,7 +30,7 @@
                     <li><a href="contate.php">Contate-nos</a></li>
                     <li><a href="index.php">Sobre nós</a></li>              
                     <li><a href="cadastro.php" id="login">entrar</a></li>
-                </ul>;
+                </ul>
             </nav>
         </header>
 
