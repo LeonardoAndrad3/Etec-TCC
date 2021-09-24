@@ -1,14 +1,14 @@
-const cacheName = 'cacheV1';
+/*const cacheName = 'cacheV1';
 
 const resourcesToPrecache = [
-    'view/erro.html',
-    'css/style.css',
-    'icon/erro-conexao.png',
-    'icon/logo-2.png',
-    'js/main.js',
-    'js/jquery-3.1.1.min.js',
-    'js/script.js',
-    'manifest.js',
+    '/erro.html',
+    '/css/style.css',
+    '/icon/erro-conexao.png',
+    '/icon/logo-2.png',
+    '/js/main.js',
+    '/js/jquery-3.1.1.min.js',
+    '/js/script.js',
+    '/manifest.js',
 ];
 
 self.addEventListener('install', (event) => {
@@ -21,6 +21,7 @@ self.addEventListener('install', (event) => {
 self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request)
-            .then(cacheResponse => (cacheResponse || fetch(event.request))),
+            .then(cacheResponse => (fetch(event.request) || cacheResponse)),
     );
 });
+*/
