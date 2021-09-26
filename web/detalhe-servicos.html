@@ -81,10 +81,10 @@
             <ul class="detalhe-denuncie">
                 <li><h4>Denuncie</h4></li>
                 <li>
-                    <form class="form-denuncia">
-                        <p>Nome:</p><input type="text">
-                        <p>Email:</p><input type="email">
-                        <p>Mensagem:</p><textarea class="mensagem-area-denuncia"></textarea>
+                    <form class="form-denuncia" method="POST" action="sendDenuncia.php">
+                        <p>Nome:</p><input type="text" name="nome">
+                        <p>Email:</p><input type="email" name="email">
+                        <p>Mensagem:</p><textarea class="mensagem-area-denuncia" name="mensagem"></textarea>
                         <br/><input type="submit" value="Enviar">
                     </form>
                 </li>

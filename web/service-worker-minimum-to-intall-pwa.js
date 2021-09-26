@@ -1,27 +1,47 @@
-/*const cacheName = 'cacheV1';
+const cacheName = 'v1';
 
-const resourcesToPrecache = [
+const cacheFiles = [
+    '/',
+    '/index.html',
     '/erro.html',
     '/css/style.css',
     '/icon/erro-conexao.png',
     '/icon/logo-2.png',
     '/js/main.js',
     '/js/jquery-3.1.1.min.js',
-    '/js/script.js',
-    '/manifest.js',
+    '/js/script.js'
 ];
 
-self.addEventListener('install', (event) => {
-    event.waitUtil(
-        caches.open(cacheName)
-            .then(cache =>  (cache.addAll(resourcesToPrecache))),
-    );
-});
+self.addEventListener('install', function(e){
+    console.log("SW installed");
 
-self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        caches.match(event.request)
-            .then(cacheResponse => (fetch(event.request) || cacheResponse)),
+    e.waitUntil(
+        caches.open(cacheName).then(function(cache){
+            console.log("SW caching cacheFiles");
+            return cache.addAll(cacheFiles);
+        })
+    )
+})
+
+self.addEventListener('activate', function(e){
+    console.log("SW activated");
+
+    e.waitUntil(
+
+        caches.keys().then(function(cacheName){
+            if(thisCacheName !== cacheName){
+                console.log("SW removing cached files from ", thisCacheName);
+                return caches.delete(thisCacheName);
+            }
+        })
+    )
+})
+
+self.addEventListener('fetch', (e) => {
+    console.log("SW fecthing");
+    
+    e.respondWith(
+        caches.match(e.request)
+            .then(cacheResponse => (cacheResponse || fetch(e.request))),
     );
 });
-*/
