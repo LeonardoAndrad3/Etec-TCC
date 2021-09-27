@@ -37,11 +37,9 @@ if(isset($_POST['btnLoginCliente'])){
     entrar($query="select email, senha, nome from Chaveiro where email='$email' and senha='$senha';");
 
 } elseif(isset($_POST["btnSair"])){
+    echo'<script>window.location.replace("../index.php");alert("Até uma próxima!");</script>';
     include_once("logar.php");
     session_destroy();
-    echo'<script>window.location.replace("../index.php");alert("Até uma próxima!");</script>';
-}
-
-
+}else{}
 
 ?>
