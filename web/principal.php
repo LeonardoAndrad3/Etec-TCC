@@ -8,6 +8,19 @@
 			<link rel="stylesheet" type="text/css" href="css/style.css">
 			<link rel="manifest" href="manifest.json">
 			<script src="js/main.js" defer></script>
+			<script type="text/javascript">
+			function updateStatus(){
+				if(navigator.onLine){
+					console.log('online');
+					document.getElementById("cssLink").href = "css/style.css";
+				}else{
+					document.getElementById("cssLink").href = "css/stylerr.css";
+				}
+			}
+			window.addEventListener('offline', updateStatus);
+			window.addEventListener('online', updateStatus);
+			updateStatus();
+			</script>
 			<script src="//code-sa1.jivosite.com/widget/PNSgAqbd3B" async></script>
 			<?php
 				include("php/logar.php");
@@ -69,7 +82,6 @@
 					?>
 			</nav>
 		</header>
-
 
 		<section class="conteudo">
 		
@@ -164,8 +176,12 @@
 			</footer>
 		
 		</section>
-		
+
+		<section class="mensagem-erro">
+            <img src="icon/erro-conexao.png">
+            <h3>Conecte-se à Internet</h3>
+            <p>Você não está conectado a internet, verifique sua conexão.</p>
+        </section>
 		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-		<script type="text/javascript" src="js/script.js"></script>
 	</body>
 </html>

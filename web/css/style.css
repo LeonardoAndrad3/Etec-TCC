@@ -776,6 +776,25 @@ a:hover{ /*mostrar área de contato*/
     .estrelas input[type=radio]:checked ~ label i.fa:before{
         color: rgb(182, 182, 182);
     }
+    .estrelas input[type=text]{
+        background-color: rgb(53, 53, 53);
+        border: none;
+        border-bottom: 2px solid rgb(24, 25, 27);
+        color: white;
+        width: 200px;
+        margin: 10px 0 10px 0;
+        padding: 5px 2px;
+    }
+    .estrelas input[type=text]:hover{
+        border-color: rgb(12, 147, 3);
+    }
+    .estrelas input[type=text]::placeholder{
+        color: rgb(119, 119, 119);
+        padding-left: 5px;
+    }
+    .estrelas input:focus{
+        outline: 0;
+    }
     /*Fim estrelas*/
     .botao-detalhes-estrela{
         color: rgb(12, 147, 3);

@@ -93,7 +93,8 @@
                         <input type="radio" id="estrela_quatro" name="estrela" value="4">
                         <label for="estrela_cinco"><i class="fa"></i></label>
                         <input type="radio" id="estrela_cinco" name="estrela" value="5"><br/>
-                        <input type="submit" class="botao-detalhes-estrela" value="Enviar">
+                        <input type="text" name="Mensagem" placeholder="Mensagem"><br/>
+                        <input type="submit" class="botao-detalhes-estrela" name="btnEstrela" value="Enviar"><br/>
                     </form>
                 </li>
             </ul>
@@ -116,9 +117,16 @@
             <ul class="detalhe-avaliacoes">
                 <li><h4>Avaliações</h4></li>
                 <div class="uni-avaliacoes">
+
+                <?php
+                    include("php/avaliar.php");
+                    mostrarAv();
+                ?>
+
+
+                <!-- <li><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, omnis.</p></li>
                     <li><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, omnis.</p></li>
-                    <li><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, omnis.</p></li>
-                    <li><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, omnis.</p></li>
+                    <li><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, omnis.</p></li> -->
                 </div>
             </ul>
             <ul class="detalhe-denuncie">
