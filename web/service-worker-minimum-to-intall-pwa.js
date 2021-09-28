@@ -1,10 +1,10 @@
-const cacheName = 'v1';
+const cacheName = 'v2';
 
 const cacheFiles = [
     '/',
     '/index.html',
-    '/erro.html',
     '/css/style.css',
+    '/css/stylerr.css',
     '/icon/erro-conexao.png',
     '/icon/logo-2.png',
     '/js/main.js',
@@ -28,10 +28,10 @@ self.addEventListener('activate', function(e){
 
     e.waitUntil(
 
-        caches.keys().then(function(cacheName){
-            if(thisCacheName !== cacheName){
-                console.log("SW removing cached files from ", thisCacheName);
-                return caches.delete(thisCacheName);
+        caches.keys().then(function(cacheNameKey){
+            if(cacheName !== cacheNameKey){
+                console.log("SW removing cached files from ", cacheNameKey);
+                return caches.delete(cacheNameKey);
             }
         })
     )
