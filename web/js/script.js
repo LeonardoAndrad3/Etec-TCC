@@ -45,5 +45,3 @@ function alternarMenu(event){
 
 btnMobile.addEventListener('click', alternarMenu);
 btnMobile.addEventListener('touchstart', alternarMenu);
-
-

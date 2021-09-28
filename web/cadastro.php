@@ -78,7 +78,7 @@
                         <li><p>*Telefone:</p><input type="text" name="txtTelefone" onkeypress="$(this).mask('(00) 0000-00009')"required ></li>
                     </ul>
 
-                    <ul>
+                    <ul class="cadastro-segunda-ul-chav">
                         <li><p>Descreva-se:</p><input type="text" name="txtDescricao"></li>
                         <li><p id="funcao">*Função Principal <br/>
                             <select id="lista" name="txtEspecialidade"required>
@@ -114,11 +114,11 @@
                         <li><p>*Confirmar Senha:</p><input type="password" name="txtSenhaConf" minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"required><button type="button" class="visible-senha" onclick="mostrarConfSenha()" ><img src="icon/olho-senha.png"></button></li>
                     </ul>
 
-                    <ul>
+                    <ul class="cadastro-segunda-ul">
                         <li><p>*CPF:</p><input type="text"required name="txtCpf" onkeypress="$(this).mask('000.000.000-00')"></li>
                         <li><p>*Data de Nascimento:</p><input type="text"required name="txtDataNascimento" onkeypress="$(this).mask('00/00/0000')"></li>
                         <li><p>*Telefone:</p><input type="text"required name="txtTelefone" onkeypress="$(this).mask('(00) 0000-00009')"></li>
-                        <li class="submit-line"><button name="btnCadastrarCliente" type="submit" class="botaochav">Cadastrar</button></li>
+                        <li class="submit-line"><button name="btnCadastrarCliente" type="submit" class="botaouser">Cadastrar</button></li>
                     </ul>
                 </form>
             </div>

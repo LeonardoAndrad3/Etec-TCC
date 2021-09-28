@@ -103,7 +103,7 @@
                     <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></li>
                     <li><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p></li>
                     <li class="linha-botao-bloco"><a class="botao-maior" href="">Contate via WhatsApp</a><br/></li>
-                    <li><a class="mais-info-bloco" href="detalhe-servicos.html">Clique aqui para mais informações</a></li>
+                    <li><a class="mais-info-bloco" href="detalhe-servicos.php">Clique aqui para mais informações</a></li>
                 </ul>
 
                 <ul class="blocos-chaveiros">
@@ -143,7 +143,7 @@
             <footer>
                 <ul class="rodape">
                     <li><h1 class="titulo-rodape">Suporte</h1></li>
-                    <li><p>Email: opendoors@gmail.com</p></li>
+                    <li><p>Email: contatopendoors@gmail.com</p></li>
                     <li><p>Desenvolvido por: Giovanna Rocha, Leonardo Andrade, Mateus Santana, Renan Rocha.</p></li>
                     <li><p class="copy">Copyright © 2021 Open doors</p></li>
                     <li><a class="link-rodape" href="">Termos e condições</a></li>

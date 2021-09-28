@@ -81,8 +81,8 @@
                 <li><p>Membro da Open Doors desde AAAA</p></li>
                 <li><h3>Avalie o chaveiro:</h3></li>
                 <li>
-                    <form class="estrelas">
-                        <input type="radio" id="vazio" name="estrela" value="" checked> <!--Coloco esse vazio para mostrar uma estrela-->
+                    <form class="estrelas" method="post" name="fEstrela" id="fEstrela" action="php/avaliar.php">
+                        <input type="radio" id="vazio" name="estrela" value="0" checked> <!--Coloco esse vazio para mostrar uma estrela-->
                         <label for="estrela_um"><i class="fa"></i></label> <!--label serve para se tornar a estrela-->
                         <input type="radio" id="estrela_um" name="estrela" value="1">
                         <label for="estrela_dois"><i class="fa"></i></label>
@@ -124,10 +124,10 @@
             <ul class="detalhe-denuncie">
                 <li><h4>Denuncie</h4></li>
                 <li>
-                    <form class="form-denuncia">
-                        <p>Nome:</p><input type="text">
-                        <p>Email:</p><input type="email">
-                        <p>Mensagem:</p><textarea class="mensagem-area-denuncia"></textarea>
+                    <form class="form-denuncia" method="POST" action="sendDenuncia.php">
+                        <p>Nome:</p><input type="text" name="nome">
+                        <p>Email:</p><input type="email" name="email">
+                        <p>Mensagem:</p><textarea class="mensagem-area-denuncia" name="mensagem"></textarea>
                         <br/><input type="submit" value="Enviar">
                     </form>
                 </li>
@@ -139,7 +139,7 @@
     <footer>
         <ul class="rodape">
             <li><h1 class="titulo-rodape">Suporte</h1></li>
-            <li><p>Email: opendoors@gmail.com</p></li>
+            <li><p>Email: contatopendoors@gmail.com</p></li>
             <li><p>Desenvolvido por: Giovanna Rocha, Leonardo Andrade, Mateus Santana, Renan Rocha.</p></li>
             <li><p class="copy">Copyright © 2021 Open doors</p></li>
             <li><a class="link-rodape" href="">Termos e condições</a></li>

@@ -74,17 +74,17 @@
             <li><h1 class="titulo-contate">Suporte Open Doors</h1></li>
             <li><p class="info-contate">Preencha todas os campos para facilitar o contato.</p></li>
             <li>
-                <form class="formulario-contate">
-                    <p>Nome:</p><input type="text">
-                    <p>Email:</p><input type="email">
+                <form class="formulario-contate" method="POST" action="sendEmail.php">
+                    <p>Nome:</p><input type="text" name="nome">
+                    <p>Email:</p><input type="email" name="email">
                     <p>Assunto:</p>
-                        <select id="lista">
+                        <select id="lista" name="assunto">
                             <option value="" disabled selected>Selecione</option>
-                            <option value="1">Dúvida</option>
-                            <option value="2">Reclamação</option>
-                            <option value="3">Sugestão</option>
+                            <option value="Duvida">Dúvida</option>
+                            <option value="Reclamacao">Reclamação</option>
+                            <option value="Sugestao">Sugestão</option>
                         </select><br/>
-                    <p>Mensagem:</p><textarea></textarea><br/>
+                    <p>Mensagem:</p><textarea value="mensagem" name="mensagem"></textarea><br/>
                     <input type="submit" value="Enviar">
                 </form>
             </li>
@@ -97,7 +97,7 @@
     <footer>
         <ul class="rodape">
             <li><h1 class="titulo-rodape">Suporte</h1></li>
-            <li><p>Email: opendoors@gmail.com</p></li>
+            <li><p>Email: contatopendoors@gmail.com</p></li>
             <li><p>Desenvolvido por: Giovanna Rocha, Leonardo Andrade, Mateus Santana, Renan Rocha.</p></li>
             <li><p class="copy">Copyright © 2021 Open doors</p></li>
             <li><a class="link-rodape" href="">Termos e condições</a></li>

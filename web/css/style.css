@@ -871,6 +871,28 @@ a:hover{ /*mostrar área de contato*/
         margin: 0;
     }
     /*Fim contate-nos*/
+    /*Inicio erro conexao*/
+    .mensagem-erro{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 50px auto;
+        color: white;
+    }
+    .mensagem-erro img{
+        width: 37vw;
+        height: 66vh;
+    }
+    .mensagem-erro h3{
+        font-size: 22px;
+        margin-bottom: 0;
+    }
+    .mensagem-erro p{
+        margin: 15px;
+    }
+    /*Fim erro conexao*/
 
 @media (max-width: 600px){
     /*caso esteja abaixo de 600px*/
@@ -941,7 +963,7 @@ a:hover{ /*mostrar área de contato*/
         margin-bottom: 20px;
     }
     .escolher-users img{
-        width: 300px;
+        width: 250px;
     }
     .div-escolher{
         max-width: 100%;
@@ -1108,6 +1130,12 @@ a:hover{ /*mostrar área de contato*/
             padding-left: 10px;
         }
     /*Fim detalhes do serviço*/
+    /*Inicio erro conexao*/
+    .mensagem-erro img{
+        width: 70%;
+        height: auto;
+    }
+    /*Fim erro conexao*/
 }
 
 @media (max-width: 750px){
@@ -1184,7 +1212,20 @@ a:hover{ /*mostrar área de contato*/
     #busca-fun-input{
         width: 200px;
     }
-
+    /*Inicio tela cadastro*/
+    .escolher-users img{
+        width: 90%;
+    }
+    .lista-form{
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    .lista-form ul{
+        box-sizing: border-box;
+        margin: 0 27vw;
+    }
+    /*Fim tela cadastro*/
     /*Fim consultando serviços*/
     .sobre-nos{
         display: block;
@@ -1237,7 +1278,16 @@ a:hover{ /*mostrar área de contato*/
     .formulario-contate input[type="submit"]{
         width: 250px;
     }
+    .formulario-contate input[type="email"]{
+        width: 250px;
+    }
     /*Fim Tela contate-nos*/
+    /*Inicio erro conexao*/
+    .mensagem-erro img{
+        width: 65%;
+        height: auto;
+    }
+    /*Fim erro conexao*/
 }
 @media (max-width: 930px) and (min-width: 751px){
     #menu{
@@ -1310,6 +1360,20 @@ a:hover{ /*mostrar área de contato*/
     .image-lampada{
         max-width: 100%;
     }
+    /*Inicio tela cadastro*/
+    .escolher-users img{
+        width: 90%;
+    }
+    /*Fim tela cadastro*/
+    /*Inicio consultando serviços*/
+    .servicos-chaveiros{
+        grid-template-areas: 
+        "blocos-chaveiros blocos-chaveiros"
+        "blocos-chaveiros blocos-chaveiros"
+        "blocos-chaveiros blocos-chaveiros"
+        "blocos-chaveiros blocos-chaveiros";
+    }
+    /*Fim consultando serviços*/   
     /*Inicio detalhes serviços*/
     .detalhes{
         max-width: 100%;
@@ -1332,6 +1396,12 @@ a:hover{ /*mostrar área de contato*/
         width: 35vw;
     }
     /*Fim Tela contate-nos*/
+    /*Inicio erro conexao*/
+    .mensagem-erro img{
+        width: 45%;
+        height: auto;
+    }
+    /*Fim erro conexao*/
 }
 
 @media (max-width: 1150px) and (min-width: 931px){
@@ -1376,6 +1446,12 @@ a:hover{ /*mostrar área de contato*/
         width: 35vw;
     }
     /*Fim Tela contate-nos*/
+    /*Inicio erro conexao*/
+    .mensagem-erro img{
+        width: 45%;
+        height: auto;
+    }
+    /*Fim erro conexao*/
 }
 
 @media (max-width: 1250px) and (min-width: 1151px){
@@ -1394,4 +1470,10 @@ a:hover{ /*mostrar área de contato*/
         width: 400px;
     }
     /*Fim Tela contate-nos*/
+    /*Inicio erro conexao*/
+    .mensagem-erro img{
+        width: 45%;
+        height: auto;
+    }
+    /*Fim erro conexao*/
 }
