@@ -70,7 +70,7 @@
 
     <section class="content-contate">
         
-        <ul class="ul-contate1">
+        <ul class="ul-contate1" >
             <li><h1 class="titulo-contate">Suporte Open Doors</h1></li>
             <li><p class="info-contate">Preencha todas os campos para facilitar o contato.</p></li>
             <li>

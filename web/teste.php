@@ -13,8 +13,15 @@
         include_once("php/avaliar.php");
 
         mostrarAv();
-    
+
+        while('s' === 's'){
+                if(0 === 0){
+                    echo"opaaaaaaaa";
+                }
+        }
+
     ?>
+
 
 
 </body>

@@ -115,14 +115,13 @@
                 <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia itaque tenetur exercitationem magnam eos necessitatibus iusto a unde vero</p></li>
             </ul>
             <ul class="detalhe-avaliacoes">
-                <li><h4>Avaliações</h4></li>
-                <div class="uni-avaliacoes">
-
+                <li><h4>Avaliações - Últimas avaliações:</h4></li>
+                <div class="uni-avaliacoes" style="display:block;">
+               
                 <?php
                     include("php/avaliar.php");
                     mostrarAv();
                 ?>
-
 
                 <!-- <li><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, omnis.</p></li>
                     <li><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, omnis.</p></li>

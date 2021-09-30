@@ -26,7 +26,7 @@ if(isset($_POST['btnLoginCliente'])){
     $senha = md5(addslashes($_POST["txtSenhaLogin"]));
     // Fazendo a criptografia para entrar corretamente
 
-    entrar($query="select email, senha, nome from Cliente where email='$email' and senha='$senha';");
+    entrar($query="select * from Cliente where email='$email' and senha='$senha';");
     
 } elseif(isset($_POST['btnLoginChaveiro'])){           
 
@@ -34,7 +34,7 @@ if(isset($_POST['btnLoginCliente'])){
     $senha = md5(addslashes($_POST["txtSenhaLogin"]));
     // Fazendo a criptografia para entrar corretamente
 
-    entrar($query="select email, senha, nome from Chaveiro where email='$email' and senha='$senha';");
+    entrar($query="select * from Chaveiro where email='$email' and senha='$senha';");
 
 } elseif(isset($_POST["btnSair"])){
     echo'<script>window.location.replace("../index.php");alert("Até uma próxima!");</script>';
