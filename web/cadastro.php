@@ -154,7 +154,7 @@
                     <ul>
                         <li><p>*Email:</p><input type="text" name="txtEmailLogin" required></li>
                         <li><p>*Senha:</p><input type="password" name="txtSenhaLogin" id="campo-senhalogin"required minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"><button type="button" class="visible-senha" onclick="mostrarSenhaLogin()"><img src="icon/olho-senha.png"></button></li>
-                        <li class="submit-line"><button name="btnLoginCliente" type="submit" class="botaochav">Cadastrar</button></li>
+                        <li class="submit-line"><button name="btnLoginCliente" type="submit" class="botaochav">Login</button></li>
                     </ul>
                 </form>
             </div>
