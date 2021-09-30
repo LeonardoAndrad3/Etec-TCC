@@ -22,7 +22,7 @@ function validar($query){
     }}
 
 function mostrarAv(){
-    $queryAvaliacao = "select*from avaliacoes order by data desc limit 3;";
+    $queryAvaliacao = "select*from Avaliacoes order by random() limit 3;";
     try{
     $result = pg_query($queryAvaliacao);
     
