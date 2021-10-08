@@ -39,7 +39,7 @@
 				</button>
 				<ul id="menu" class="menu" role="menu">
 				<li><a href="servicos.php">Serviços</a></li>
-                <li><a href="">Sua localização</a></li>
+                <li><a href="localiza.html">Sua localização</a></li>
                 <li><a href="contate.php">Contate-nos</a></li>
                 <li><a href="index.php">Sobre nós</a></li>
 					<?php
