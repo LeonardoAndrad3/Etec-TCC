@@ -101,6 +101,7 @@ if(isset($_POST['btnCadastrarChaveiro'])){
     $dataN = addslashes($_POST['txtDataNascimento']);
     $cep =  addslashes($_POST['txtCep']);
     $tel = addslashes($_POST['txtTelefone']);
+    $cel = addslashes($_POST['txtCelular']);
     $descricao;
     
     if(addslashes($_POST['txtEspecialidade']) != 3){
@@ -117,8 +118,8 @@ if(isset($_POST['btnCadastrarChaveiro'])){
             
     if ($senha == $senhaConfirma) {
         cadastrar(
-            $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, cep, descricao, senha, dataDeNascimento, pagamento)
-            values('$name','$email','$especialidade','$tel','$cpf','$cep','$descricao','$senha','$dataN','$pagamento');", $vEmail="select email from Cliente where email='$email';", $vCpf="select cpf from Cliente where cpf='$cpf';");  
+            $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, cep, descricao, senha, dataDeNascimento, pagamento, celular)
+            values('$name','$email','$especialidade','$tel','$cpf','$cep','$descricao','$senha','$dataN','$pagamento', '$cel');", $vEmail="select email from Cliente where email='$email';", $vCpf="select cpf from Cliente where cpf='$cpf';");  
     } else {
             echo '<script>window.location.replace("../index.php");
             alert("Senhas não conferem!");</script>';

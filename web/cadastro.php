@@ -75,7 +75,16 @@
                         <li><p>*CPF:</p><input type="text" name="txtCpf" required  minlength="14" onkeypress="$(this).mask('000.000.000-00')"></li>
                         <li><p>*Data de Nascimento:<p><input type="text" name="txtDataNascimento"required onkeypress="$(this).mask('00/00/0000')"></li>
                         <li><p>*CEP:</p><input type="text" onkeypress="$(this).mask('00000-000')"name="txtCep" required ></li>
-                        <li><p>*Telefone:</p><input type="text" name="txtTelefone" onkeypress="$(this).mask('(00) 0000-00009')"required ></li>
+                        <li><p>
+                                Celular: <input type="checkbox" id="checkBoxCelular" onchange="javascript:Caixa()"><br/>
+                                <input id="txtBoxCelular" type="text" name="txtCelular" onkeypress="$(this).mask('(00) 0000-00009')"  style="display:none "/>
+                            </p>
+                        </li>
+                        <li><p>
+                                Telefone: <input type="checkbox" id="checkBoxTelefone" onchange="javascript:Caixa2()"><br/>
+                                <input id="txtBoxTelefone" type="text" name="txtTelefone" onkeypress="$(this).mask('(00) 0000-00009')" style="display:none"/>
+                            </p>
+                        </li>
                     </ul>
 
                     <ul class="cadastro-segunda-ul-chav">
@@ -259,12 +268,23 @@
         <script type="text/javascript">
             function Caixa()
             {
-                var check = document.getElementById('checkBox1');
+                var check = document.getElementById('checkBoxCelular');
                 if (check.checked) {
-                    document.getElementById('textBox1').style.display = 'block';
+                    document.getElementById('txtBoxCelular').style.display = 'block';
                 }
                 else
-                    document.getElementById('textBox1').style.display = 'none';                
+                    document.getElementById('txtBoxCelular').style.display = 'none';                
+            }
+        </script>
+        <script type="text/javascript">
+            function Caixa2()
+            {
+                var check = document.getElementById('checkBoxTelefone');
+                if (check.checked) {
+                    document.getElementById('txtBoxTelefone').style.display = 'block';
+                }
+                else
+                    document.getElementById('txtBoxTelefone').style.display = 'none';                
             }
         </script>
 

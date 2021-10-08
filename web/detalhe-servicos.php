@@ -1,3 +1,7 @@
+<?php
+ include('php/detalhesChaveiroServico.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,9 +80,19 @@
         
         <div class="detalhes">
             <ul class="detalhe-nome">
-                <li><h4>Nome do Chaveiro</h4></li>
-                <li class="linha-botao-bloco"><a class="botao-detalhes-menor" href="">Contate via WhatsApp</a><br/></li>
-                <li><p>Membro da Open Doors desde AAAA</p></li>
+                <li><h4><?php echo $row['nome']?></h4></li>
+                <?php
+                 if ($row['celular'] == "") {
+                     echo "<li><p>Telefone: ".$row['telefone']." </p></li>";
+                 }
+                else {
+                    
+                    echo "<li class='linha-botao-bloco'><a class='botao-detalhes-menor'  target='_blank' href='https://api.whatsapp.com/send?phone=55".$row['celular']."'> Contate via WhatsApp</a><br/></li>";
+                }
+                ?>
+                
+                <li><p> <?php $myDate = date("jS M Y"); 
+                echo "Membro da Open Doors desde: $myDate";?></p></li>
                 <li><h3>Avalie o chaveiro:</h3></li>
                 <li>
                     <form class="estrelas" method="post" name="fEstrela" id="fEstrela" action="php/avaliar.php">
@@ -100,19 +114,23 @@
             </ul>
             <ul class="detalhe-descricao">
                 <li><h4>Descrição</h4></li>
-                <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia itaque tenetur exercitationem magnam eos necessitatibus iusto a unde vero</p></li>
+                <li><p><?php echo $row['descricao']?></p></li>
             </ul>
             <ul class="detalhe-funcao">
                 <li><h4>Função</h4></li>
-                <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia itaque tenetur exercitationem magnam eos necessitatibus iusto a unde vero</p></li>
+                <li><p><?php echo $row['especialidade']?></p></li>
             </ul>
             <ul class="detalhe-encontrar">
-                <h4>Onde encontrar</h4>
+               <h4>Onde encontrar: <br><?php echo $row['cep']?></h4>
+               <?php echo "<iframe width='400' height='300' style='border:0;' allowfullscreen='' loading='lazy' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyCAcV6JSwmuPsbOtY7qHrAS6Xf6dORB16k
+    &q=".$row['cep']."' ></iframe>"?>
+                <!-- teste pra ver se ta pegando a api do gogole -->
+
                 <!--Aqui fica a API de mapa fixando pelo cep que o chaveiro registrará-->
             </ul>
             <ul class="detalhe-valor">
                 <li><h4>Valor</h4></li>
-                <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia itaque tenetur exercitationem magnam eos necessitatibus iusto a unde vero</p></li>
+                <li><p><?php echo $row['pagamento']?></p></li>
             </ul>
             <ul class="detalhe-avaliacoes">
                 <li><h4>Avaliações - Últimas avaliações:</h4></li>
@@ -154,5 +172,7 @@
     </footer>
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script src="http://maps.google.com/maps/api/js"></script>
+
 </body>
 </html>
