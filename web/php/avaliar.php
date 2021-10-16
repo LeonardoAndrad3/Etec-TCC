@@ -1,31 +1,45 @@
 <?php
-include_once("query.php");
-include_once("logar.php");
-$db = new ControllerDb();
-$db->connectDb();
+require_once("logar.php");
+require_once("detalhesChaveiroServico.php");
+
+function req(){
+
+    if(isset($_GET['id'])) {
+        $idC = pg_escape_string($_GET['id']);
+        $postg = "SELECT * FROM chaveiro WHERE id = '$idC' ";
+        $result = pg_query($postg) ;
+        $row = pg_fetch_array($result);
+         
+        
+        return $GLOBALS['id'] = $row['id'];
+    } 
+}
+//novo
 
 function validar($query){
     try{
-        $return = pg_query($query);
-    if(pg_num_rows($return) == 0){
-
-     echo "<script>window.location.replace('../detalhe-servicos.php'); alert('Avaliação enviada com sucesso!')</script>";
+  
+    if(!pg_query($query)){
+    throw new Exception("<script>window.location.replace('../servicos.php');alert('Não é possível continuar');</script>");
     }
      else{
-    throw new Exception("<script>window.location.replace('../detalhe-servicos.php');alert('Por favor, ao mínimo uma estrela')</script>");
+     echo "<script>window.location.replace('../servicos.php');alert('Avaliação enviada com sucesso!')</script>";
     }
 
     }catch(Exception $e){
-
     echo die($e->getMessage());
 
     }}
 
 function mostrarAv(){
-    $queryAvaliacao = "select*from Avaliacoes order by random() limit 3;";
-    try{
-    $result = pg_query($queryAvaliacao);
-    
+    req(); 
+    $_SESSION["id"] = $GLOBALS['id'];
+    //Novo
+
+    try{ 
+    $queryAvaliacao = "select*from Avaliacoes where idchaveiro=".$GLOBALS['id']." order by random() limit 3;" or die("Sem avaliações");
+    if(pg_query($queryAvaliacao)){
+        $result=pg_query($queryAvaliacao);
         while($row = pg_fetch_assoc($result)){
             if(!$row['descricao']==""){
                 if($row["avaliacoes"] == 5){
@@ -199,29 +213,31 @@ function mostrarAv(){
                     <label for="estrela_cinco"><i class="fa"></i></label>
                     <input type="radio" id="estrela_cinco" name="estrela" value="5"><br/>             
                     </form></div>';
+                
                 }
             }
         }
-    }catch(Exception $e){
-        
     }
+    }catch(Exception $err){
+        return die($err);
+    } 
 }
-
-
 if(isset($_POST["btnEstrela"])){
-    if(isset($_SESSION["usuario"])){   
+    if(isset($_SESSION["usuario"])){
     $mensagem = $_POST["Mensagem"];
     $estrela = $_POST["estrela"];
     $name = $_SESSION["usuario"];
-
-    $query = "insert into Avaliacoes(nomeCliente, avaliacoes, descricao) values('$name','$estrela', '$mensagem');";
+    if(!$estrela == 0){ 
+    $query = "insert into Avaliacoes(idchaveiro, nomeCliente, avaliacoes, descricao) values('".$_SESSION['id']."', '$name', '$estrela', '$mensagem');";
     validar($query); 
+    } else {
+        echo("<script>window.location.replace('../servicos.php');alert('Ao menos uma estrela!');</script>");
     }
-    else{
-        echo "<script>window.location.replace('../cadastro.php'); alert('Inicie uma sessão para avaliar!');</script>";
-    }
-} else{
-    echo "<script>window.location.replace('../cadastro.php') alert('Inicie uma sessão para avaliar!');</script>";
 
-}
+    }else{
+        echo('<script>window.location.replace("../cadastro.php");alert("Inicie uma sessão!");</script>');
+    }
+} 
+
+// Alterando....
 ?>

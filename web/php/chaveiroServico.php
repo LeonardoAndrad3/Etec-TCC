@@ -12,6 +12,7 @@ function chaveiroServico(){
 
         while ($row = pg_fetch_assoc($result)) {
             if ($row['celular'] == "") {
+            
             echo " 
             <ul class='blocos-chaveiros' id='blocos-chaveiros'> 
             <li><h4>".$row['nome']."</h4></li>
@@ -20,8 +21,7 @@ function chaveiroServico(){
             <li><p>Formas de pagamento: ".$row['pagamento']." </p></li>
             <li><p>Telefone: ".$row['telefone']." </p></li>
             <li><a class='mais-info-bloco' href='detalhe-servicos.php?id={$row['id']}'>Clique aqui para mais informações</a></li>
-            </ul>" 
-            ; 
+            </ul>"; 
            }
            else {
             echo " 
@@ -33,10 +33,9 @@ function chaveiroServico(){
             <li><p>Telefone: ".$row['telefone']." </p></li>
             <li><a class='mais-info-bloco' href='detalhe-servicos.php?id={$row['id']}'>Clique aqui para mais informações</a></li>
             <li class='linha-botao-bloco'><a class='botao-maior' href='https://api.whatsapp.com/send?phone=55".$row['celular']."'>Contate via WhatsApp</a><br/></li>
-            </ul>" 
-            ; 
+            </ul>"; 
+            
            }
-        
         } 
     }
     catch(Exception $e){

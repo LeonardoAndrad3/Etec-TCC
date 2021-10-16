@@ -1,7 +1,6 @@
 <?php
- include('php/detalhesChaveiroServico.php');
+ require("php/avaliar.php");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +15,13 @@
     <meta name="theme-color" content="#353535">
     <script src="//code-sa1.jivosite.com/widget/PNSgAqbd3B" async></script>
     <?php
-        include("php/logar.php");
         if(isset($_SESSION["usuario"])){
             echo '<link rel="stylesheet" href="css/button.css">';
         }
 	?>
 </head>
 <body>
+
     <header id="header">
         <a id="logo" href="index.php"><img src="icon/logo-2.png" width="150" height="120"></a> <!--logo1: w:60, h:60 -- logo2: w:150, h:120 -- logo3: w:130, h:70-->
         <nav id="nav">
@@ -123,7 +122,7 @@
             <ul class="detalhe-encontrar">
                <h4>Onde encontrar: <br><?php echo $row['cep']?></h4>
                <?php echo "<iframe width='400' height='300' style='border:0;' allowfullscreen='' loading='lazy' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyCAcV6JSwmuPsbOtY7qHrAS6Xf6dORB16k
-    &q=".$row['cep']."' ></iframe>"?>
+                &q=".$row['cep']."' ></iframe>"?>
                 <!-- teste pra ver se ta pegando a api do gogole -->
 
                 <!--Aqui fica a API de mapa fixando pelo cep que o chaveiro registrará-->
@@ -137,8 +136,8 @@
                 <div class="uni-avaliacoes" style="display:block;">
                
                 <?php
-                    include("php/avaliar.php");
-                    mostrarAv();
+                    
+                    mostrarAv();                                 
                 ?>
 
                 <!-- <li><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, omnis.</p></li>
@@ -174,5 +173,6 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script src="http://maps.google.com/maps/api/js"></script>
 
+    <!-- Alterando -->
 </body>
 </html>

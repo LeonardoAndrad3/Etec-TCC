@@ -21,7 +21,6 @@ function entrar($query){
 }    
 
 if(isset($_POST['btnLoginCliente'])){           
-
     $email = addslashes($_POST["txtEmailLogin"]);
     $senha = md5(addslashes($_POST["txtSenhaLogin"]));
     // Fazendo a criptografia para entrar corretamente
@@ -40,6 +39,5 @@ if(isset($_POST['btnLoginCliente'])){
     echo'<script>window.location.replace("../index.php");alert("Até uma próxima!");</script>';
     include_once("logar.php");
     session_destroy();
-}else{}
-
+}
 ?>
