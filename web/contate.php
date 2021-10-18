@@ -24,7 +24,7 @@
             </button>
             <ul id="menu" class="menu" role="menu">
                 <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="">Sua localização</a></li>
+                <li><a href="localiza.php">Sua localização</a></li>
                 <li><a href="contate.html">Contate-nos</a></li>
                 <li><a href="index.php">Sobre nós</a></li>
                 <?php
