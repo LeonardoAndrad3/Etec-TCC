@@ -178,6 +178,17 @@
                 </ul>
             </footer>
         
+            <div id="modal-container" class="modal-container">
+                <div class="modal" style="border-color: red;">
+                    <button class="fechar" style="border-color: red;">X</button>
+                    <h3>Deseja encerrar a sessão?</h3>
+                    <p>Ao clicar abaixo você desconectará de sua conta.</p>
+                    <form action="php/logar.php" method="POST">
+                        <button name="btnSair" class="encerrar-sessao">Encerrar</button>
+                    </form>
+                </div>
+            </div>
+            
         <!-- <div id="modal-sucesso" class="modal-container">
             <div class="modal">
                 <a href="index.php"><button class="fechar">X</button></a>

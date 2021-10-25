@@ -1,5 +1,7 @@
 <?php
 include_once("query.php");
+include_once("modal.php");
+
 $db = new ControllerDb();
 $db->connectDb();
 session_start();
@@ -7,13 +9,20 @@ session_start();
 function entrar($query){
     try{$result = pg_query($query);
         session_reset();
+        include("modal.php");
         if(pg_num_rows($result) > 0){
             $row = pg_fetch_assoc($result);
             $_SESSION['usuario'] = $row["nome"];
-            echo'<script>window.location.replace("../index.php");alert("Bem-vindo '.$_SESSION['usuario'].'!");</script>';
-            include("../css/button.css");
+            echo "<script>
+                iniciaModal('modal-login');
+                modal.principal();
+            </script>";
         } else{
-            throw new Exception("<script>window.location.replace('../cadastro.php');alert('Email ou senha incorretos!');</script>');"); 
+            throw new Exception("
+            <script>
+            iniciaModal('modal-erro-login');
+            modal.cadastro();
+            </script>"); 
 
     }}catch(Exception $e){ 
         echo die($e->getMessage());
@@ -36,8 +45,11 @@ if(isset($_POST['btnLoginCliente'])){
     entrar($query="select * from Chaveiro where email='$email' and senha='$senha';");
 
 } elseif(isset($_POST["btnSair"])){
-    echo'<script>window.location.replace("../index.php");alert("Até uma próxima!");</script>';
-    include_once("logar.php");
+    echo'
+    <script> 
+    iniciaModal("modal-sair");
+    modal.principal();
+    </script>';
     session_destroy();
 }
 ?>

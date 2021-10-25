@@ -1,5 +1,6 @@
 <?php
-include("query.php");
+include_once("modal.php");
+include_once("query.php");
 $db = new ControllerDb();
 $db->connectDb();
     
@@ -11,18 +12,29 @@ function cadastrar($query, $vEmail, $vCpf){
           if(pg_num_rows($validarE) === 0){
 
           }else{
-              throw new Exception('<script>window.location.replace("../cadastro.php");alert("Email já cadastrado, tente outro");</script>');
+              throw new Exception('
+              <script>
+              iniciaModal("modal-existe-email");
+              modal.cadastro();
+              </script>');
           }
 
           if(pg_num_rows($validarC) === 0){
 
           } else{
-              throw new Exception('<script>window.location.replace("../cadastro.php");alert("CPF já cadastrado, tente outro");</script>');
+              throw new Exception('
+              <script>
+              iniciaModal("modal-existe-cpf");
+              modal.cadastro();
+              </script>');
           }
   
           if($result = pg_query($query)){
-              echo '<script>window.location.replace("../index.php");
-              alert("Usuário cadastrado com sucesso!");</script>';
+              echo '
+              <script>
+              iniciaModal("modal-cadastro");
+              modal.principal();
+              </script>';
           } else{
               throw new Exception('<script>window.location.replace("../cadastro.php");alert("Fala ao cadastrar!");</script>');
           }
@@ -41,7 +53,12 @@ function validarCPF($cpf){
     try{
         //Verifica se foi digitado corretamente
         if(strlen($cpf) != 11){
-            throw new Exception('<script>window.location.replace("../cadastro.php");alert("CPF inválido");</script>');   
+            throw new Exception('
+            <script>
+            iniciaModal("modal-invalide-cpf");
+            modal.cadastro();
+
+            </script>');   
         }
 
         //faz o calculo para validar o cpf
@@ -51,7 +68,12 @@ function validarCPF($cpf){
             }
             $d = ((10 * $d) % 11) %10;
             if ($cpf[$c] != $d){
-                throw new Exception('<script>window.location.replace("../cadastro.php");alert("CPF inválido");</script>'); 
+                throw new Exception('
+                <script>
+                iniciaModal("modal-invalide-cpf");
+                modal.cadastro();
+                
+                </script>'); 
             }
 
         }
@@ -66,7 +88,11 @@ function validarEmail($email){
     try{
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
         } else {
-            throw new Exception('<script>window.location.replace("../cadastro.php");alert("E-mail inválido");</script>');
+            throw new Exception('
+            <script>
+            iniciaModal("modal-invalide-email");
+            modal.cadastro();
+            </script>');
         }
     }catch(Exception $e){
         echo die($e->getMessage());
@@ -121,8 +147,11 @@ if(isset($_POST['btnCadastrarChaveiro'])){
             $query="insert into Chaveiro(nome, email, especialidade, telefone, cpf, cep, descricao, senha, dataDeNascimento, pagamento, celular)
             values('$name','$email','$especialidade','$tel','$cpf','$cep','$descricao','$senha','$dataN','$pagamento', '$cel');", $vEmail="select email from Cliente where email='$email';", $vCpf="select cpf from Cliente where cpf='$cpf';");  
     } else {
-            echo '<script>window.location.replace("../index.php");
-            alert("Senhas não conferem!");</script>';
+            echo'
+            <script>
+            iniciaModal("modal-erro-senha");
+            modal.cadastro();
+            </script>';
     };
         
 } elseif(isset($_POST['btnCadastrarCliente'])){
@@ -141,8 +170,11 @@ if(isset($_POST['btnCadastrarChaveiro'])){
         $query="insert into Cliente(nome, email, telefone, cpf, senha, datadenascimento) 
         values('$name', '$email','$tel','$cpf','$senha','$dataN');", $vEmail="select email from Cliente where email='$email';", $vCpf="select cpf from Cliente where cpf='$cpf';");
     } else {
-        echo '<script>window.location.replace("../index.php");
-        alert("Senhas não conferem!");</script>';
+        echo'
+        <script>
+        iniciaModal("modal-erro-senha");
+        modal.cadastro();
+        </script>';
     };
 
 } 
