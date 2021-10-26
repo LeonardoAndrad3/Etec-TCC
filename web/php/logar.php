@@ -21,7 +21,7 @@ function entrar($query){
             throw new Exception("
             <script>
             iniciaModal('modal-erro-login');
-            modal.cadastro();
+            modal.back();
             </script>"); 
 
     }}catch(Exception $e){ 

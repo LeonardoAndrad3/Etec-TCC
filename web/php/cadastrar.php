@@ -15,7 +15,7 @@ function cadastrar($query, $vEmail, $vCpf){
               throw new Exception('
               <script>
               iniciaModal("modal-existe-email");
-              modal.cadastro();
+              modal.back();
               </script>');
           }
 
@@ -25,7 +25,7 @@ function cadastrar($query, $vEmail, $vCpf){
               throw new Exception('
               <script>
               iniciaModal("modal-existe-cpf");
-              modal.cadastro();
+              modal.back();
               </script>');
           }
   
@@ -56,7 +56,7 @@ function validarCPF($cpf){
             throw new Exception('
             <script>
             iniciaModal("modal-invalide-cpf");
-            modal.cadastro();
+            modal.back();
 
             </script>');   
         }
@@ -71,7 +71,7 @@ function validarCPF($cpf){
                 throw new Exception('
                 <script>
                 iniciaModal("modal-invalide-cpf");
-                modal.cadastro();
+                modal.back();
                 
                 </script>'); 
             }
@@ -91,7 +91,7 @@ function validarEmail($email){
             throw new Exception('
             <script>
             iniciaModal("modal-invalide-email");
-            modal.cadastro();
+            modal.back();
             </script>');
         }
     }catch(Exception $e){
@@ -150,7 +150,7 @@ if(isset($_POST['btnCadastrarChaveiro'])){
             echo'
             <script>
             iniciaModal("modal-erro-senha");
-            modal.cadastro();
+            modal.back();
             </script>';
     };
         
@@ -173,7 +173,7 @@ if(isset($_POST['btnCadastrarChaveiro'])){
         echo'
         <script>
         iniciaModal("modal-erro-senha");
-        modal.cadastro();
+        modal.back();
         </script>';
     };
 

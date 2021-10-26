@@ -14,10 +14,10 @@
         <p>Faça o login e aproveite nossas funcionalidades!</p>
     </div>
 </div>
-<div id="modal-sair" class="modal-container">
+<div id="modal-sucesso-avaliacao" class="modal-container">
     <div class="modal" style="border-color: gren;">
-        <h3>Até logo!<h3>
-        <p>As portas sempre estarão apertas!</p>
+        <h3>Avaliação enviada com sucesso!<h3>
+        <p>Obrigado, sua avaliação faz toda diferença</p>
     </div>
 </div>
 
@@ -25,7 +25,7 @@
 <!-- modal erro -->
 <div id="modal-erro-login" class="modal-container">
     <div class="modal" style="border-color: red;">
-        <h3>Email ou senha incorreta!</h3>
+        <h3>Email ou senha incorretos!</h3>
         <p>Por favor, verifique e tente novamente</p>
     </div>
 </div>
@@ -60,6 +60,30 @@
         <p>Por favor, tente novamente!</p>
     </div>
 </div>
+<div id="modal-sair" class="modal-container">
+    <div class="modal" style="border-color: gren;">
+        <h3>Até logo!<h3>
+        <p>As portas sempre estarão apertas!</p>
+    </div>
+</div>
+<div id="modal-erro-geral" class="modal-container">
+    <div class="modal" style="border-color: gren;">
+        <h3>Ops, ocorreu um erro!<h3>
+        <p>Tente novamente mais tarde ou tente entrar em contato com o suporte</p>
+    </div>
+</div>
+<div id="modal-iniciar-session" class="modal-container">
+    <div class="modal" style="border-color: gren;">
+        <h3>Atenção!<h3>
+        <p>Fazer login para avaliar</p>
+    </div>
+</div>
+<div id="modal-erro-estrela" class="modal-container">
+    <div class="modal" style="border-color: gren;">
+        <h3>Por favor!<h3>
+        <p>Ao menos uma estrela para avaliar!</p>
+    </div>
+</div>
 
 <script>		
 	function iniciaModal(modalID){
@@ -82,15 +106,22 @@ function redirecionar() {
             window.location.href = "../index.php";
         }, 1000);
     }
-    function cadastro(){
+    function back(){
         setTimeout(() => {
             window.history.back(-1);
+        }, 2000);
+    }
+    function cadastro(){
+        setTimeout(() => {
+            window.location.href = "../cadastro.php";
         }, 2000);
     }
     
 
     redirecionarP.principal = principal;
+    redirecionarP.back = back;
     redirecionarP.cadastro = cadastro;
+
     return redirecionarP;
 };
 let modal = redirecionar()

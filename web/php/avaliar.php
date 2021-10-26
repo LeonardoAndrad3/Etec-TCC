@@ -20,14 +20,22 @@ function validar($query){
     try{
   
     if(!pg_query($query)){
-    throw new Exception("<script>window.location.replace('../servicos.php');alert('Não é possível continuar');</script>");
+        throw new Exception("
+        <script>
+            inciaModal('modal-erro-geral');
+            modal.back();
+        <script>");
     }
-     else{
-     echo "<script>window.location.replace('../servicos.php');alert('Avaliação enviada com sucesso!')</script>";
+    else{
+        echo "
+        <script>
+            inciaModal('modal-sucesso-avaliacao');
+            moda.back();
+        </script>";    
     }
 
     }catch(Exception $e){
-    echo die($e->getMessage());
+        echo die($e->getMessage());
 
     }}
 
@@ -37,7 +45,7 @@ function mostrarAv(){
     //Novo
 
     try{ 
-    $queryAvaliacao = "select*from Avaliacoes where idchaveiro=".$GLOBALS['id']." order by random() limit 3;" or die("Sem avaliações");
+        $queryAvaliacao = "select*from Avaliacoes where idchaveiro=".$GLOBALS['id']." order by random() limit 3;" or die("Sem avaliações");
     if(pg_query($queryAvaliacao)){
         $result=pg_query($queryAvaliacao);
         while($row = pg_fetch_assoc($result)){
@@ -224,20 +232,26 @@ function mostrarAv(){
 }
 if(isset($_POST["btnEstrela"])){
     if(isset($_SESSION["usuario"])){
-    $mensagem = $_POST["Mensagem"];
-    $estrela = $_POST["estrela"];
-    $name = $_SESSION["usuario"];
+        $mensagem = $_POST["Mensagem"];
+        $estrela = $_POST["estrela"];
+        $name = $_SESSION["usuario"];
     if(!$estrela == 0){ 
-    $query = "insert into Avaliacoes(idchaveiro, nomeCliente, avaliacoes, descricao) values('".$_SESSION['id']."', '$name', '$estrela', '$mensagem');";
-    validar($query); 
+        $query = "insert into Avaliacoes(idchaveiro, nomeCliente, avaliacoes, descricao) values('".$_SESSION['id']."', '$name', '$estrela', '$mensagem');";
+        validar($query); 
     } else {
-        echo("<script>window.location.replace('../servicos.php');alert('Ao menos uma estrela!');</script>");
+        echo("
+            <script>
+            inciaModal('modal-erro-estrela')
+            modal.back();
+        </script>");
     }
 
     }else{
-        echo('<script>window.location.replace("../cadastro.php");alert("Inicie uma sessão!");</script>');
+        echo('
+        <script>
+            iniciaModal("modal-iniciar-session");
+            modal.cadastro();
+        </script>');
     }
 } 
-
-// Alterando....
 ?>
