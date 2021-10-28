@@ -124,6 +124,6 @@ function redirecionar() {
 
     return redirecionarP;
 };
-let modal = redirecionar()
+let modal = redirecionar();
 
 </script>
