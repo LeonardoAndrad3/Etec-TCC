@@ -67,21 +67,13 @@
         <iframe 
             width="600"
             height="450"
-            style="border:0"
+            style="border:0;
+            margin: 0px auto"
             loading="lazy"
             allowfullscreen
             class="map"
             src="">
         </iframe>
-    <label>
-        <span id="lat"></span>
-    </label>
-    <br><br>
-    <label>
-        <span id="lon"></span>
-    </label>
-
-    
     <footer>
         <ul class="rodape">
             <li><h1 class="titulo-rodape">Suporte</h1></li>
