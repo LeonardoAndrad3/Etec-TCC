@@ -64,10 +64,9 @@
                 ?>
         </nav>
     </header>
-?>
         <iframe 
-            width="600"
-            height="450"
+            width="850"
+            height="550"
             style="border:0"
             loading="lazy"
             allowfullscreen
@@ -75,13 +74,6 @@
             src="">
         </iframe>
     <label>
-        <span id="lat"></span>
-    </label>
-    <br><br>
-    <label>
-        <span id="lon"></span>
-    </label>
-
     
     <footer>
         <ul class="rodape">
