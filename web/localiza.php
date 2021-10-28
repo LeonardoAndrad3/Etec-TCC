@@ -65,8 +65,8 @@
         </nav>
     </header>
         <iframe 
-            width="850"
-            height="550"
+            width="600"
+            height="450"
             style="border:0"
             loading="lazy"
             allowfullscreen
