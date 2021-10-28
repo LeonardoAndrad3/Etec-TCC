@@ -74,6 +74,13 @@
             src="">
         </iframe>
     <label>
+        <span id="lat"></span>
+    </label>
+    <br><br>
+    <label>
+        <span id="lon"></span>
+    </label>
+
     
     <footer>
         <ul class="rodape">
