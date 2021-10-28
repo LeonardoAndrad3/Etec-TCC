@@ -114,11 +114,6 @@ function redirecionar() {
     function cadastro(){
         setTimeout(() => {
             window.location.href = "../cadastro.php";
-            <?php include_once("../cadastro.php");
-            echo "<script>
-            chamarformnormal();
-            </script>";            
-            ?>
         }, 2000);
     }
     
