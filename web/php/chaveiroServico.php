@@ -2,7 +2,6 @@
 
 function chaveiroServico(){
 
-    
     try{
         $result = pg_query("SELECT * FROM chaveiro");
         if (!$result) {

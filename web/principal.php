@@ -1,3 +1,5 @@
+<?php include_once("php/logar.php");?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -23,7 +25,6 @@
 			</script>
 			<script src="//code-sa1.jivosite.com/widget/PNSgAqbd3B" async></script>
 			<?php
-				include("php/logar.php");
 				if(isset($_SESSION["usuario"])){
 					echo '<link rel="stylesheet" href="css/button.css">';
 				}
@@ -164,7 +165,12 @@
 		
 			<div class="opcoes">
 				<h1 class="titulo-centralizado">Nossas opções incluem:</h1>
-				<h3 class="tipos-chaveiros">Tipo de chaveiro //Tipo de chaveiro // Tipo de chaveiro // Tipo de chaveiro // Tipo de chaveiro // Tipo de chaveiro // Tipo de chaveiro //  </h3>
+				<h3 class="tipos-chaveiros">
+					<?php
+					include_once("php/profissoes.php");
+						profissao();
+					?>
+				</h3>
 			</div>
 		
 		

@@ -8,7 +8,6 @@ session_start();
 
 function entrar($query){
     try{$result = pg_query($query);
-        session_reset();
         include("modal.php");
         if(pg_num_rows($result) > 0){
             $row = pg_fetch_assoc($result);
