@@ -106,16 +106,16 @@ if(!isset($_SESSION["usuario"])){
             <div class="servicos-chaveiros">
                 <!--Aqui ficará o laço de repetição, bastando fazer apenas um bloco que se fizer o laço ele fica com cada um sendo um linha diferente-->
                 <?php                
-                include('php/chaveiroServico.php');
+                include_once('php/chaveiroServico.php');
                 chaveiroServico();                     
                 ?>
-                <ul class="blocos-chaveiros">
+                <!-- <ul class="blocos-chaveiros">
                     <li><h4>Nome do Chaveiro</h4></li>
                     <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></li>
                     <li><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p></li>
                     <li class="linha-botao-bloco"><a class="botao-maior" href="">Contate via WhatsApp</a><br/></li>
                     <li><a class="mais-info-bloco" href="detalhe-servicos.php">Clique aqui para mais informações</a></li>
-                </ul>
+                </ul> -->
             </div>
 
             <footer>
