@@ -2,10 +2,11 @@
 if(!isset($_SESSION["usuario"])){
     echo "
     <script>
-    iniciModal('modal-iniciar-session');
+    iniciaModal('modal-iniciar-session');
     modal.cadastro();
     </script>";
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
