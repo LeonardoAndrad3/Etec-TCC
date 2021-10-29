@@ -1,3 +1,12 @@
+<?php include_once("php/logar.php");
+if(!isset($_SESSION["usuario"])){
+    echo "
+    <script>
+    iniciModal();
+    modal.cadastro();
+    </script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,7 +20,6 @@
         <title>Open Doors</title>
 		<meta name="theme-color" content="#353535">
         <?php
-				include("php/logar.php");
 				if(isset($_SESSION["usuario"])){
 					echo '<link rel="stylesheet" href="css/button.css">';
 				}
