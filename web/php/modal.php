@@ -75,7 +75,7 @@
 <div id="modal-iniciar-session" class="modal-container">
     <div class="modal" style="border-color: gren;">
         <h3>Atenção!<h3>
-        <p>Fazer login para avaliar</p>
+        <p>Por favor, fazer login para aproveitar todas funcionalidades</p>
     </div>
 </div>
 <div id="modal-erro-estrela" class="modal-container">
