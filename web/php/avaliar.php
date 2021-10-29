@@ -1,6 +1,7 @@
 <?php
 require_once("logar.php");
 require_once("detalhesChaveiroServico.php");
+require_once("modal.php");
 
 function req(){
 
@@ -9,7 +10,6 @@ function req(){
         $postg = "SELECT * FROM chaveiro WHERE id = '$idC' ";
         $result = pg_query($postg) ;
         $row = pg_fetch_array($result);
-         
         
         return $GLOBALS['id'] = $row['id'];
     } 
