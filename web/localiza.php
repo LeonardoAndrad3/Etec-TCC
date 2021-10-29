@@ -11,6 +11,11 @@
     <title>Open Doors</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> <!--link para pegar as estrelas-->
     <meta name="theme-color" content="#353535">
+    <?php
+        if(isset($_SESSION["usuario"])){
+            echo '<link rel="stylesheet" href="css/button.css">';
+        }
+	?>
     <script src="js/localizar.js"></script>
 </head>
 <body>

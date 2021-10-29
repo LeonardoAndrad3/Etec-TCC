@@ -10,7 +10,6 @@
 		<link rel="manifest" href="manifest.json">
 		<script src="js/main.js" defer></script>
         <?php
-				include("php/logar.php");
 				if(isset($_SESSION["usuario"])){
 					echo '<link rel="stylesheet" href="css/button.css">';
 				}
