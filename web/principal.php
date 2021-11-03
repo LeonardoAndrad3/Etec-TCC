@@ -81,8 +81,6 @@
 							echo '<li><a href="cadastro.php" id="login">
 							entrar</a></li></ul>';
 					}
-
-
 					?>
 			</nav>
 		</header>
@@ -143,7 +141,6 @@
 					<li><img class="image-lampada" src="icon/lampada.png"></li>
 				</ul>
 			</div>	
-		
 
 			<div class="motivos" id="motivos">
 				<ul class="image-motivos">
