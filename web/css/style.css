@@ -8,6 +8,10 @@ body{
     width: 100%;
 }
 
+.map{
+    border-radius: 50%;
+}
+
 #login{
     color: rgb(12, 147, 3);
     font-weight: bold;

@@ -1,13 +1,4 @@
-<?php include_once("php/logar.php");
-if(!isset($_SESSION["usuario"])){
-    echo "
-    <script>
-    iniciaModal('modal-iniciar-session');
-    modal.cadastro();
-    </script>";
-}
-
-?>
+<?php include_once("php/logar.php");?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

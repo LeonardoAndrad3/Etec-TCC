@@ -137,8 +137,7 @@
                 <div class="uni-avaliacoes" style="display:block;">
                
                 <?php
-                    
-                    mostrarAv();                                 
+                    mostrarAvaliacao();                                 
                 ?>
 
                 <!-- <li><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, omnis.</p></li>
