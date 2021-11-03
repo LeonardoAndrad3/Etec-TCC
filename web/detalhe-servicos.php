@@ -137,8 +137,7 @@
                 <div class="uni-avaliacoes" style="display:block;">
                
                 <?php
-                    
-                    mostrarAv();                                 
+                    mostrarAvaliacao();                                 
                 ?>
 
                 <!-- <li><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, omnis.</p></li>
@@ -174,6 +173,5 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script src="http://maps.google.com/maps/api/js"></script>
 
-    <!-- Alterando -->
 </body>
 </html>

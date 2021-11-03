@@ -11,7 +11,7 @@ function chaveiroServico(){
 
         while ($row = pg_fetch_assoc($result)) {
             if ($row['celular'] == "") {
-            
+             
             echo " 
             <ul class='blocos-chaveiros' id='blocos-chaveiros'> 
             <li><h4>".$row['nome']."</h4></li>
@@ -41,6 +41,5 @@ function chaveiroServico(){
         return die($e);
     }
 }
-
 
 ?>

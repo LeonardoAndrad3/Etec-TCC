@@ -39,7 +39,7 @@ function validar($query){
 
     }}
 
-function mostrarAv(){
+function mostrarAvaliacao(){
     req(); 
     $_SESSION["id"] = $GLOBALS['id'];
     //Novo
