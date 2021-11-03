@@ -11,7 +11,8 @@ function entrar($query){
         include("modal.php");
         if(pg_num_rows($result) > 0){
             $row = pg_fetch_assoc($result);
-            $_SESSION['usuario'] = $row["nome"];
+            $PrimeiroName = explode(" ", $row["nome"]);
+            $_SESSION['usuario'] = $PrimeiroName[0];
             echo "<script>
                 iniciaModal('modal-login');
                 modal.principal();
