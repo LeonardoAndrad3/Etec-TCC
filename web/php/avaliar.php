@@ -22,15 +22,15 @@ function validar($query){
     if(!pg_query($query)){
         throw new Exception("
         <script>
-            inciaModal('modal-erro-geral');
+            iniciaModal('modal-erro-geral');
             modal.back();
         <script>");
     }
     else{
         echo "
         <script>
-            inciaModal('modal-sucesso-avaliacao');
-            moda.back();
+            iniciaModal('modal-sucesso-avaliacao');
+            modal.back();
         </script>";    
     }
 
@@ -241,7 +241,7 @@ if(isset($_POST["btnEstrela"])){
     } else {
         echo("
             <script>
-            inciaModal('modal-erro-estrela')
+            iniciaModal('modal-erro-estrela')
             modal.back();
         </script>");
     }
