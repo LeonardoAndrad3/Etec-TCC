@@ -143,8 +143,8 @@
             <div class="form-cadastro">
                 <form class="lista-form" action="php/logar.php" method="POST">
                     <ul>
-                        <li><p>*Email:</p><input type="text"></li>
-                        <li><p>*Senha:</p><input type="password" id="campo-senhalogin-chaveiro"required minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"><button type="button" class="visible-senha" onclick="mostrarSenhaLoginChaveiro()"><img src="icon/olho-senha.png"></button></li>
+                        <li><p>*Email:</p><input type="text" name="txtEmailLogin"></li>
+                        <li><p>*Senha:</p><input type="password" name="txtSenhaLogin" id="campo-senhalogin-chaveiro"required minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"><button type="button" class="visible-senha" onclick="mostrarSenhaLoginChaveiro()"><img src="icon/olho-senha.png"></button></li>
                         <li class="submit-line"><button name="btnLoginChaveiro" type="submit" class="botaochav">login</button></li>
                     </ul>
                 </form>
