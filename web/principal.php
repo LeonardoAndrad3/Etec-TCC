@@ -158,8 +158,7 @@
 					<li class="botao-motivos"><a class="botoes" href="servicos.html">Quero contratar</a></li>
 				</ul>
 			</div>
-		
-		
+					
 			<div class="opcoes">
 				<h1 class="titulo-centralizado">Nossas opções incluem:</h1>
 				<h3 class="tipos-chaveiros">

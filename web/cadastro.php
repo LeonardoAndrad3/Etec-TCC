@@ -69,7 +69,7 @@
                 <form class="lista-form" action="php/cadastrar.php" method="POST">
                     <ul>
                         <li><p>*Nome:</p><input type="text" name="txtName" required></li>
-                        <li><p>*Email:</p><input type="text" name="txtEmailCadastro"required></li>
+                        <li><p>*Email:</p><input type="email" name="txtEmailCadastro"required></li>
                         <li><p>*Senha:</p><input type="password" name="txtSenhaCadastro" id ="campo-senhaconfirm2"pattern="^[a-zA-Z0-9]+$" minlength="6" maxlength="50"required ><button type="button" class="visible-senha" onclick="mostrarConfSenha()" ><img src="icon/olho-senha.png"></button></li>
                         <li><p>*Confirmar Senha:</p><input type="password" id="campo-senhaconfirm" name="txtSenhaConf" pattern="^[a-zA-Z0-9]+$" minlength="6" maxlength="50"required ><button type="button" class="visible-senha" onclick="mostrarConfSenha()" ><img src="icon/olho-senha.png"></button></li>
                         <li><p>*CPF:</p><input type="text" name="txtCpf" required  minlength="14" onkeypress="$(this).mask('000.000.000-00')"></li>
@@ -118,7 +118,7 @@
                 <form class="lista-form" name="form_cliente" action="php/cadastrar.php" method="POST">
                     <ul>
                         <li><p>*Nome:</p><input type="text" name="txtName"required></li>
-                        <li><p>*Email:</p><input type="text" name="txtEmailCadastro"required></li>
+                        <li><p>*Email:</p><input type="email" name="txtEmailCadastro"required></li>
                         <li><p>*Senha:</p><input type="password" name="txtSenhaCadastro" minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"required><button type="button" class="visible-senha" onclick="mostrarConfSenha()" ><img src="icon/olho-senha.png"></button></li>
                         <li><p>*Confirmar Senha:</p><input type="password" name="txtSenhaConf" minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"required><button type="button" class="visible-senha" onclick="mostrarConfSenha()" ><img src="icon/olho-senha.png"></button></li>
                     </ul>
