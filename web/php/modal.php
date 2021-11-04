@@ -20,6 +20,11 @@
         <p>Obrigado, sua avaliação faz toda diferença</p>
     </div>
 </div>
+<div id="modal-sair" class="modal-container">
+    <div class="modal" style="border-color: gren;">
+        <h3>Até logo!<h3>
+        <p>As portas sempre estarão apertas!</p>
+    </div>
 
 
 <!-- modal erro -->
@@ -60,26 +65,21 @@
         <p>Por favor, tente novamente!</p>
     </div>
 </div>
-<div id="modal-sair" class="modal-container">
-    <div class="modal" style="border-color: gren;">
-        <h3>Até logo!<h3>
-        <p>As portas sempre estarão apertas!</p>
-    </div>
 </div>
 <div id="modal-erro-geral" class="modal-container">
-    <div class="modal" style="border-color: gren;">
+    <div class="modal" style="border-color: red;">
         <h3>Ops, ocorreu um erro!<h3>
         <p>Tente novamente mais tarde ou tente entrar em contato com o suporte</p>
     </div>
 </div>
 <div id="modal-iniciar-session" class="modal-container">
-    <div class="modal" style="border-color: gren;">
+    <div class="modal" style="border-color: red;">
         <h3>Atenção!<h3>
         <p>Por favor, fazer login para aproveitar todas funcionalidades</p>
     </div>
 </div>
 <div id="modal-erro-estrela" class="modal-container">
-    <div class="modal" style="border-color: gren;">
+    <div class="modal" style="border-color: red;">
         <h3>Por favor!<h3>
         <p>Ao menos uma estrela para avaliar!</p>
     </div>
