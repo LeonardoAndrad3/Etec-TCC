@@ -97,7 +97,7 @@
             src="">
     	</iframe>
 
-			<button class="link" onclick=""> Entrar </button>
+			<button class="link" onclick="functionMaps()"> Entrar </button>
 
 		</section>
 
