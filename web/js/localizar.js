@@ -11,10 +11,9 @@ function getLocation(){
     });
 }
 
-function functionMaps(){
+function direcionarMaps(){
     let urlMaps = `https://www.google.com.br/maps/place/${lat},+${lon}`;
     window.location.href = urlMaps;
 }
-
 
 getLocation()
