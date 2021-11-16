@@ -45,3 +45,20 @@ function alternarMenu(event){
 
 btnMobile.addEventListener('click', alternarMenu);
 btnMobile.addEventListener('touchstart', alternarMenu);
+
+// if(1 == 1){
+// 	function iniciaModal(modalID){
+// 		const modal = document.getElementById(modalID);
+// 		if (modal){
+// 			modal.classList.add("mostrar");
+// 			modal.addEventListener("click", (e)=> {
+// 			console.log(e);
+// 			if(e.target.className == "fechar"){
+// 				modal.classList.remove("mostrar");
+// 			}
+// 			});
+// 		}
+// 	}
+
+// 	iniciaModal('modal-container');
+// }

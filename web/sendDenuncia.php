@@ -4,7 +4,7 @@
     if(isset($_POST['nome']) && isset($_POST['email'])){
         $name = $_POST['nome'];
         $email = $_POST['email'];
-        $subject = "Denuncia";
+        $subject = $_POST["Denuncia"];
         $body = $_POST['mensagem'];
 
         require_once "PHPMailer/PHPMailer.php";

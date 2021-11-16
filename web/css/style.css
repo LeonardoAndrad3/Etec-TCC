@@ -8,6 +8,7 @@ body{
     width: 100%;
 }
 
+
 #login{
     color: rgb(12, 147, 3);
     font-weight: bold;
@@ -126,10 +127,10 @@ a:hover{ /*mostrar área de contato*/
     }
     /*Fim home*/
 
-
     /*Início div-oque*/
     .oque{
         color: white;
+        margin-top: 5px;
     }
 
     .lista-oque{
@@ -227,6 +228,11 @@ a:hover{ /*mostrar área de contato*/
     /*Fim sobre*/
 
     /*ìnicio opcoes*/
+    .sucesso{
+        color: white;
+        font-size: 24px arial;
+
+    }
 
     .opcoes{
         background-image: url(../icon/fundo-opcoes.png);
@@ -241,6 +247,23 @@ a:hover{ /*mostrar área de contato*/
     }
     .tipos-chaveiros{
         text-align: center;
+    }
+
+    .sub-menu{
+        display: flex;
+        background-color: rgb(53, 53, 53);
+        list-style: none;
+        font-weight: bold;
+        border-radius: 0 0 10px 10px;
+        padding: 18px 10px 18px 10px;
+        right: 0;
+        width: 180px;
+        align-items: center;
+        display: none;
+    }
+    
+    .sub-menu a{
+        color: red;
     }
 
     /*Fim opcoes*/
@@ -260,12 +283,12 @@ a:hover{ /*mostrar área de contato*/
     .titulo-rodape{
         font-size: 30px;
         text-align: center;
-        padding-bottom: 10px;
+        padding-bottom: 5px;
         border-bottom: 2px solid white;
         margin: 0 35vw 0 35vw;
     }
     .copy{
-        padding-top: 20px;
+        padding-top: 5px;
     }
     .link-rodape{
         text-decoration: underline;
@@ -317,6 +340,14 @@ a:hover{ /*mostrar área de contato*/
     }
     .titulo-entrar{
         font-size: 35px;
+        text-align: center;
+        border-bottom: 2px solid rgb(12, 147, 3);
+        padding: 30px 10px 10px 10px;
+        margin: 0 30vw 20px 30vw;
+    }
+    .titulo-voltar{
+        font-size: 35px;
+        color: white;
         text-align: center;
         border-bottom: 2px solid rgb(12, 147, 3);
         padding: 30px 10px 10px 10px;
@@ -374,7 +405,7 @@ a:hover{ /*mostrar área de contato*/
     .form-cadastro select:focus{
         outline: 0;
     }
-    .form-cadastro input[type="button"], .form-cadastro input[type="submit"]{
+    .form-cadastro button[type="submit"]{
         cursor: pointer;
         color: rgb(12, 147, 3);
         font-weight: bold;
@@ -386,7 +417,7 @@ a:hover{ /*mostrar área de contato*/
         width: 200px;
         font-size: 18px;
     }
-    .form-cadastro input[type="button"]:hover, .form-cadastro input[type="submit"]:hover{
+    .form-cadastro button[type="submit"]:hover{
         background-color: rgb(12, 147, 3);
         color: white;
     }
@@ -642,6 +673,10 @@ a:hover{ /*mostrar área de contato*/
     }
     .detalhe-encontrar{
         background-color: rgb(24, 25, 27);
+        width: 100px;
+    }
+    .mapa-google{
+
     }
     .detalhe-descricao h4, .detalhe-funcao h4, .detalhe-valor h4, .detalhe-avaliacoes h4, .detalhe-encontrar h4{
         font-size: 18px;
@@ -862,9 +897,37 @@ a:hover{ /*mostrar área de contato*/
     /*Fim contate-nos*/
     /*Inicio erro conexao*/
     .mensagem-erro{
-        display: none;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 50px auto;
+        color: white;
+    }
+    .mensagem-erro img{
+        width: 37vw;
+        height: 66vh;
+    }
+    .mensagem-erro h3{
+        font-size: 22px;
+        margin-bottom: 0;
+    }
+    .mensagem-erro p{
+        margin: 15px;
     }
     /*Fim erro conexao*/
+    /*Inicio localização*/
+    .conteudo-localizacao{
+        justify-content: center;
+    }
+    .map{
+        border: none;
+        width: 80%;
+        height: 90%;
+        margin: 20px 10%;
+    }
+    /*FIm localização*/
 
 @media (max-width: 600px){
     /*caso esteja abaixo de 600px*/
@@ -1101,7 +1164,15 @@ a:hover{ /*mostrar área de contato*/
             text-align: left;
             padding-left: 10px;
         }
+        .mapa-google{
+            margin-left: -20px;
+        }
     /*Fim detalhes do serviço*/
+    .mensagem-erro img{
+        width: 70%;
+        height: auto;
+    }
+    /*Fim erro conexao*/
 }
 
 @media (max-width: 750px){
@@ -1225,6 +1296,9 @@ a:hover{ /*mostrar área de contato*/
         text-align: left;
         padding-left: 10px;
     }
+    .mapa-google{
+        margin-left: -20px;
+    }
     /*Fim detalhes serviços*/
     /*Tela contate-nos*/
     .content-contate img{
@@ -1248,6 +1322,12 @@ a:hover{ /*mostrar área de contato*/
         width: 250px;
     }
     /*Fim Tela contate-nos*/
+    /*Inicio erro conexao*/
+    .mensagem-erro img{
+        width: 65%;
+        height: auto;
+    }
+    /*Fim erro conexao*/
 }
 @media (max-width: 930px) and (min-width: 751px){
     #menu{
@@ -1347,6 +1427,9 @@ a:hover{ /*mostrar área de contato*/
         text-align: left;
         padding-left: 10px;
     }
+    .mapa-google{
+        margin-left: -20px;
+    }
     /*Fim detalhes serviços*/
     /*Tela contate-nos*/
     .content-contate img{
@@ -1356,6 +1439,12 @@ a:hover{ /*mostrar área de contato*/
         width: 35vw;
     }
     /*Fim Tela contate-nos*/
+    /*Inicio erro conexao*/
+    .mensagem-erro img{
+        width: 45%;
+        height: auto;
+    }
+    /*Fim erro conexao*/
 }
 
 @media (max-width: 1150px) and (min-width: 931px){
@@ -1400,6 +1489,12 @@ a:hover{ /*mostrar área de contato*/
         width: 35vw;
     }
     /*Fim Tela contate-nos*/
+    /*Inicio erro conexao*/
+    .mensagem-erro img{
+        width: 45%;
+        height: auto;
+    }
+    /*Fim erro conexao*/
 }
 
 @media (max-width: 1250px) and (min-width: 1151px){
@@ -1418,4 +1513,10 @@ a:hover{ /*mostrar área de contato*/
         width: 400px;
     }
     /*Fim Tela contate-nos*/
+    /*Inicio erro conexao*/
+    .mensagem-erro img{
+        width: 45%;
+        height: auto;
+    }
+    /*Fim erro conexao*/
 }

@@ -1,31 +1,74 @@
+<?php include_once("php/logar.php");?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="manifest" href="manifest.json">
+        <script src="js/main.js" defer></script>
+        <script src="//code-sa1.jivosite.com/widget/PNSgAqbd3B" async></script>
         <title>Open Doors</title>
 		<meta name="theme-color" content="#353535">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="manifest" href="manifest.json">
-		<script src="js/main.js" defer></script>
+        <?php
+				if(isset($_SESSION["usuario"])){
+					echo '<link rel="stylesheet" href="css/button.css">';
+				}
+			?>
     </head>
     <body>
         <header id="header">
-			<a id="logo" href="index.html"><img src="icon/logo-2.png" width="150" height="120"></a> <!--logo1: w:60, h:60 -- logo2: w:150, h:120 -- logo3: w:130, h:70-->
-			<nav id="nav">
-				<button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
-					<span id="hamburguer"></span>
-				</button>
-				<ul id="menu" role="menu">
-					<li><a href="servicos.html">Serviços</a></li>
-					<li><a href="">Sua localização</a></li>
-					<li><a href="contate.html">Contate-nos</a></li>
-					<li><a href="index.html">Sobre nós</a></li>
-					<li><a href="cadastro.html" id="login">Entrar</a></li>
-				</ul>
-			</nav>
-		</header>
+            <a id="logo" href="index.php"><img src="icon/logo-2.png" width="150" height="120"></a> <!--logo1: w:60, h:60 -- logo2: w:150, h:120 -- logo3: w:130, h:70-->
+            <nav id="nav">
+                <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
+                    <span id="hamburguer"></span>
+                </button>
+                <ul id="menu" role="menu">
+                    <li><a href="servicos.php">Serviços</a></li>
+                    <li><a href="localiza.php">Sua localização</a></li>
+                    <li><a href="contate.php">Contate-nos</a></li>
+                    <li><a href="index.php">Sobre nós</a></li>
+                    <?php
+					if(isset($_SESSION["usuario"])){
+						echo '<li><button href="" id="login" class="sessao">'.
+						$_SESSION["usuario"].'</button></a></ul>';
+						echo '<script>
+							//script para o modal
+								function iniciaModal(modalID){
+									const modal = document.getElementById(modalID);
+									if (modal){
+										modal.classList.add("mostrar");
+										modal.addEventListener("click", (e)=> {
+										console.log(e);
+										if(e.target.className == "fechar"){
+											modal.classList.remove("mostrar");
+										}
+										});
+									}
+								}
+
+								const sessaoR = document.querySelector(".sessao");
+								sessaoR.addEventListener("click", () => iniciaModal ("modal-container"));
+							</script>
+							<div id="modal-container" class="modal-container">
+								<div class="modal" style="border-color: red;">
+									<button class="fechar" style="border-color: red;">X</button>
+									<h3>Deseja encerrar a sessão?</h3>
+									<p>Ao clicar abaixo você desconectará de sua conta.</p>
+									<form action="php/logar.php" method="POST">
+										<button name="btnSair" class="encerrar-sessao">Encerrar</button>
+									</form>
+								</div>
+							</div>';
+
+						}else {
+							echo '<li><a href="cadastro.php" id="login">
+							Entrar</a></li></ul>';
+					}
+					?>
+            </nav>
+        </header>
 
         <section class="conteudo">
 
@@ -36,7 +79,7 @@
             <div class="voce-chaveiro">
                 <h2>Você é um chaveiro?</h2>
                 <p>Clique abaixo para cadastrar-se:</p>
-                <a class="botao-maior" href="cadastro.html">Cadastrar-se</a>
+                <a class="botao-maior" href="cadastro.php">Cadastrar-se</a>
             </div>
             <div class="opcoes-servicos">
                 <h2>Veja as opções que temos para você</h2>
@@ -54,48 +97,18 @@
 
             <div class="servicos-chaveiros">
                 <!--Aqui ficará o laço de repetição, bastando fazer apenas um bloco que se fizer o laço ele fica com cada um sendo um linha diferente-->
-
-                <ul class="blocos-chaveiros">
+                <?php                
+                include_once('php/chaveiroServico.php');
+                chaveiroServico();                     
+                ?>
+                <!-- <ul class="blocos-chaveiros">
                     <li><h4>Nome do Chaveiro</h4></li>
                     <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></li>
                     <li><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p></li>
                     <li class="linha-botao-bloco"><a class="botao-maior" href="">Contate via WhatsApp</a><br/></li>
-                    <li><a class="mais-info-bloco" href="detalhe-servicos.html">Clique aqui para mais informações</a></li>
-                </ul>
-
-                <ul class="blocos-chaveiros">
-                    <li><h4>Nome do Chaveiro</h4></li>
-                    <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></li>
-                    <li><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p></li>
-                    <li class="linha-botao-bloco"><a class="botao-maior" href="">Contate via WhatsApp</a><br/></li>
-                    <li><a class="mais-info-bloco" href="detalhe-servicos.html">Clique aqui para mais informações</a></li>
-                </ul>
-
-                <ul class="blocos-chaveiros">
-                    <li><h4>Nome do Chaveiro</h4></li>
-                    <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></li>
-                    <li><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p></li>
-                    <li class="linha-botao-bloco"><a class="botao-maior" href="">Contate via WhatsApp</a><br/></li>
-                    <li><a class="mais-info-bloco" href="detalhe-servicos.html">Clique aqui para mais informações</a></li>
-                </ul>
-
-                <ul class="blocos-chaveiros">
-                    <li><h4>Nome do Chaveiro</h4></li>
-                    <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></li>
-                    <li><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p></li>
-                    <li class="linha-botao-bloco"><a class="botao-maior" href="">Contate via WhatsApp</a><br/></li>
-                    <li><a class="mais-info-bloco" href="detalhe-servicos.html">Clique aqui para mais informações</a></li>
-                </ul>
-
-                <ul class="blocos-chaveiros">
-                    <li><h4>Nome do Chaveiro</h4></li>
-                    <li><p>Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></li>
-                    <li><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p></li>
-                    <li class="linha-botao-bloco"><a class="botao-maior" href="">Contate via WhatsApp</a><br/></li>
-                    <li><a class="mais-info-bloco" href="detalhe-servicos.html">Clique aqui para mais informações</a></li>
-                </ul>
+                    <li><a class="mais-info-bloco" href="detalhe-servicos.php">Clique aqui para mais informações</a></li>
+                </ul> -->
             </div>
-
 
             <footer>
                 <ul class="rodape">

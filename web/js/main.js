@@ -7,3 +7,5 @@ if ('serviceWorker' in navigator) {
             console.dir('Service worker registration failed (arquivo main), error:', error);
         });
 }
+
+

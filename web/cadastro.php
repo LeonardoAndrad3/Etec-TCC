@@ -8,22 +8,28 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="manifest" href="manifest.json">
         <script src="js/main.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+        <!-- <script src="chamarFunctionPhp.js"></script> -->
+        <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    
     </head>
     <body>
 
         <header id="header">
-            <a id="logo" href="index.html"><img src="icon/logo-2.png" width="150" height="120"></a> <!--logo1: w:60, h:60 -- logo2: w:150, h:120 -- logo3: w:130, h:70-->
+            <a id="logo" href="index.php"><img src="icon/logo-2.png" width="150" height="120"></a> <!--logo1: w:60, h:60 -- logo2: w:150, h:120 -- logo3: w:130, h:70-->
             <nav id="nav">
                 <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
                     <span id="hamburguer"></span>
                 </button>
                 <ul id="menu" role="menu">
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="">Sua localização</a></li>
-                    <li><a href="contate.html">Contate-nos</a></li>
-                    <li><a href="index.html">Sobre nós</a></li>
-                    <li><a href="cadastro.html" id="login">Entrar</a></li>
+                    <li><a href="servicos.php">Serviços</a></li>
+                    <li><a href="localiza.php">Sua localização</a></li>
+                    <li><a href="contate.php">Contate-nos</a></li>
+                    <li><a href="index.php">Sobre nós</a></li>              
+                    <li><a href="cadastro.php" id="login">Entrar</a></li>
                 </ul>
             </nav>
         </header>
@@ -60,43 +66,47 @@
             </div>
         
             <div class="form-cadastro">
-                <form class="lista-form">
-                    <ul class="cadastro-primeira-ul-chav">
-                        <li><p>*Nome:</p><input type="text"></li>
-                        <li><p>*Email:</p><input type="text"></li>
-                        <li><p>*Senha:</p><input type="password" id="campo-senha"><button type="button" class="visible-senha" onclick="mostrarSenha()"><img src="icon/olho-senha.png"></button></li>
-                        <li><p>*Confirmar Senha:</p><input type="password" id="campo-senhaconfirm"><button type="button" class="visible-senha" onclick="mostrarConfSenha()"><img src="icon/olho-senha.png"></button></li>
-                        <li><p>*CPF:</p><input type="text"></li>
-                        <li><p>*Data de Nascimento:</p><input type="text"></li>
-                        <li><p>*CEP:</p><input type="text"></li>
-                        <li><p>*Telefone:</p><input type="text"></li>
+                <form class="lista-form" action="php/cadastrar.php" method="POST">
+                    <ul>
+                        <li><p>*Nome:</p><input type="text" name="txtName" required></li>
+                        <li><p>*Email:</p><input type="email" name="txtEmailCadastro"required></li>
+                        <li><p>*Senha:</p><input type="password" name="txtSenhaCadastro" id ="campo-senhaconfirm2"pattern="^[a-zA-Z0-9]+$" minlength="6" maxlength="50"required ><button type="button" class="visible-senha" onclick="mostrarConfSenha()" ><img src="icon/olho-senha.png"></button></li>
+                        <li><p>*Confirmar Senha:</p><input type="password" id="campo-senhaconfirm" name="txtSenhaConf" pattern="^[a-zA-Z0-9]+$" minlength="6" maxlength="50"required ><button type="button" class="visible-senha" onclick="mostrarConfSenha()" ><img src="icon/olho-senha.png"></button></li>
+                        <li><p>*CPF:</p><input type="text" name="txtCpf" required  minlength="14" onkeypress="$(this).mask('000.000.000-00')"></li>
+                        <li><p>*Data de Nascimento:<p><input type="text" name="txtDataNascimento"required onkeypress="$(this).mask('00/00/0000')"></li>
+                        <li><p>*CEP:</p><input type="text" onkeypress="$(this).mask('00000-000')"name="txtCep" required ></li>
+                        <li><p>
+                                Celular: <input type="checkbox" id="checkBoxCelular" onchange="javascript:Caixa()"><br/>
+                                <input id="txtBoxCelular" type="text" name="txtCelular" onkeypress="$(this).mask('(00) 0000-00009')"  style="display:none "/>
+                            </p>
+                        </li>
+                        <li><p>
+                                Telefone: <input type="checkbox" id="checkBoxTelefone" onchange="javascript:Caixa2()"><br/>
+                                <input id="txtBoxTelefone" type="text" name="txtTelefone" onkeypress="$(this).mask('(00) 0000-00009')" style="display:none"/>
+                            </p>
+                        </li>
                     </ul>
 
                     <ul class="cadastro-segunda-ul-chav">
-                        <li><p>Descreva-se:</p><input type="text"></li>
+                        <li><p>Descreva-se:</p><input type="text" name="txtDescricao"></li>
                         <li><p id="funcao">*Função Principal <br/>
-                            <select id="lista">
+                            <select id="lista" name="txtEspecialidade"required>
                                 <option value="" disabled selected>Selecione</option>
-                                <option value="1">Chaveiro Residencial</option>
-                                <option value="2">Chaveiro Residencial</option>
+                                <?php   
+                                include('php/profissoes.php');
+                                profissao();                           
+                                ?>
                                 <option value="3">Outro</option>
                             </select><br/>
                         </p></li>
-                        <li><p>*Valor da função principal:</p><input type="text"></li>
-                        <li><p>
-                                Possui outras funções? <input type="checkbox" id="checkBox1" onchange="javascript:Caixa()"><br/>
-                                <input id="textBox1" type="text" style="display:none"/>
-                            </p>
-                        </li>
-                        <li><p>Insira os valores das funções extras:</p><input type="text"></li>
-                        <li><p>*Métodos de pagamento aceito: <br/> <p>Dinheiro: <input type="checkbox"></p> <p>Cartão: <input type="checkbox"></p> 
+                        <li><p>*Valor da função principal:</p><input type="text" required></li>
+                        <li><p>*Métodos de pagamento aceito: <br/> <p>Dinheiro: <input type="checkbox" value="Dinheiro"name="txtPagamentoD"></p> <p>Cartão: <input type="checkbox" value="Cartão" name="txtPagamentoC"></p> 
                         </p></li>
-                        <li class="submit-line"><input type="button" value="Cadastrar" class="botaochav"></li>
+                        <li class="submit-line"><button name="btnCadastrarChaveiro" type="submit" class="botaochav">Cadastrar</button></li> 
                     </ul>
                 </form>
             </div>
         </section>
-        
         <!--Abaixo é o cadastro do usuário normal-->
         <section id="cadastronormal" class="cadastro" style="display: none;">
             <div class="login-cadastro">
@@ -105,18 +115,19 @@
             </div>
         
             <div class="form-cadastro">
-                <form class="lista-form">
+                <form class="lista-form" name="form_cliente" action="php/cadastrar.php" method="POST">
                     <ul>
-                        <li><p>*Nome:</p><input type="text"></li>
-                        <li><p>*Email:</p><input type="text"></li>
-                        <li><p>*Senha:</p><input type="password" id="campo-senha2"><button type="button" class="visible-senha" onclick="mostrarSenha()"><img src="icon/olho-senha.png"></button></li>
-                        <li><p>*Confirmar Senha:</p><input type="password" id="campo-senhaconfirm2"><button type="button" class="visible-senha" onclick="mostrarConfSenha()"><img src="icon/olho-senha.png"></button></li>
+                        <li><p>*Nome:</p><input type="text" name="txtName"required></li>
+                        <li><p>*Email:</p><input type="email" name="txtEmailCadastro"required></li>
+                        <li><p>*Senha:</p><input type="password" name="txtSenhaCadastro" minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"required><button type="button" class="visible-senha" onclick="mostrarConfSenha()" ><img src="icon/olho-senha.png"></button></li>
+                        <li><p>*Confirmar Senha:</p><input type="password" name="txtSenhaConf" minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"required><button type="button" class="visible-senha" onclick="mostrarConfSenha()" ><img src="icon/olho-senha.png"></button></li>
                     </ul>
+
                     <ul class="cadastro-segunda-ul">
-                        <li><p>*CPF:</p><input type="text"></li>
-                        <li><p>*Data de Nascimento:</p><input type="text"></li>
-                        <li><p>*Telefone:</p><input type="text"></li>
-                        <li class="submit-line"><input type="button" value="Cadastrar" class="botaouser"></li>
+                        <li><p>*CPF:</p><input type="text"required name="txtCpf" onkeypress="$(this).mask('000.000.000-00')"></li>
+                        <li><p>*Data de Nascimento:</p><input type="text"required name="txtDataNascimento" onkeypress="$(this).mask('00/00/0000')"></li>
+                        <li><p>*Telefone:</p><input type="text"required name="txtTelefone" onkeypress="$(this).mask('(00) 0000-00009')"></li>
+                        <li class="submit-line"><button name="btnCadastrarCliente" type="submit" class="botaouser">Cadastrar</button></li>
                     </ul>
                 </form>
             </div>
@@ -130,11 +141,11 @@
             </div>
 
             <div class="form-cadastro">
-                <form class="lista-form">
+                <form class="lista-form" action="php/logar.php" method="POST">
                     <ul>
-                        <li><p>*Email:</p><input type="text"></li>
-                        <li><p>*Senha:</p><input type="password" id="campo-senhalogin-chaveiro"><button type="button" class="visible-senha" onclick="mostrarSenhaLoginChaveiro()"><img src="icon/olho-senha.png"></button></li>
-                        <li class="submit-line"><input type="submit" value="Entrar"></li>
+                        <li><p>*Email:</p><input type="text" name="txtEmailLogin"></li>
+                        <li><p>*Senha:</p><input type="password" name="txtSenhaLogin" id="campo-senhalogin-chaveiro"required minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"><button type="button" class="visible-senha" onclick="mostrarSenhaLoginChaveiro()"><img src="icon/olho-senha.png"></button></li>
+                        <li class="submit-line"><button name="btnLoginChaveiro" type="submit" class="botaochav">login</button></li>
                     </ul>
                 </form>
             </div>
@@ -148,32 +159,73 @@
             </div>
 
             <div class="form-cadastro">
-                <form class="lista-form">
+                <form class="lista-form" action="php/logar.php" method="POST">
                     <ul>
-                        <li><p>*Email:</p><input type="text"></li>
-                        <li><p>*Senha:</p><input type="password" id="campo-senhalogin"><button type="button" class="visible-senha" onclick="mostrarSenhaLogin()"><img src="icon/olho-senha.png"></button></li>
-                        <li class="submit-line"><input type="submit" value="Entrar"></li>
+                        <li><p>*Email:</p><input type="text" name="txtEmailLogin" required></li>
+                        <li><p>*Senha:</p><input type="password" name="txtSenhaLogin" id="campo-senhalogin"required minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"><button type="button" class="visible-senha" onclick="mostrarSenhaLogin()"><img src="icon/olho-senha.png"></button></li>
+                        <li class="submit-line"><button name="btnLoginCliente" type="submit" class="botaochav">Login</button></li>
                     </ul>
                 </form>
             </div>
         </section>
+            <footer>
+                <ul class="rodape">
+                    <li><h1 class="titulo-rodape">Suporte</h1></li>
+                    <li><p>Email: opendoors@gmail.com</p></li>
+                    <li><p>Desenvolvido por: Giovanna Rocha, Leonardo Andrade, Mateus Santana, Renan Rocha.</p></li>
+                    <li><p class="copy">Copyright © 2021 Open doors</p></li>
+                    <li><a class="link-rodape" href="">Termos e condições</a></li>
+                </ul>
+            </footer>
         
-        <footer>
-            <ul class="rodape">
-                <li><h1 class="titulo-rodape">Suporte</h1></li>
-                <li><p>Email: contatopendoors@gmail.com</p></li>
-                <li><p>Desenvolvido por: Giovanna Rocha, Leonardo Andrade, Mateus Santana, Renan Rocha.</p></li>
-                <li><p class="copy">Copyright © 2021 Open doors</p></li>
-                <li><a class="link-rodape" href="">Termos e condições</a></li>
-            </ul>
-        </footer>
-        
-        <div id="modal-container" class="modal-container">
+            <div id="modal-container" class="modal-container">
+                <div class="modal" style="border-color: red;">
+                    <button class="fechar" style="border-color: red;">X</button>
+                    <h3>Deseja encerrar a sessão?</h3>
+                    <p>Ao clicar abaixo você desconectará de sua conta.</p>
+                    <form action="php/logar.php" method="POST">
+                        <button name="btnSair" class="encerrar-sessao">Encerrar</button>
+                    </form>
+                </div>
+            </div>
+            
+        <!-- <div id="modal-sucesso" class="modal-container">
             <div class="modal">
-                <a href="index.html"><button class="fechar">X</button></a>
+                <a href="index.php"><button class="fechar">X</button></a>
+                <h3>Cadastro realizado com sucesso!</h3>
+            </div>
+        </div> 
+        <div id="modal-falha" class="modal-container">
+            <div class="modal">
+                <a href="index.php"><button class="fechar">X</button></a>
+                <h3>Falha ao Cadastro!</h3>
+            </div>
+        </div>    
+        <div id="modal-cpf" class="modal-container">
+            <div class="modal">
+                <a href="index.php"><button class="fechar">X</button></a>
+                <h3>Cadastro realizado com sucesso!</h3>
+            </div>
+        </div> 
+        <div id="modal-login" class="modal-container">
+            <div class="modal">
+                <a href="index.php"><button class="fechar">X</button></a>
+                <h3>Cadastro realizado com sucesso!</h3>
+            </div>
+        </div>        
+        <div id="modal-email" class="modal-container">
+            <div class="modal">
+                <a href="index.php"><button class="fechar">X</button></a>
                 <h3>Cadastro realizado com sucesso!</h3>
             </div>
         </div>    
+        <div id="modal-senhas" class="modal-container">
+            <div class="modal">
+                <a href="index.php"><button class="fechar">X</button></a>
+                <h3>Cadastro realizado com sucesso!</h3>
+            </div>
+        </div>        -->
+
 
         <script type="text/javascript" src="js/script.js"></script>
 
@@ -181,9 +233,14 @@
         <script>
             $('#lista').change(function(){
                 if( $(this).val() == '3'){
-                    $('#funcao').append('<input id="myInput" type="text"/>');
+                    $('#funcao').append(<?php
+                        require_once('php/profissoes.php');
+                        profissaoCheck();
+                        ?>);
                 }else{
-                    $('#myInput').remove();
+                    for(let i=0;i<15;i++){
+                        $("#myInput").remove();
+                    } 
                 }
             });
         </script>
@@ -222,12 +279,23 @@
         <script type="text/javascript">
             function Caixa()
             {
-                var check = document.getElementById('checkBox1');
+                var check = document.getElementById('checkBoxCelular');
                 if (check.checked) {
-                    document.getElementById('textBox1').style.display = 'block';
+                    document.getElementById('txtBoxCelular').style.display = 'block';
                 }
                 else
-                    document.getElementById('textBox1').style.display = 'none';                
+                    document.getElementById('txtBoxCelular').style.display = 'none';                
+            }
+        </script>
+        <script type="text/javascript">
+            function Caixa2()
+            {
+                var check = document.getElementById('checkBoxTelefone');
+                if (check.checked) {
+                    document.getElementById('txtBoxTelefone').style.display = 'block';
+                }
+                else
+                    document.getElementById('txtBoxTelefone').style.display = 'none';                
             }
         </script>
 
@@ -316,11 +384,12 @@
                 }else {
                     tipo5.type = "password";
                 }
+              
             }
 
         </script>
 
-        <script>
+        <!-- <script>
             //script para o modal
 
             function iniciaModal(modalID){
@@ -341,7 +410,9 @@
             const botaochav = document.querySelector(".botaochav");
             botaochav.addEventListener("click", () => iniciaModal ('modal-container'));
 
-        </script>
+        </script> -->
+
+
 
     </body>
 </html>
