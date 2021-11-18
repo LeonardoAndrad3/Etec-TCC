@@ -96,7 +96,7 @@
             src="">
     	</iframe>
 			<!--Abaixo é o botão para rota-->
-			<!--<button class="link" onclick="direcionarMaps()">Entrar</button>-->
+			<button class="link" onclick="direcionarMaps()">Entrar</button>
 
 		</section>
 
