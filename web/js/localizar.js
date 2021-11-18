@@ -13,7 +13,7 @@ function getLocation(){
 
 function direcionarMaps(){
     let urlMaps = `https://www.google.com.br/maps/place/${lat},+${lon}`;
-    window.open = urlMaps;
+    window.open(urlMaps, "_blank");
 }
 
 getLocation()
