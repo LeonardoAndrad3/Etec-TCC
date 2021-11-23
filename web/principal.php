@@ -42,7 +42,7 @@
 				<li><a href="servicos.php">Serviços</a></li>
                 <li><a href="localiza.php">Sua localização</a></li>
                 <li><a href="contate.php">Contate-nos</a></li>
-                <li><a href="index.php">Sobre nós</a></li>
+                <li><a class="link-parascroll" href="#sobre-nos">Sobre nós</a></li>
 					<?php
 					if(isset($_SESSION["usuario"])){
 						echo '<li><button id="login" class="sessao">'.
@@ -79,7 +79,7 @@
 							
 						}else {
 							echo '<li><a href="cadastro.php" id="login">
-							entrar</a></li></ul>';
+							Entrar</a></li></ul>';
 					}
 					?>
 			</nav>

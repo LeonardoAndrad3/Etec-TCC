@@ -79,25 +79,24 @@
 							
 						}else {
 							echo '<li><a href="cadastro.php" id="login">
-							entrar</a></li></ul>';
+							Entrar</a></li></ul>';
 					}
 					?>
 			</nav>
 		</header>
 
-		<section class="conteudo">
+		<section class="conteudo-localizacao">
 			
         <iframe 
             width="600"
             height="450"
-            style="border:2;"
             loading="lazy"
             allowfullscreen
             class="map"
             src="">
     	</iframe>
-
-			<button class="link" onclick="direcionarMaps()"> Entrar </button>
+			<!--Abaixo é o botão para rota-->
+			<button class="link" onclick="direcionarMaps()">Entrar</button>
 
 		</section>
 

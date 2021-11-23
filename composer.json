@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 {
   "require" : {
   },
   "require-dev": {
     "heroku/heroku-buildpack-php": "*"
   }
+=======
+{
+  "require" : {
+  },
+  "require-dev": {
+    "heroku/heroku-buildpack-php": "*"
+  }
+>>>>>>> 58c4b262ca902e831c98e1f936ef71ce550245a2
 }

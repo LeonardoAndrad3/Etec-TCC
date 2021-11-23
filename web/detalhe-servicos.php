@@ -69,7 +69,7 @@
 
                     }else {
                         echo '<li><a href="cadastro.php" id="login">
-                        entrar</a></li></ul>';
+                        Entrar</a></li></ul>';
                 }
                 ?>
         </nav>
@@ -91,7 +91,7 @@
                 }
                 ?>
                 
-                <li><p> <?php $myDate = date("jS M Y"); 
+                <li><p> <?php $myDate = date("Y"); 
                 echo "Membro da Open Doors desde: $myDate";?></p></li>
                 <li><h3>Avalie o chaveiro:</h3></li>
                 <li>

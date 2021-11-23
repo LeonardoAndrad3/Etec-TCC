@@ -62,7 +62,7 @@
 
                     }else {
                         echo '<li><a href="cadastro.php" id="login">
-                        entrar</a></li></ul>';
+                        Entrar</a></li></ul>';
                 }
                 ?>
         </nav>

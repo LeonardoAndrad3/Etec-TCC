@@ -29,7 +29,7 @@
                     <li><a href="localiza.php">Sua localização</a></li>
                     <li><a href="contate.php">Contate-nos</a></li>
                     <li><a href="index.php">Sobre nós</a></li>              
-                    <li><a href="cadastro.php" id="login">entrar</a></li>
+                    <li><a href="cadastro.php" id="login">Entrar</a></li>
                 </ul>
             </nav>
         </header>
@@ -233,10 +233,10 @@
         <script>
             $('#lista').change(function(){
                 if( $(this).val() == '3'){
-                    $('#funcao').append("<?php
+                    $('#funcao').append(<?php
                         require_once('php/profissoes.php');
                         profissaoCheck();
-                        ?>");
+                        ?>);
                 }else{
                     for(let i=0;i<15;i++){
                         $("#myInput").remove();

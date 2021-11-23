@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 {
   "dependencies": {
     "jquery": "^3.6.0"
   }
 }
+=======
+{
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
+>>>>>>> 58c4b262ca902e831c98e1f936ef71ce550245a2

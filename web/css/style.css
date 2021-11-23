@@ -8,9 +8,12 @@ body{
     width: 100%;
 }
 
+<<<<<<< HEAD
 .map{
     border-radius: 50%;
 }
+=======
+>>>>>>> 58c4b262ca902e831c98e1f936ef71ce550245a2
 
 #login{
     color: rgb(12, 147, 3);
@@ -133,6 +136,7 @@ a:hover{ /*mostrar área de contato*/
     /*Início div-oque*/
     .oque{
         color: white;
+        margin-top: 5px;
     }
 
     .lista-oque{
@@ -285,12 +289,12 @@ a:hover{ /*mostrar área de contato*/
     .titulo-rodape{
         font-size: 30px;
         text-align: center;
-        padding-bottom: 10px;
+        padding-bottom: 5px;
         border-bottom: 2px solid white;
         margin: 0 35vw 0 35vw;
     }
     .copy{
-        padding-top: 20px;
+        padding-top: 5px;
     }
     .link-rodape{
         text-decoration: underline;
@@ -675,7 +679,11 @@ a:hover{ /*mostrar área de contato*/
     }
     .detalhe-encontrar{
         background-color: rgb(24, 25, 27);
+        width: 100px;
     }
+    /* .mapa-google{
+
+    } */
     .detalhe-descricao h4, .detalhe-funcao h4, .detalhe-valor h4, .detalhe-avaliacoes h4, .detalhe-encontrar h4{
         font-size: 18px;
         margin-bottom: 0;
@@ -915,6 +923,17 @@ a:hover{ /*mostrar área de contato*/
         margin: 15px;
     }
     /*Fim erro conexao*/
+    /*Inicio localização*/
+    .conteudo-localizacao{
+        justify-content: center;
+    }
+    .map{
+        border: none;
+        width: 80%;
+        height: 90%;
+        margin: 20px 10%;
+    }
+    /*FIm localização*/
 
 @media (max-width: 600px){
     /*caso esteja abaixo de 600px*/
@@ -1151,6 +1170,9 @@ a:hover{ /*mostrar área de contato*/
             text-align: left;
             padding-left: 10px;
         }
+        .mapa-google{
+            margin-left: -20px;
+        }
     /*Fim detalhes do serviço*/
     .mensagem-erro img{
         width: 70%;
@@ -1280,6 +1302,9 @@ a:hover{ /*mostrar área de contato*/
         text-align: left;
         padding-left: 10px;
     }
+    .mapa-google{
+        margin-left: -20px;
+    }
     /*Fim detalhes serviços*/
     /*Tela contate-nos*/
     .content-contate img{
@@ -1407,6 +1432,9 @@ a:hover{ /*mostrar área de contato*/
         margin: 20px 0 10px 0;
         text-align: left;
         padding-left: 10px;
+    }
+    .mapa-google{
+        margin-left: -20px;
     }
     /*Fim detalhes serviços*/
     /*Tela contate-nos*/

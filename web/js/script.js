@@ -6,7 +6,7 @@ $('.home .botoes-verdes').click(function(e){ //saber mais
 			menuHeight = $('nav').innerHeight(),
 			targetOffset = $(id).offset().top;
 	$('html, section').animate({
-		scrollTop: targetOffset -65
+		scrollTop: targetOffset
 	}, 500);
 });
 $('.home .botoes').click(function(e){ //porque contratar
