@@ -1,6 +1,7 @@
-<?php
- include_once("php/logar.php");
- require("php/avaliar.php");
+<?php   
+    include_once("php/logar.php");
+    require("php/avaliar.php");
+        
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,4 +1,3 @@
-<?php include("php/logar.php");?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +12,7 @@
         <title>Open Doors</title>
 		<meta name="theme-color" content="#353535">
         <?php
+            include_once("php/logar.php");
 				if(isset($_SESSION["usuario"])){
 					echo '<link rel="stylesheet" href="css/button.css">';
 				}
