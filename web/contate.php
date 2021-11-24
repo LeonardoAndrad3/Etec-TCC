@@ -1,4 +1,4 @@
-
+<?php include_once("php/logar.php");?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +10,6 @@
 		<link rel="manifest" href="manifest.json">
 		<script src="js/main.js" defer></script>
         <?php
-            include_once("php/logar.php");
 				if(isset($_SESSION["usuario"])){
 					echo '<link rel="stylesheet" href="css/button.css">';
 				}

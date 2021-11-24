@@ -3,6 +3,7 @@ const cacheName = 'v2';
 const cacheFiles = [
     '/',
     '/index.html',
+    '/css/style.css',
     '/css/stylerr.css',
     '/icon/erro-conexao.png',
     '/icon/logo-2.png',

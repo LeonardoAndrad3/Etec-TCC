@@ -1,3 +1,5 @@
+<?php include_once("php/logar.php");?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -23,7 +25,7 @@
 			</script>
 			<script src="//code-sa1.jivosite.com/widget/PNSgAqbd3B" async></script>
 			<?php 
-				include_once("php/logar.php");
+				
 				if(isset($_SESSION["usuario"])){
 					echo '<link rel="stylesheet" href="css/button.css">';
 				}

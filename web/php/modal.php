@@ -1,6 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+    
 <!-- modal sucesso -->
-<link rel="stylesheet" type="text/css" href="../css/style.css">
-
 <div id="modal-login" class="modal-container">
     <div class="modal" style="border-color: gren;">
         <h3>Bem vindo!</h3>
@@ -22,12 +31,12 @@
     </div>
 </div>
 
-<div  class="modal-container" id="modal-sair">
+<div id="modal-sair" class="modal-container">
     <div class="modal" style="border-color: gren;">
         <h3>Até logo!<h3>
         <p>As portas sempre estarão apertas!</p>
+    </div>
 </div>
-
 
 <!-- modal erro -->
 <div id="modal-erro-login" class="modal-container"  >
@@ -135,3 +144,6 @@ function redirecionar() {
 let modal = redirecionar();
 
 </script>
+
+</body>
+</html>

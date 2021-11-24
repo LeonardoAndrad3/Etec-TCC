@@ -187,45 +187,7 @@
                         <button name="btnSair" class="encerrar-sessao">Encerrar</button>
                     </form>
                 </div>
-            </div>
-            
-        <!-- <div id="modal-sucesso" class="modal-container">
-            <div class="modal">
-                <a href="index.php"><button class="fechar">X</button></a>
-                <h3>Cadastro realizado com sucesso!</h3>
-            </div>
-        </div> 
-        <div id="modal-falha" class="modal-container">
-            <div class="modal">
-                <a href="index.php"><button class="fechar">X</button></a>
-                <h3>Falha ao Cadastro!</h3>
-            </div>
-        </div>    
-        <div id="modal-cpf" class="modal-container">
-            <div class="modal">
-                <a href="index.php"><button class="fechar">X</button></a>
-                <h3>Cadastro realizado com sucesso!</h3>
-            </div>
-        </div> 
-        <div id="modal-login" class="modal-container">
-            <div class="modal">
-                <a href="index.php"><button class="fechar">X</button></a>
-                <h3>Cadastro realizado com sucesso!</h3>
-            </div>
-        </div>        
-        <div id="modal-email" class="modal-container">
-            <div class="modal">
-                <a href="index.php"><button class="fechar">X</button></a>
-                <h3>Cadastro realizado com sucesso!</h3>
-            </div>
-        </div>    
-        <div id="modal-senhas" class="modal-container">
-            <div class="modal">
-                <a href="index.php"><button class="fechar">X</button></a>
-                <h3>Cadastro realizado com sucesso!</h3>
-            </div>
-        </div>        -->
-
+            </div>          
 
         <script type="text/javascript" src="js/script.js"></script>
 

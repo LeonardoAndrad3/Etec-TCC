@@ -1,6 +1,7 @@
 <?php
-include_once("query.php");
 
+require("modal.php");
+include_once("query.php");
 $db = new ControllerDb();
 $db->connectDb();
 session_start();
@@ -18,7 +19,7 @@ function entrar($query){
         } else{
             throw new Exception("
             <script>
-            iniciaModal('modal_erro_login');
+            iniciaModal('modal-erro-login');
             modal.back();
             </script>"); 
 
