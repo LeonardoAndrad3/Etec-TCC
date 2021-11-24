@@ -6,7 +6,6 @@ $db->connectDb();
 session_start();
 
 function entrar($query){
-    include_once("modal.php");
     try{$result = pg_query($query);
         if(pg_num_rows($result) > 0){
             $row = pg_fetch_assoc($result);
@@ -19,7 +18,7 @@ function entrar($query){
         } else{
             throw new Exception("
             <script>
-            iniciaModal('testeModal');
+            iniciaModal('modal_erro_login');
             modal.back();
             </script>"); 
 
@@ -44,7 +43,6 @@ if(isset($_POST['btnLoginCliente'])){
     entrar($query="select * from Chaveiro where email='$email' and senha='$senha';");
 
 } elseif(isset($_POST["btnSair"])){
-    include_once("modal.php");
     echo'
     <script> 
     iniciaModal("modal-sair");

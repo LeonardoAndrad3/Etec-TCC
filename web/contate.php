@@ -1,4 +1,4 @@
-<?php include_once("php/logar.php");?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +10,7 @@
 		<link rel="manifest" href="manifest.json">
 		<script src="js/main.js" defer></script>
         <?php
+            include_once("php/logar.php");
 				if(isset($_SESSION["usuario"])){
 					echo '<link rel="stylesheet" href="css/button.css">';
 				}
@@ -23,9 +24,9 @@
                 <span id="hamburguer"></span>
             </button>
             <ul id="menu" class="menu" role="menu">
-                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="servicos.php">Serviços</a></li>
                 <li><a href="localiza.php">Sua localização</a></li>
-                <li><a href="contate.html">Contate-nos</a></li>
+                <li><a href="contate.php">Contate-nos</a></li>
                 <li><a href="index.php">Sobre nós</a></li>
                 <?php
                 if(isset($_SESSION["usuario"])){

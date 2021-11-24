@@ -1,6 +1,4 @@
 <!-- modal sucesso -->
-<?php include_once("logar.php")?>
-
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 
 <div id="modal-login" class="modal-container">
@@ -32,8 +30,8 @@
 
 
 <!-- modal erro -->
-<div class="modal-container" id="modal_erro_login" >
-    <div class="modal" style="border-color: gren;">
+<div id="modal-erro-login" class="modal-container"  >
+    <div class="modal" style="border-color: red;">
         <h3>Email ou senha incorretos!</h3>
         <p>Por favor, verifique e tente novamente</p>
     </div>
@@ -73,7 +71,6 @@
         <p>Por favor, tente novamente!</p>
     </div>
 </div>
-
 
 <div id="modal-erro-geral" class="modal-container">
     <div class="modal" style="border-color: red;">

@@ -1,4 +1,3 @@
-<?php include_once("php/logar.php")?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,7 +23,7 @@
 			</script>
 			<script src="//code-sa1.jivosite.com/widget/PNSgAqbd3B" async></script>
 			<?php 
-			
+				include_once("php/logar.php");
 				if(isset($_SESSION["usuario"])){
 					echo '<link rel="stylesheet" href="css/button.css">';
 				}
@@ -197,8 +196,8 @@
             <img src="icon/erro-conexao.png">
             <h3>Conecte-se à Internet</h3>
             <p>Você não está conectado a internet, verifique sua conexão.</p>
-        </section>
-		 -->
+        </section> -->
+		
 		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
 		<script type="text/javascript" src="js/localizar.js"></script>
