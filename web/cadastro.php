@@ -94,7 +94,7 @@
                                 <option value="" disabled selected>Selecione</option>
                                 <?php   
                                 include('php/profissoes.php');
-                                profissao();                           
+                                profissao();                
                                 ?>
                                 <option value="3">Outro</option>
                             </select><br/>
@@ -234,7 +234,7 @@
             $('#lista').change(function(){
                 if( $(this).val() == '3'){
                     $('#funcao').append(<?php
-                        require_once('php/profissoes.php');
+                        include_once('php/profissoes.php');
                         profissaoCheck();
                         ?>);
                 }else{

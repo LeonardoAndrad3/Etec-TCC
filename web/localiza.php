@@ -95,9 +95,9 @@
             class="map"
             src="">
     	</iframe>
-			<!--Abaixo é o botão para rota-->
+			<!-- Abaixo é o botão para rota
 			<button class="link" onclick="direcionarMaps()">Entrar</button>
-
+				-->
 		</section>
 
         <footer>

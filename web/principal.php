@@ -1,5 +1,4 @@
-<?php include_once("php/logar.php");?>
-
+<?php include_once("php/logar.php")?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,7 +23,8 @@
 			updateStatus();
 			</script>
 			<script src="//code-sa1.jivosite.com/widget/PNSgAqbd3B" async></script>
-			<?php
+			<?php 
+			
 				if(isset($_SESSION["usuario"])){
 					echo '<link rel="stylesheet" href="css/button.css">';
 				}
@@ -155,7 +155,7 @@
 						Suporte total da equipe open doors para qualquer dúvida ou reclamação.<br/>
 					</p>
 					</li>
-					<li class="botao-motivos"><a class="botoes" href="servicos.html">Quero contratar</a></li>
+					<li class="botao-motivos"><a class="botoes" href="servicos.php">Quero contratar</a></li>
 				</ul>
 			</div>
 					

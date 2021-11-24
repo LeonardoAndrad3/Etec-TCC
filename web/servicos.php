@@ -1,4 +1,5 @@
-<?php include_once("php/logar.php");?>
+<?php include("php/logar.php");?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

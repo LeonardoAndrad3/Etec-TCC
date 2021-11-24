@@ -1,45 +1,51 @@
-<?php require_once("logar.php");?>
-
 <!-- modal sucesso -->
+<?php include_once("logar.php")?>
+
 <link rel="stylesheet" type="text/css" href="../css/style.css">
+
 <div id="modal-login" class="modal-container">
     <div class="modal" style="border-color: gren;">
         <h3>Bem vindo!</h3>
         <p>Aproveite nossas funcionalidades!</p>
     </div>
 </div>
+
 <div id="modal-cadastro" class="modal-container">
     <div class="modal" style="border-color: gren;">
         <h3>Cadastrado em sucesso!<h3>
         <p>Faça o login e aproveite nossas funcionalidades!</p>
     </div>
 </div>
+
 <div id="modal-sucesso-avaliacao" class="modal-container">
     <div class="modal" style="border-color: gren;">
         <h3>Avaliação enviada com sucesso!<h3>
         <p>Obrigado, sua avaliação faz toda diferença</p>
     </div>
 </div>
-<div id="modal-sair" class="modal-container">
+
+<div  class="modal-container" id="modal-sair">
     <div class="modal" style="border-color: gren;">
         <h3>Até logo!<h3>
         <p>As portas sempre estarão apertas!</p>
-    </div>
+</div>
 
 
 <!-- modal erro -->
-<div id="modal-erro-login" class="modal-container">
-    <div class="modal" style="border-color: red;">
+<div class="modal-container" id="modal_erro_login" >
+    <div class="modal" style="border-color: gren;">
         <h3>Email ou senha incorretos!</h3>
         <p>Por favor, verifique e tente novamente</p>
     </div>
 </div>
+
 <div id="modal-existe-email" class="modal-container">
     <div class="modal" style="border-color: red;">
         <h3>Email já cadastrado!</h3>
         <p>Por favor, tente novamente!</p>
     </div>
 </div>
+
 <div id="modal-invalide-email" class="modal-container">
     <div class="modal" style="border-color: red;">
         <h3>Email inválido!</h3>
@@ -53,31 +59,36 @@
         <p>Por favor, tente novamente!</p>
     </div>
 </div>
+
 <div id="modal-invalide-cpf" class="modal-container">
     <div class="modal" style="border-color: red;">
         <h3>CPF inválido!</h3>
         <p>Por favor, tente novamente!</p>
     </div>
 </div>
+
 <div id="modal-erro-senha" class="modal-container">
     <div class="modal" style="border-color: red;">
         <h3>Senhas não coincidem!</h3>
         <p>Por favor, tente novamente!</p>
     </div>
 </div>
-</div>
+
+
 <div id="modal-erro-geral" class="modal-container">
     <div class="modal" style="border-color: red;">
         <h3>Ops, ocorreu um erro!<h3>
         <p>Tente novamente mais tarde ou tente entrar em contato com o suporte</p>
     </div>
 </div>
+
 <div id="modal-iniciar-session" class="modal-container">
     <div class="modal" style="border-color: red;">
         <h3>Atenção!<h3>
         <p>Por favor, fazer login para aproveitar todas funcionalidades</p>
     </div>
 </div>
+
 <div id="modal-erro-estrela" class="modal-container">
     <div class="modal" style="border-color: red;">
         <h3>Por favor!<h3>
