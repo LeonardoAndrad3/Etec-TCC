@@ -194,11 +194,11 @@
 		
 		</section>
 
-		<!-- <section class="mensagem-erro">
+		<section class="mensagem-erro">
             <img src="icon/erro-conexao.png">
             <h3>Conecte-se à Internet</h3>
             <p>Você não está conectado a internet, verifique sua conexão.</p>
-        </section> -->
+        </section>
 		
 		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>

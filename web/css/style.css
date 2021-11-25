@@ -896,7 +896,7 @@ a:hover{ /*mostrar área de contato*/
     /*Inicio erro conexao*/
     .mensagem-erro{
         text-align: center;
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;
