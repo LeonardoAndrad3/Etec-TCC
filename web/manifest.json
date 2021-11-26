@@ -3,7 +3,7 @@
     "short_name": "Open doors",
     "description": "WEB APP para aprender PWA (Disciplina PAMII).",
     "display": "fullscreen",
-    "start_url":"index.html", 
+    "start_url":"index.php", 
     "scope": "/",
     "background_color": "#535353",
     

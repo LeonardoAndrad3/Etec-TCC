@@ -1,16 +1,6 @@
 const cacheName = 'v2';
 
-const cacheFiles = [
-    '/',
-    '/index.html',
-    '/css/style.css',
-    '/css/stylerr.css',
-    '/icon/erro-conexao.png',
-    '/icon/logo-2.png',
-    '/js/main.js',
-    '/js/jquery-3.1.1.min.js',
-    '/js/script.js'
-];
+
 
 self.addEventListener('install', function(e){
     console.log("SW installed");
