@@ -156,7 +156,7 @@
 						Suporte total da equipe open doors para qualquer dúvida ou reclamação.<br/>
 					</p>
 					</li>
-					<li class="botao-motivos"><a class="botoes" href="servicos.php">Quero contratar</a></li>
+					<li class="botao-motivos"><a class="botoes" href="servicos.php">Visualizar serviços</a></li>
 				</ul>
 			</div>
 					
