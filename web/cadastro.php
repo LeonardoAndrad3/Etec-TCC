@@ -14,7 +14,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
         <!-- <script src="chamarFunctionPhp.js"></script> -->
         <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-    
     </head>
     <body>
 
@@ -69,7 +68,7 @@
                 <form class="lista-form" action="php/cadastrar.php" method="POST">
                     <ul>
                         <li><p>*Nome:</p><input type="text" name="txtName" required></li>
-                        <li><p>*Email:</p><input type="email" name="txtEmailCadastro"required></li>
+                        <li><p>*Email:</p><input type="text" name="txtEmailCadastro"required></li>
                         <li><p>*Senha:</p><input type="password" name="txtSenhaCadastro" id ="campo-senhaconfirm2"pattern="^[a-zA-Z0-9]+$" minlength="6" maxlength="50"required ><button type="button" class="visible-senha" onclick="mostrarConfSenha()" ><img src="icon/olho-senha.png"></button></li>
                         <li><p>*Confirmar Senha:</p><input type="password" id="campo-senhaconfirm" name="txtSenhaConf" pattern="^[a-zA-Z0-9]+$" minlength="6" maxlength="50"required ><button type="button" class="visible-senha" onclick="mostrarConfSenha()" ><img src="icon/olho-senha.png"></button></li>
                         <li><p>*CPF:</p><input type="text" name="txtCpf" required  minlength="14" onkeypress="$(this).mask('000.000.000-00')"></li>
@@ -96,10 +95,9 @@
                                 include('php/profissoes.php');
                                 profissao();                
                                 ?>
-                                <option value="3">Outro</option>
+                                <option value="3">Outros</option>
                             </select><br/>
                         </p></li>
-                        <li><p>*Valor da função principal:</p><input type="text" required></li>
                         <li><p>*Métodos de pagamento aceito: <br/> <p>Dinheiro: <input type="checkbox" value="Dinheiro"name="txtPagamentoD"></p> <p>Cartão: <input type="checkbox" value="Cartão" name="txtPagamentoC"></p> 
                         </p></li>
                         <li class="submit-line"><button name="btnCadastrarChaveiro" type="submit" class="botaochav">Cadastrar</button></li> 
@@ -118,7 +116,7 @@
                 <form class="lista-form" name="form_cliente" action="php/cadastrar.php" method="POST">
                     <ul>
                         <li><p>*Nome:</p><input type="text" name="txtName"required></li>
-                        <li><p>*Email:</p><input type="email" name="txtEmailCadastro"required></li>
+                        <li><p>*Email:</p><input type="text" name="txtEmailCadastro"required></li>
                         <li><p>*Senha:</p><input type="password" name="txtSenhaCadastro" minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"required><button type="button" class="visible-senha" onclick="mostrarConfSenha()" ><img src="icon/olho-senha.png"></button></li>
                         <li><p>*Confirmar Senha:</p><input type="password" name="txtSenhaConf" minlength="6" maxlength="50" pattern="^[a-zA-Z0-9]+$"required><button type="button" class="visible-senha" onclick="mostrarConfSenha()" ><img src="icon/olho-senha.png"></button></li>
                     </ul>
@@ -195,8 +193,7 @@
         <script>
             $('#lista').change(function(){
                 if( $(this).val() == '3'){
-                    $('#funcao').append(<?php
-                        include_once('php/profissoes.php');
+                    $('#funcao').append( <?php
                         profissaoCheck();
                         ?>);
                 }else{

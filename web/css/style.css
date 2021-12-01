@@ -848,7 +848,7 @@ a:hover{ /*mostrar área de contato*/
     .content-contate img{
         width: 720px;
     }
-    .content-contate input[type="text"],.content-contate input[type="email"]{
+    .content-contate input[type="text"], .content-contate input[type="email"]{
         border: none;
         background-color: rgb(24, 25, 27);
         border-bottom: 2px solid rgb(53, 53, 53);
