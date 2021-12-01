@@ -119,11 +119,11 @@
             </ul>
             <ul class="detalhe-funcao">
                 <li><h4>Função</h4></li>
-                <li><p><?php echo $row['especialidade']?></p></li>
+                <li><p><?php echo str_replace("_", " ", $row['especialidade'])?></p></li>
             </ul>
             <ul class="detalhe-encontrar">
                <h4>Onde encontrar: <br><?php echo $row['cep']?></h4>
-               <?php echo "<iframe width='400' height='300' style='border:0;' allowfullscreen='' loading='lazy' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyCAcV6JSwmuPsbOtY7qHrAS6Xf6dORB16k
+               <?php echo "<iframe class='map-servico' width='400' height='250' style='border:0;margin:5px;' allowfullscreen='' loading='lazy' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyCAcV6JSwmuPsbOtY7qHrAS6Xf6dORB16k
                 &q=".$row['cep']."' ></iframe>"?>
                 <!-- teste pra ver se ta pegando a api do gogole -->
 

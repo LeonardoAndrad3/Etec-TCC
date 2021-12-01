@@ -810,6 +810,7 @@ a:hover{ /*mostrar área de contato*/
         width: 200px;
         cursor: pointer;
     }
+
     .botao-detalhes-estrela:hover{
         color: white;
         background-color: rgb(12, 147, 3);
@@ -1158,6 +1159,7 @@ a:hover{ /*mostrar área de contato*/
             justify-content: center;
             margin-top: 30px;
         }
+
         .detalhes ul{
             max-width: 80%;
         }

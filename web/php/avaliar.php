@@ -45,15 +45,21 @@ function mostrarAvaliacao(){
     //Novo
 
     try{ 
-        $queryAvaliacao = "select*from Avaliacoes where idchaveiro=".$GLOBALS['id']." order by random() limit 3;" or die("Sem avaliações");
+        $queryAvaliacao = "select * from Avaliacoes where idchaveiro=".$GLOBALS['id']." order by random() limit 3;" or die ("Sem avaliações");
+    
     if(pg_query($queryAvaliacao)){
+
         $result=pg_query($queryAvaliacao);
+        
         while($row = pg_fetch_assoc($result)){
+
             if(!$row['descricao']==""){
+                $dataA = $row["data"];
+                $dataA = date('d/m/Y', strtotime($dataA));
                 if($row["avaliacoes"] == 5){
                     echo'<div style="margin-top:30px;">                        
                         <form class="estrelas" style="margin: 5px;">
-                        <p>'.$row["nomecliente"].'</p>
+                        <p>'.$row["nomecliente"]." ".$dataA.'</p>
                         <input type="radio" id="vazio" name="estrela" value="0"> <!--Coloco esse vazio para mostrar uma estrela-->
                         <label for="estrela_um"><i class="fa"></i></label> <!--label serve para se tornar a estrela-->
                         <input type="radio" id="estrela_um" name="estrela" value="1">
@@ -70,7 +76,7 @@ function mostrarAvaliacao(){
                     }elseif($row['avaliacoes'] == 4){
                         echo '<div style="margin-top:30px;">                        
                         <form class="estrelas" style="margin: 5px;">
-                        <p>'.$row["nomecliente"].'</p>
+                        <p>'.$row["nomecliente"]." ".$dataA.'</p>
                         <input type="radio" id="vazio" name="estrela" value="0"> <!--Coloco esse vazio para mostrar uma estrela-->
                         <label for="estrela_um"><i class="fa"></i></label> <!--label serve para se tornar a estrela-->
                         <input type="radio" id="estrela_um" name="estrela" value="1">
@@ -87,7 +93,7 @@ function mostrarAvaliacao(){
                     }elseif($row['avaliacoes'] == 3){
                         echo '<div style="margin-top:30px;">                        
                         <form class="estrelas" style="margin: 5px;">
-                        <p>'.$row["nomecliente"].'</p>
+                        <p>'.$row["nomecliente"]." ".$dataA.'</p>
                         <input type="radio" id="vazio" name="estrela" value="0"> <!--Coloco esse vazio para mostrar uma estrela-->
                         <label for="estrela_um"><i class="fa"></i></label> <!--label serve para se tornar a estrela-->
                         <input type="radio" id="estrela_um" name="estrela" value="1">
@@ -104,7 +110,7 @@ function mostrarAvaliacao(){
                     }elseif($row['avaliacoes'] == 2){
                         echo '<div style="margin-top:30px;">                        
                         <form class="estrelas" style="margin: 5px;">
-                        <p>'.$row["nomecliente"].'</p>
+                        <p>'.$row["nomecliente"]." ".$dataA.'</p>
                         <input type="radio" id="vazio" name="estrela" value="0"> <!--Coloco esse vazio para mostrar uma estrela-->
                         <label for="estrela_um"><i class="fa"></i></label> <!--label serve para se tornar a estrela-->
                         <input type="radio" id="estrela_um" name="estrela" value="1">
@@ -121,7 +127,7 @@ function mostrarAvaliacao(){
                     }elseif($row['avaliacoes'] == 1){
                         echo '<div style="margin-top:30px;">
                         <form class="estrelas" style="margin: 5px;">
-                        <p>'.$row["nomecliente"].'</p>
+                        <p>'.$row["nomecliente"]." ".$dataA.'</p>
                         <input type="radio" id="vazio" name="estrela" value="0"> <!--Coloco esse vazio para mostrar uma estrela-->
                         <label for="estrela_um"><i class="fa"></i></label> <!--label serve para se tornar a estrela-->
                         <input type="radio" id="estrela_um" name="estrela" value="1" checked>
@@ -141,7 +147,7 @@ function mostrarAvaliacao(){
                 if($row["avaliacoes"] == 5){
                     echo'<div style="margin-top:30px;">                        
                     <form class="estrelas" style="margin: 5px;">
-                    <p>'.$row["nomecliente"].'</p>
+                    <p>'.$row["nomecliente"]." ".$dataA.'</p>
                     <input type="radio" id="vazio" name="estrela" value="0"> <!--Coloco esse vazio para mostrar uma estrela-->
                     <label for="estrela_um"><i class="fa"></i></label> <!--label serve para se tornar a estrela-->
                     <input type="radio" id="estrela_um" name="estrela" value="1">
@@ -158,7 +164,7 @@ function mostrarAvaliacao(){
                 }elseif($row['avaliacoes'] == 4){
                     echo'<div style="margin-top:30px;">
                     <form class="estrelas" style="margin: 5px;">
-                    <p>'.$row["nomecliente"].'</p>
+                    <p>'.$row["nomecliente"]." ".$dataA.'</p>
                     <input type="radio" id="vazio" name="estrela" value="0"> <!--Coloco esse vazio para mostrar uma estrela-->
                     <label for="estrela_um"><i class="fa"></i></label> <!--label serve para se tornar a estrela-->
                     <input type="radio" id="estrela_um" name="estrela" value="1">
@@ -175,7 +181,7 @@ function mostrarAvaliacao(){
                 }elseif($row['avaliacoes'] == 3){
                     echo'<div style="margin-top:30px;">
                     <form class="estrelas" style="margin: 5px;">
-                    <p>'.$row["nomecliente"].'</p>
+                    <p>'.$row["nomecliente"]." ".$dataA.'</p>
                     <input type="radio" id="vazio" name="estrela" value="0"> <!--Coloco esse vazio para mostrar uma estrela-->
                     <label for="estrela_um"><i class="fa"></i></label> <!--label serve para se tornar a estrela-->
                     <input type="radio" id="estrela_um" name="estrela" value="1">
@@ -191,7 +197,7 @@ function mostrarAvaliacao(){
                 }elseif($row['avaliacoes'] == 2){
                     echo'<div style="margin-top:30px;">
                     <form class="estrelas" style="margin: 5px;">
-                    <p>'.$row["nomecliente"].'</p>
+                    <p>'.$row["nomecliente"]." ".$dataA.'</p>
                     <input type="radio" id="vazio" name="estrela" value="0"> <!--Coloco esse vazio para mostrar uma estrela-->
                     <label for="estrela_um"><i class="fa"></i></label> <!--label serve para se tornar a estrela-->
                     <input type="radio" id="estrela_um" name="estrela" value="1">
@@ -208,7 +214,7 @@ function mostrarAvaliacao(){
                 }elseif($row['avaliacoes'] == 1){
                     echo'<div style="margin-top:30px;">
                     <form class="estrelas" style="margin: 5px;">
-                    <p>'.$row["nomecliente"].'</p>
+                    <p>'.$row["nomecliente"]."  ".$dataA.'</p>
                     <input type="radio" id="vazio" name="estrela" value="0"> <!--Coloco esse vazio para mostrar uma estrela-->
                     <label for="estrela_um"><i class="fa"></i></label> <!--label serve para se tornar a estrela-->
                     <input type="radio" id="estrela_um" name="estrela" value="1" checked>
