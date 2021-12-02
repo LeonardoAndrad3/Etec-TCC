@@ -74,9 +74,13 @@
                         <li><p>*CPF:</p><input type="text" name="txtCpf" required  minlength="14" onkeypress="$(this).mask('000.000.000-00')"></li>
                         <li><p>*Data de Nascimento:<p><input type="text" name="txtDataNascimento"required onkeypress="$(this).mask('00/00/0000')"></li>
                         <li><p>*CEP:</p><input type="text" onkeypress="$(this).mask('00000-000')"name="txtCep" required ></li>
-                        <li><p>
-                                Celular: <input type="checkbox" id="checkBoxCelular" onchange="javascript:Caixa()"><br/>
-                                <input id="txtBoxCelular" type="text" name="txtCelular" onkeypress="$(this).mask('(00) 0000-00009')"  style="display:none "/>
+                      
+                    </ul>
+
+                    <ul class="cadastro-segunda-ul-chav">
+                    <li><p>
+                                *Celular: <br>
+                                <input type="text"required name="txtCelular" onkeypress="$(this).mask('(00) 0000-00009')">
                             </p>
                         </li>
                         <li><p>
@@ -84,9 +88,6 @@
                                 <input id="txtBoxTelefone" type="text" name="txtTelefone" onkeypress="$(this).mask('(00) 0000-00009')" style="display:none"/>
                             </p>
                         </li>
-                    </ul>
-
-                    <ul class="cadastro-segunda-ul-chav">
                         <li><p>Descreva-se:</p><input type="text" name="txtDescricao"></li>
                         <li><p id="funcao">*Função Principal <br/>
                             <select id="lista" name="txtEspecialidade"required>
