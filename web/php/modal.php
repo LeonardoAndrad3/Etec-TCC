@@ -34,7 +34,7 @@
 <div id="modal-sair" class="modal-container">
     <div class="modal" style="border-color: gren;">
         <h3>Até logo!<h3>
-        <p>As portas sempre estarão apertas!</p>
+        <p>As portas sempre estarão abertas!</p>
     </div>
 </div>
 
